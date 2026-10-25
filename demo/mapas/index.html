@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 estilos de mapa · propuesta para las maquetas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{--bg:#0c0c0e;--fg:#f2efe9;--mut:#9a958c;--acc:#ff6a3d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,sans-serif}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto;padding:32px 0 48px}
+h1{font:400 clamp(34px,5vw,58px)/1 'Instrument Serif',serif;margin:0 0 8px}
+h1 em{color:var(--acc)}
+.lead{color:var(--mut);max-width:62ch;margin:0 0 22px}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-bottom:14px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;border:1px solid #2a2a2e;background:#141417;color:var(--mut);font:500 13px Inter;cursor:pointer;transition:all .3s}
+.tabs button b{font:500 11px 'JetBrains Mono';color:#5d5a55}
+.tabs button[aria-selected=true]{background:var(--fg);color:#111;border-color:var(--fg)}
+.tabs button[aria-selected=true] b{color:var(--acc)}
+.stage{position:relative;height:min(68vh,640px);min-height:420px;border-radius:22px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+#map{position:absolute;inset:0}
+.fx{position:absolute;inset:0;pointer-events:none;z-index:2;transition:opacity .6s}
+.info{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:18px}
+.info h2{font:400 32px/1 'Instrument Serif',serif;margin:0 0 6px}
+.info h2 small{font:500 12px 'JetBrains Mono';color:var(--acc);margin-right:10px}
+.info p{margin:0;color:var(--mut);max-width:60ch}
+.nav{display:flex;gap:8px;align-items:center}
+.nav button{width:44px;height:44px;border-radius:50%;border:1px solid #2a2a2e;background:#141417;color:var(--fg);font-size:18px;cursor:pointer}
+.note{margin-top:26px;padding:16px 18px;border-radius:14px;background:#141417;color:var(--mut);font-size:14px}
+.note b{color:var(--fg)}
+/* Marcadores y tarjetas comunes */
+.pin{position:relative;width:22px;height:22px}
+.pin i{position:absolute;inset:0;border-radius:50%;background:var(--pc,#ff6a3d);box-shadow:0 0 0 4px rgba(255,255,255,.9),0 6px 18px rgba(0,0,0,.4)}
+.pin::before,.pin::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid var(--pc,#ff6a3d);animation:ping 2.2s ease-out infinite;opacity:0}
+.pin::after{animation-delay:1.1s}
+@keyframes ping{0%{transform:scale(.3);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+.card{position:absolute;z-index:3;left:18px;bottom:18px;display:flex;gap:12px;align-items:center;padding:10px 14px 10px 10px;border-radius:16px;background:rgba(14,14,17,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;box-shadow:0 14px 40px rgba(0,0,0,.4);font-size:13px;max-width:calc(100% - 36px)}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover}
+.card b{display:block;font-size:15px}
+.card span{opacity:.75}
+.chip{position:absolute;z-index:3;padding:7px 11px;border-radius:99px;font:600 12px Inter;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+/* 2 · Papel */
+.paper{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .35 0 0 0 0 .2 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(ellipse at center,transparent 55%,rgba(90,60,20,.45));mix-blend-mode:multiply}
+.compass{position:absolute;right:22px;top:22px;width:92px;height:92px;z-index:3;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(8deg)}}
+.stamp{position:absolute;left:24px;top:22px;z-index:3;font:italic 400 26px 'Instrument Serif',serif;color:#5a3d1c;border:2px solid #5a3d1c;padding:4px 14px;rotate:-6deg;background:rgba(244,232,206,.6)}
+/* 5 · Radar */
+.radar{position:absolute;width:0;height:0;inset:auto}
+.radar i{left:0;top:0;transform:translate(-50%,-50%)}
+.radar i{position:absolute;width:30vmin;height:30vmin;border-radius:50%;border:1px solid rgba(80,255,170,.35)}
+.radar i:nth-child(2){width:60vmin;height:60vmin}.radar i:nth-child(3){width:90vmin;height:90vmin}
+.radar .sweep{position:absolute;width:140vmin;height:140vmin;border:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(80,255,170,.32),transparent 18%);animation:spinc 4s linear infinite}
+@keyframes spinc{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.blip{position:absolute;z-index:3;font:600 11px 'JetBrains Mono';color:#7dffbf;text-shadow:0 0 10px #39ff9a}
+.blip::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#39ff9a;box-shadow:0 0 10px #39ff9a;margin-right:6px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+/* 6 · Plano técnico */
+.grid{background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+.bp-label{position:absolute;z-index:3;right:18px;bottom:18px;border:1px solid rgba(255,255,255,.6);color:#fff;font:500 11px/1.6 'JetBrains Mono';padding:10px 14px;background:rgba(17,58,120,.6)}
+.cross{position:absolute;z-index:3;left:50%;top:50%;width:140px;height:140px;margin:-70px;border:1px dashed rgba(255,255,255,.8);border-radius:50%;animation:spin 20s linear infinite}
+/* 9 · Ilustrado */
+.emoji{position:absolute;z-index:3;font-size:22px;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.bubble{position:absolute;z-index:3;background:#fff;color:#2b2b2b;padding:10px 14px;border-radius:18px 18px 18px 4px;font:600 14px Inter;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+@media (max-width:640px){.stage{height:62vh;border-radius:18px}.card img{width:42px;height:42px}.compass{width:64px;height:64px}.stamp{font-size:20px}.info h2{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>10 estilos de <em>mapa</em></h1>
+  <p class="lead">Propuestas para el mapa de las webs de maqueta (la landing de VeridIA se queda con el suyo). Pulsa cada número: el mapa es real y se puede mover. De ejemplo, una barbería en Lavapiés.</p>
+  <div class="tabs" role="tablist"></div>
+  <div class="stage"><div id="map"></div><div class="fx" id="fx"></div></div>
+  <div class="info"><div><h2 id="t"></h2><p id="d"></p></div><div class="nav"><button id="prev" aria-label="Anterior">←</button><button id="next" aria-label="Siguiente">→</button></div></div>
+  <p class="note">Dime el <b>número</b> (o una mezcla, por ejemplo «el 4 con los colores del 1») y lo aplico a todas las maquetas. En cada web se pinta con los colores de su marca.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+const BIZ = [-3.700183, 40.408957], METRO = [-3.69878, 40.41217], PARK = [-3.70205, 40.40985];
+const PHOTO = 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=200&q=70&auto=format';
+const OFM = s => 'https://tiles.openfreemap.org/styles/' + s;
+const SAT = { version: 8, sources: { s: { type: 'raster', tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'], tileSize: 256, maxzoom: 19, attribution: 'Imágenes © Esri' } }, layers: [{ id: 's', type: 'raster', source: 's' }] };
+let route = null;   // ruta a pie real desde el metro (OSRM); si falla, línea recta
+fetch('https://router.project-osrm.org/route/v1/foot/' + METRO.join(',') + ';' + BIZ.join(',') + '?overview=full&geometries=geojson').then(r => r.json()).then(j => route = j.routes[0]).catch(() => {});
+
+// Recolorea un estilo de OpenFreeMap a partir de una paleta
+function paint(map, P) {
+  map.getStyle().layers.forEach(l => {
+    const id = l.id, sl = l['source-layer'] || '';
+    try {
+      if (l.type === 'background') map.setPaintProperty(id, 'background-color', P.bg);
+      else if (l.type === 'fill' && sl === 'water') map.setPaintProperty(id, 'fill-color', P.water);
+      else if (l.type === 'fill' && (sl === 'park' || /park|wood|grass/.test(id))) map.setPaintProperty(id, 'fill-color', P.park);
+      else if (l.type === 'fill' && (sl === 'landuse' || sl === 'landcover')) map.setPaintProperty(id, 'fill-color', P.land || P.bg);
+      else if (l.type === 'fill' && sl === 'building') { map.setPaintProperty(id, 'fill-color', P.bld); map.setPaintProperty(id, 'fill-outline-color', P.bldLine || P.bld); }
+      else if (l.type === 'line' && sl === 'transportation') { map.setPaintProperty(id, 'line-color', /motorway|trunk|primary/.test(id) ? P.major : P.road); if (P.roadW) map.setPaintProperty(id, 'line-width', ['interpolate', ['linear'], ['zoom'], 13, .6 * P.roadW, 17, 6 * P.roadW]); if (P.roadBlur) map.setPaintProperty(id, 'line-blur', P.roadBlur); }
+      else if (l.type === 'line' && sl === 'waterway') map.setPaintProperty(id, 'line-color', P.water);
+      else if (l.type === 'line' && /boundary/.test(sl)) map.setLayoutProperty(id, 'visibility', 'none');
+      else if (l.type === 'symbol') { if (P.noLabels || (P.fewLabels && !/road|street|transportation_name|poi/.test(id))) map.setLayoutProperty(id, 'visibility', 'none'); else { map.setPaintProperty(id, 'text-color', P.text); map.setPaintProperty(id, 'text-halo-color', P.halo || P.bg); if (P.font) map.setLayoutProperty(id, 'text-font', P.font); } }
+      else if (l.type === 'fill-extrusion') map.setLayoutProperty(id, 'visibility', 'none');
+    } catch (e) {}
+  });
+}
+function extrude(map, col, top, op = .92, h = 1) {
+  map.addLayer({ id: 'x3d', type: 'fill-extrusion', source: 'openmaptiles', 'source-layer': 'building', minzoom: 14,
+    paint: { 'fill-extrusion-color': ['interpolate', ['linear'], ['coalesce', ['get', 'render_height'], 8], 0, col, 40, top], 'fill-extrusion-height': ['*', ['coalesce', ['get', 'render_height'], 8], h], 'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0], 'fill-extrusion-opacity': op } });
+}
+const px = (map, ll) => map.project(ll);
+function follow(map, el, ll, dx = 0, dy = 0) { const f = () => { const p = px(map, ll); el.style.left = (p.x + dx) + 'px'; el.style.top = (p.y + dy) + 'px'; }; map.on('move', f); f(); return () => map.off('move', f); }
+function card(fx, html, style) { const c = document.createElement('div'); c.className = 'card'; c.innerHTML = '<img src="' + PHOTO + '" alt="">' + html; if (style) c.style.cssText += style; fx.appendChild(c); return c; }
+function walkLine(map, color, w = 5, glow) {
+  const coords = route ? route.geometry.coordinates : [METRO, BIZ], mins = route ? Math.max(1, Math.round(route.duration / 60)) : 5;
+  map.addSource('walk', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: [coords[0], coords[0]] } } });
+  if (glow) map.addLayer({ id: 'walk-g', type: 'line', source: 'walk', paint: { 'line-color': color, 'line-width': w * 3, 'line-blur': w * 2, 'line-opacity': .5 }, layout: { 'line-cap': 'round' } });
+  map.addLayer({ id: 'walk', type: 'line', source: 'walk', paint: { 'line-color': color, 'line-width': w }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
+  let i = 1, stop = false; const step = () => { if (stop) return; i = Math.min(coords.length, i + Math.max(1, Math.ceil(coords.length / 90))); map.getSource('walk') && map.getSource('walk').setData({ type: 'Feature', geometry: { type: 'LineString', coordinates: coords.slice(0, i) } }); if (i < coords.length) requestAnimationFrame(step); else setTimeout(() => { if (!stop) { i = 1; step(); } }, 2600); };
+  setTimeout(step, 600); return { mins, stop: () => stop = true };
+}
+
+const D = [
+  { n: 'Noche neón', d: 'Ciudad de noche con las calles iluminadas en el color de la marca, edificios 3D con brillo y un pulso en la puerta. Muy llamativo para barberías, gimnasios, bares y tiendas de tecnología.',
+    style: OFM('dark'), cam: { zoom: 16.3, pitch: 62, bearing: -30 },
+    go(map, fx) { paint(map, { bg: '#07070b', water: '#0b1424', park: '#0b1610', bld: '#101018', road: '#ff3d6e', major: '#ffb02e', roadW: 1.1, roadBlur: .6, text: '#ff9ab4', halo: '#07070b', fewLabels: 1 }); extrude(map, '#15151f', '#ff3d6e', .9); return marker(map, '#ff3d6e'); } },
+  { n: 'Plano de papel', d: 'Mapa antiguo en tinta sobre papel envejecido, con rosa de los vientos y sello. Encaja con restaurantes clásicos, abogados, inmobiliarias y negocios con tradición.',
+    style: OFM('positron'), cam: { zoom: 15.8, pitch: 0, bearing: 0 },
+    go(map, fx) { paint(map, { bg: '#efe2c4', water: '#b9c7bd', park: '#d7d3a9', land: '#e9dcbc', bld: '#e1cfa6', bldLine: '#8a6a3c', road: '#fbf3df', major: '#f4d9a6', text: '#4a3214', halo: '#efe2c4', font: ['Noto Sans Italic'] });
+      fx.innerHTML = '<div class="fx paper"></div><div class="stamp">Lavapiés · 1998</div><svg class="compass" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#5a3d1c" stroke-width="1.5"/><path d="M50 6 58 50 50 94 42 50Z" fill="#5a3d1c" opacity=".85"/><path d="M6 50 50 42 94 50 50 58Z" fill="#5a3d1c" opacity=".45"/><text x="50" y="22" text-anchor="middle" font-family="serif" font-size="12" fill="#efe2c4">N</text></svg>';
+      const m = document.createElement('div'); m.innerHTML = '<svg width="44" height="54" viewBox="0 0 44 54"><path d="M22 2C11 2 3 10 3 21c0 14 19 31 19 31s19-17 19-31C41 10 33 2 22 2Z" fill="#a3361c" stroke="#4a2410" stroke-width="2"/><circle cx="22" cy="21" r="7" fill="#efe2c4"/></svg>';
+      m.style.cssText = 'position:absolute;z-index:3;transform:translate(-50%,-100%);animation:bob 3s ease-in-out infinite'; fx.appendChild(m); return follow(map, m, BIZ); } },
+  { n: 'Maqueta de arcilla', d: 'La manzana como una maqueta de arquitecto: edificios blancos en 3D con sombras suaves, sin ruido, girando despacio. Elegante para clínicas, reformas, inmobiliarias y estudios.',
+    style: OFM('positron'), cam: { zoom: 16.6, pitch: 58, bearing: 20 }, spin: 1,
+    go(map, fx) { paint(map, { bg: '#ecebe7', water: '#cfd8dc', park: '#dfe3d6', land: '#e7e6e1', bld: '#e3e1db', road: '#f8f8f6', major: '#ffffff', text: '#8d8a83', halo: '#ecebe7', fewLabels: 1 }); extrude(map, '#f2f1ec', '#ffffff', 1); map.setLight({ anchor: 'map', position: [1.4, 210, 35], intensity: .5, color: '#fff' }); return marker(map, '#e4572e'); } },
+  { n: 'Ruta desde el metro', d: 'Se dibuja la ruta andando desde la parada de metro más cercana hasta la puerta, con los minutos a pie. Lo más útil para el cliente que no conoce la zona.',
+    style: OFM('positron'), cam: { zoom: 16, pitch: 40, bearing: -15 },
+    go(map, fx) { paint(map, { bg: '#f4f2ee', water: '#c8dbe6', park: '#dbe8d2', land: '#efece6', bld: '#e6e2db', road: '#ffffff', major: '#fff3d6', text: '#5f5a52', halo: '#f4f2ee' }); extrude(map, '#e6e1d8', '#f3efe8', .8);
+      const w = walkLine(map, '#2f6bff', 6, 1); const chip = document.createElement('div'); chip.className = 'chip'; chip.style.cssText += 'background:#2f6bff;color:#fff;transform:translate(-50%,-150%)'; chip.textContent = '🚇 Metro Antón Martín · ' + w.mins + ' min andando'; fx.appendChild(chip);
+      const un = follow(map, chip, METRO), um = marker(map, '#2f6bff'); return () => { w.stop(); un(); um(); }; } },
+  { n: 'Radar', d: 'Pantalla de radar: barrido verde desde el negocio, anillos de distancia y puntos que parpadean en el metro y el parking. Muy original para tecnología, drones, gimnasios y talleres.',
+    style: OFM('dark'), cam: { zoom: 15.6, pitch: 0, bearing: 0 },
+    go(map, fx) { paint(map, { bg: '#020a06', water: '#03140c', park: '#041a0e', bld: '#062612', bldLine: '#0d5a2c', road: '#0e3d22', major: '#16794a', text: '#3fbf7a', halo: '#020a06', fewLabels: 1 });
+      const r = document.createElement('div'); r.className = 'radar'; r.innerHTML = '<i></i><i></i><i></i><i class="sweep"></i>'; fx.appendChild(r);
+      const u1 = follow(map, r, BIZ, 0, 0);
+      const b1 = document.createElement('div'); b1.className = 'blip'; b1.textContent = 'METRO 382 m'; fx.appendChild(b1);
+      const b2 = document.createElement('div'); b2.className = 'blip'; b2.textContent = 'PARQUE 224 m'; fx.appendChild(b2);
+      const u2 = follow(map, b1, METRO, -4, -6), u3 = follow(map, b2, PARK, -4, -6), um = marker(map, '#39ff9a'); return () => { u1(); u2(); u3(); um(); }; } },
+  { n: 'Plano técnico', d: 'Estilo plano de arquitecto: fondo azul, líneas blancas finas, cuadrícula y cartela con coordenadas. Perfecto para reformas, fontaneros, electricistas y talleres.',
+    style: OFM('positron'), cam: { zoom: 16.2, pitch: 0, bearing: 0 },
+    go(map, fx) { paint(map, { bg: '#123c7a', water: '#0f3266', park: '#174788', land: '#133f7f', bld: '#1a4b8f', bldLine: '#cfe0ff', road: '#e9f1ff', major: '#ffffff', roadW: .5, text: '#e9f1ff', halo: '#123c7a', fewLabels: 1 });
+      fx.innerHTML = '<div class="fx grid"></div><div class="cross"></div><div class="bp-label">PLANO DE SITUACIÓN<br>40.408957 N · 3.700183 O<br>ESC. 1:2000 · HOJA 01</div>'; return follow(map, fx.querySelector('.cross'), BIZ, 0, 0); } },
+  { n: 'Satélite 3D', d: 'Foto de satélite real con la cámara inclinada y la etiqueta del negocio flotando. El cliente reconoce la calle y la fachada al instante.',
+    style: SAT, cam: { zoom: 17.4, pitch: 55, bearing: -20 },
+    go(map, fx) { const c = card(fx, '<div><b>Navaja Barber Club</b><span>Calle de la Fe 8 · abierto hasta las 20:30</span></div>'); const um = marker(map, '#ffd21c'); return () => um(); } },
+  { n: 'Minimal con foto', d: 'Mapa en blanco y negro muy limpio, el pin cae con un rebote y aparece una tarjeta con la foto del local y el horario. Sobrio y elegante, va con casi todo.',
+    style: OFM('positron'), cam: { zoom: 16.4, pitch: 0, bearing: 0 },
+    go(map, fx) { paint(map, { bg: '#f5f5f3', water: '#dcdcdc', park: '#e9e9e6', land: '#f1f1ef', bld: '#e6e6e3', road: '#ffffff', major: '#ffffff', text: '#9a9a96', halo: '#f5f5f3', fewLabels: 1 });
+      const c = card(fx, '<div><b>Navaja Barber Club</b><span>Abierto ahora · cierra a las 20:30</span></div>', 'background:#111'); c.animate([{ transform: 'translateY(30px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 900, delay: 900, fill: 'both', easing: 'cubic-bezier(.2,.8,.2,1)' });
+      const m = document.createElement('div'); m.innerHTML = '<svg width="34" height="44" viewBox="0 0 34 44"><path d="M17 1C8 1 1 8 1 17c0 11 16 26 16 26s16-15 16-26C33 8 26 1 17 1Z" fill="#111"/><circle cx="17" cy="17" r="6" fill="#fff"/></svg>'; m.style.cssText = 'position:absolute;z-index:3;transform:translate(-50%,-100%)';
+      fx.appendChild(m); m.firstChild.animate([{ transform: 'translateY(-160px)' }, { transform: 'translateY(0)', offset: .6 }, { transform: 'translateY(-14px)', offset: .8 }, { transform: 'translateY(0)' }], { duration: 1100, easing: 'ease-in', fill: 'both' }); return follow(map, m, BIZ); } },
+  { n: 'Ilustrado', d: 'Colores pastel, sin letras y con iconos que flotan (metro, parque, café) y un bocadillo «¡Estamos aquí!». Cercano y alegre: veterinarias, academias, escuelas de baile, estética.',
+    style: OFM('positron'), cam: { zoom: 16.1, pitch: 30, bearing: 10 },
+    go(map, fx) { paint(map, { bg: '#fdf3e7', water: '#a9dcf5', park: '#bfe8b5', land: '#fbeedd', bld: '#f7d9c4', road: '#ffffff', major: '#ffe28a', roadW: 1.6, text: '#000', noLabels: 1 }); extrude(map, '#ffd4b8', '#ffc29a', .95, .5);
+      const add = (html, ll, cls, dx, dy) => { const e = document.createElement('div'); e.className = cls; e.innerHTML = html; fx.appendChild(e); return follow(map, e, ll, dx, dy); };
+      const u = [add('🚇', METRO, 'emoji', -11, -14), add('🌳', PARK, 'emoji', -11, -14), add('☕', [-3.6995, 40.4098], 'emoji', -11, -14), add('¡Estamos aquí! 💈', BIZ, 'bubble', 14, -58)], um = marker(map, '#ff7a59'); return () => { u.forEach(f => f()); um(); }; } },
+  { n: 'Vuelo desde el cielo', d: 'Empieza viendo todo Madrid desde arriba y la cámara baja en picado hasta la calle del negocio, como un dron. Impactante como entrada y vuelve a empezar cada pocos segundos.',
+    style: OFM('liberty'), cam: { zoom: 10.5, pitch: 0, bearing: 0 },
+    go(map, fx) { extrude(map, '#d9d2c5', '#f5efe4', .95); let t = 0, stop = false; const loop = () => { if (stop) return; map.jumpTo({ center: [-3.7038, 40.4168], zoom: 10.5, pitch: 0, bearing: 0 }); map.flyTo({ center: BIZ, zoom: 17, pitch: 64, bearing: -35, duration: 6500, curve: 1.8, essential: true }); t = setTimeout(loop, 11000); }; setTimeout(loop, 400); const um = marker(map, '#e4572e'); return () => { stop = true; clearTimeout(t); um(); }; } }
+];
+function marker(map, color) { const el = document.createElement('div'); el.className = 'pin'; el.style.setProperty('--pc', color); el.innerHTML = '<i></i>'; const m = new maplibregl.Marker({ element: el }).setLngLat(BIZ).addTo(map); return () => m.remove(); }
+
+const tabs = document.querySelector('.tabs'), fx = document.getElementById('fx');
+tabs.innerHTML = D.map((x, i) => '<button role="tab" aria-selected="false"><b>' + String(i + 1).padStart(2, '0') + '</b>' + x.n + '</button>').join('');
+const btns = [...tabs.children];
+let map = null, cur = -1, clean = null, spinT = 0;
+function show(i) {
+  cur = (i + D.length) % D.length; const x = D[cur];
+  btns.forEach((b, k) => b.setAttribute('aria-selected', k === cur)); btns[cur].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  document.getElementById('t').innerHTML = '<small>' + String(cur + 1).padStart(2, '0') + '</small>' + x.n; document.getElementById('d').textContent = x.d;
+  if (clean) { clean(); clean = null; } cancelAnimationFrame(spinT); fx.innerHTML = '';
+  if (map) map.remove();
+  map = new maplibregl.Map({ container: 'map', style: x.style, center: BIZ, zoom: x.cam.zoom, pitch: x.cam.pitch, bearing: x.cam.bearing, attributionControl: { compact: true }, maxPitch: 75 });
+  map.on('load', () => { const at = map.getContainer().querySelector('.maplibregl-ctrl-attrib'); if (at) at.classList.remove('maplibregl-compact-show', 'maplibregl-compact') || at.removeAttribute('open'); clean = x.go(map, fx) || null; if (x.spin) { const r = () => { map.setBearing(map.getBearing() + .06); spinT = requestAnimationFrame(r); }; r(); } });
+}
+btns.forEach((b, i) => b.onclick = () => show(i));
+document.getElementById('prev').onclick = () => show(cur - 1); document.getElementById('next').onclick = () => show(cur + 1);
+show(0);
+</script>
+</body>
+</html>

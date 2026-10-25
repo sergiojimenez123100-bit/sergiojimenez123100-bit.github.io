@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="blend">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbería El Tupé · Cortes con oficio</title>
+<meta name="description" content="Barbería en Madrid: cortes, degradados, arreglo de barba y afeitado clásico con toalla caliente. Reserva online.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": false,
+  "nicho": "barberia",
+  "nombre": "Barbería El Tupé",
+  "lema": "Cortes con oficio",
+  "zona": "Usera, Madrid",
+  "direccion": "Calle de Ejemplo 2, 28026 Madrid",
+  "telefono": "600 333 444",
+  "whatsapp": "600333444",
+  "email": "",
+  "instagram": "@eltupe",
+  "cita": true,
+  "whatsappTexto": "Hola Barbería El Tupé, quiero reservar un corte.",
+  "horario": {
+    "lun": "Cerrado",
+    "mar": "10:00-20:30",
+    "mie": "10:00-20:30",
+    "jue": "10:00-21:00",
+    "vie": "10:00-21:00",
+    "sab": "09:30-15:00",
+    "dom": "Cerrado"
+  },
+  "avisos": [],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "color": "#1f6feb"
+}
+</script>
+<style>
+:root{--bg:#121010;--fg:#efe6d2;--muted:#9b917e;--accent:#d7262f;--blue:#2b4fa6;--paper:#efe6d2;--line:rgba(239,230,210,.15);--font-d:'Big Shoulders Display',sans-serif;--font-s:'Libre Caslon Text',serif;--font-b:'DM Sans',sans-serif;--btn-ink:#fff;--btn-r:2px;--btn-hover:#efe6d2;--btn-hover-ink:#121010;--cursor-ink:#fff}
+.wrap{width:min(1280px,100% - 40px);margin-inline:auto}
+.kick{font:italic 400 18px/1 var(--font-s);color:var(--accent)}
+h2{font:900 clamp(56px,9vw,150px)/.85 var(--font-d);text-transform:uppercase;margin:.15em 0 .35em;letter-spacing:-.01em}
+h2 em{font:italic 400 .62em/1 var(--font-s);text-transform:none;color:var(--accent);letter-spacing:0}
+
+/* Apertura: poste de barbero + corte de navaja */
+#opening{background:var(--bg)}
+.op-a,.op-b{position:absolute;inset:0;background:repeating-linear-gradient(-45deg,var(--accent) 0 70px,var(--paper) 70px 140px,var(--blue) 140px 210px,var(--paper) 210px 280px);background-size:396px 396px;animation:pole 1.2s linear infinite}
+.op-a{clip-path:polygon(0 0,100% 0,100% 30%,0 70%)}
+.op-b{clip-path:polygon(0 70%,100% 30%,100% 100%,0 100%)}
+@keyframes pole{to{background-position:396px 0}}
+.op-logo{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.op-logo span{background:var(--bg);color:var(--fg);padding:18px 34px;font:900 clamp(40px,8vw,110px)/1 var(--font-d);text-transform:uppercase;letter-spacing:.02em;border:3px solid var(--fg);outline:3px solid var(--bg)}
+.op-slash{position:absolute;left:-10%;top:50%;width:120%;height:3px;background:#fff;box-shadow:0 0 30px 6px rgba(255,255,255,.8);transform:rotate(-21.8deg) scaleX(0);transform-origin:0 50%;z-index:3}
+
+/* Cabecera */
+.fx-nav{padding:14px 0}
+.fx-nav.scrolled{background:rgba(18,16,16,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;font:900 26px/1 var(--font-d);text-transform:uppercase}
+.logo i{width:12px;height:36px;border-radius:6px;background:repeating-linear-gradient(-45deg,var(--accent) 0 5px,#fff 5px 10px,var(--blue) 10px 15px,#fff 15px 20px);background-size:28px 28px;animation:pole 1.5s linear infinite}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font:500 14px var(--font-b);text-transform:uppercase;letter-spacing:.08em}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.85em 1.4em;font-size:14px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:100px 0 40px}
+.hero canvas{opacity:.6}
+.rows{position:relative;z-index:1;display:grid;gap:0;transform:rotate(-4deg) scale(1.08)}
+.row{font:900 clamp(80px,15vw,250px)/.86 var(--font-d);text-transform:uppercase;white-space:nowrap}
+.row .mq-group span{padding:0 .18em}
+.row .o{color:transparent;-webkit-text-stroke:2px var(--fg)}
+.row .r{color:var(--accent)}
+.row .s{font:italic 400 .55em/1 var(--font-s);text-transform:none;color:var(--muted);vertical-align:middle}
+.pwrap{position:absolute;left:50%;top:52%;width:clamp(220px,26vw,380px);aspect-ratio:3/4;translate:-50% -50%;z-index:3}
+.portrait{width:100%;height:100%;border-radius:200px 200px 10px 10px;overflow:hidden;border:6px solid var(--fg);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.1)}
+.stamp{position:absolute;z-index:4;right:-30px;bottom:30px;width:110px;height:110px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;text-align:center;font:900 22px/.9 var(--font-d);text-transform:uppercase;rotate:12deg;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero-foot{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:40px}
+.hero-foot p{max-width:34ch;margin:0;font-size:17px;color:#d6ccb8}
+.hero-foot .meta{display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Precios */
+.prices{padding:140px 0;position:relative}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:16px 70px;margin-top:40px}
+.pi{display:flex;align-items:baseline;gap:12px;padding:16px 0;cursor:default}
+.pi h3{font:800 clamp(26px,2.6vw,38px)/1 var(--font-d);text-transform:uppercase;margin:0;transition:color .3s,letter-spacing .4s}
+.pi .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-6px)}
+.pi .p{font:italic 400 26px var(--font-s);color:var(--accent)}
+.pi small{display:block;font:400 14px var(--font-b);color:var(--muted);text-transform:none;margin-top:6px;letter-spacing:0}
+.pi:hover h3{color:var(--accent);letter-spacing:.03em}
+
+/* Equipo: tarjetas que giran */
+.team{padding:0 0 140px}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.flip{perspective:1200px;aspect-ratio:3/4}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.flip:hover .flip-in,.flip:focus-within .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px;overflow:hidden}
+.face img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.face.front::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 50%)}
+.face.front h3{position:absolute;left:20px;bottom:16px;z-index:2;margin:0;font:900 44px/1 var(--font-d);text-transform:uppercase}
+.face.front h3 small{display:block;font:italic 400 15px var(--font-s);color:var(--accent);text-transform:none}
+.face.back{transform:rotateY(180deg);background:var(--accent);color:#fff;padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+.face.back p{font:italic 400 24px/1.3 var(--font-s);margin:0}
+.face.back b{font:900 28px var(--font-d);text-transform:uppercase}
+
+/* Galería mosaico */
+.gal{padding:0 0 140px}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:40px}
+.mosaic figure{margin:0;overflow:hidden;border-radius:4px;position:relative}
+.mosaic figure:nth-child(1){grid-row:span 2;grid-column:span 2}
+.mosaic figure:nth-child(4){grid-row:span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s,scale 1s cubic-bezier(.2,.8,.2,1)}
+.mosaic figure:hover img{filter:none;scale:1.08}
+.mosaic figcaption{position:absolute;left:12px;bottom:10px;font:800 18px var(--font-d);text-transform:uppercase;background:var(--bg);padding:4px 10px;transform:translateY(150%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mosaic figure:hover figcaption{transform:none}
+
+/* Reseñas en marquesina */
+.quotes{padding:60px 0;border-block:1px solid var(--line)}
+.quotes .mq-group>div{width:min(420px,80vw);padding:0 26px;white-space:normal}
+.quotes p{font:italic 400 22px/1.35 var(--font-s);margin:0 0 8px}
+.quotes small{color:var(--muted);font-size:13px}
+.quotes .s{color:var(--accent);letter-spacing:.2em}
+
+/* Reserva */
+.book{padding:140px 0}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.pick{display:grid;gap:22px}
+.pick>div>b{display:block;font:700 13px var(--font-b);text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{padding:12px 18px;border:1.5px solid var(--line);border-radius:99px;font-weight:500;transition:all .3s}
+.pills button:hover{border-color:var(--fg)}
+.pills button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.summary{border:2px solid var(--fg);padding:30px;position:relative;background:var(--paper);color:var(--bg)}
+.summary::before{content:"";position:absolute;inset:6px;border:1px solid var(--bg);pointer-events:none}
+.summary h3{font:900 44px/1 var(--font-d);text-transform:uppercase;margin:0 0 20px}
+.summary div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(18,16,16,.3);font-size:16px}
+.summary .tot{font:900 40px var(--font-d);border:0;padding-top:18px}
+.summary .btn{width:100%;margin-top:18px}
+
+.contact{padding:0 0 120px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ct-grid iframe{width:100%;min-height:380px;border:0;border-radius:6px;filter:grayscale(1) invert(.9) sepia(.3)}
+.ct-grid a{display:block;font:800 clamp(30px,3vw,46px)/1.1 var(--font-d);text-transform:uppercase}
+.ct-grid a:hover{color:var(--accent)}
+
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:900 clamp(80px,18vw,320px)/.85 var(--font-d);text-transform:uppercase;text-align:center;white-space:nowrap}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:24px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .pwrap{width:52vw;top:46%}
+  .stamp{width:84px;height:84px;font-size:17px;right:-14px}
+  .board,.book-grid,.ct-grid{grid-template-columns:1fr}
+  .t-grid{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i></i><span data-biz="nombre">Barbería El Tupé</span></a>
+    <ul><li><a href="#precios">Precios</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#galeria">Cortes</a></li><li><a href="#reserva">Reserva</a></li></ul>
+    <a class="btn magnetic" href="#reserva" data-cursor="Silla" data-alt="Hoy hay hueco">Reservar</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"urbano","shots":[{"vid":"https://assets.mixkit.co/videos/43241/43241-720.mp4","img":"1503951914875-452162b0f3f1","k":"Barbería","t":"Corte, barba <em>y actitud</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/43225/43225-720.mp4","img":"1585747860715-2ba37e788b70","k":"Barba","t":"Navaja <em>y toalla caliente</em>","pos":"l"},{"img":"1621605815971-fbc98d665033","n":{"v":15,"l":"euros el corte"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/40127/40127-720.mp4","img":"1647140655214-e4a2d914971f","k":"Fade","t":"Degradados <em>al milímetro</em>","big":"FADE","pos":"c"},{"img":"1599351431202-1e0f0137899a","k":"Tu silla","t":"Reserva <em>y no esperes</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Barbería</span></p>
+  <h1 data-hero-hide>Corte, barba <em>y actitud</em></h1>
+  <p class="film-p" data-hero-hide>Elige tu corte, mira cómo te queda y reserva silla sin esperar.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#reserva" data-cursor="Reservar">Reservar silla</a><a class="btn ghost magnetic" href="#precios" data-cursor="Ver">Precios</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="corte">
+<script type="application/json">{"eyebrow":"Probador del sillón","title":"Elige tu <em>corte</em>","sub":"Servicio, estilo y extras con precio al momento y hueco reservado. ¿No sabes qué te queda? Pregúntale al barbero por chat.","cta":"Reservar este corte","msg":"Hola, quiero reservar este corte:"}</script>
+</section>
+
+<section class="prices" id="precios">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">— la carta de la casa</p>
+    <h2 data-split>Precios <em>sin trampa</em></h2>
+    <div class="board" data-reveal="stagger">
+      <div class="pi"><h3>Corte clásico<small>Tijera o máquina, lavado y peinado</small></h3><i class="dots"></i><span class="p">16 €</span></div>
+      <div class="pi"><h3>Skin fade<small>Degradado a piel con acabado a navaja</small></h3><i class="dots"></i><span class="p">19 €</span></div>
+      <div class="pi"><h3>Arreglo de barba<small>Perfilado, toalla caliente y aceite</small></h3><i class="dots"></i><span class="p">12 €</span></div>
+      <div class="pi"><h3>Afeitado clásico<small>Navaja, espuma y ritual completo</small></h3><i class="dots"></i><span class="p">18 €</span></div>
+      <div class="pi"><h3>Corte + barba<small>El combo de la casa</small></h3><i class="dots"></i><span class="p">25 €</span></div>
+      <div class="pi"><h3>Corte infantil<small>Hasta 12 años</small></h3><i class="dots"></i><span class="p">12 €</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"El ritual","title":"Cuarenta minutos <em>para ti</em>","play":"Ver el ritual","metric":{"label":"Minutos en la silla"},"frames":[{"k":"Min 0","t":"Toalla caliente","p":"Una cerveza fría, buena música y la toalla que abre el poro.","img":"1503951914875-452162b0f3f1","v":0},{"k":"Min 10","t":"El corte","p":"Tijera o máquina, degradado limpio y perfilado a mano.","img":"1585747860715-2ba37e788b70","v":10},{"k":"Min 25","t":"Navaja","p":"Espuma caliente, navaja y aceite para la barba.","img":"1621605815971-fbc98d665033","v":25},{"k":"Min 40","t":"Listo","p":"Te miras al espejo y sales con otra actitud.","img":"1585747860715-2ba37e788b70","v":40}],"layout":"polaroid"}</script>
+</section>
+
+<section class="team" id="equipo">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">— los de las tijeras</p>
+    <h2 data-split>El <em>equipo</em></h2>
+    <div class="t-grid" data-reveal="stagger">
+      <div class="flip" tabindex="0" data-cursor="Girar"><div class="flip-in"><div class="face front"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Barbero" loading="lazy"><h3><small>Fundador</small>Toni</h3></div><div class="face back"><p>«25 años con la navaja en la mano. Especialista en afeitado clásico.»</p><b>Clásicos · Barba</b></div></div></div>
+      <div class="flip" tabindex="0" data-cursor="Girar"><div class="flip-in"><div class="face front"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Herramientas de barbero" loading="lazy"><h3><small>Fade master</small>Álex</h3></div><div class="face back"><p>«Degradados limpios y diseños con línea. Si lo ves en Instagram, lo hago.»</p><b>Fade · Diseños</b></div></div></div>
+      <div class="flip" tabindex="0" data-cursor="Girar"><div class="flip-in"><div class="face front"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Afeitado" loading="lazy"><h3><small>Estilista</small>Rubén</h3></div><div class="face back"><p>«Cortes con tijera y asesoría de estilo. Te digo lo que te queda bien.»</p><b>Tijera · Estilo</b></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gal" id="galeria">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">— salidos de esta silla</p>
+    <h2 data-split>Últimos <em>cortes</em></h2>
+    <div class="mosaic" data-reveal="stagger">
+      <figure><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Interior de la barbería" loading="lazy"><figcaption>La casa</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Afeitado" loading="lazy"><figcaption>Afeitado</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Herramientas" loading="lazy"><figcaption>Herramientas</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Sillones" loading="lazy"><figcaption>Sillones</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Detalle" loading="lazy"><figcaption>Detalle</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Barba" loading="lazy"><figcaption>Barba</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Lo dice <em>el barrio</em>","layout":"wall","rating":"4,9","count":"300","items":[{"n":"Javier P.","t":"El mejor fade de Madrid, y encima te ofrecen una cerveza.","s":5,"src":"Google"},{"n":"Ana S.","t":"Toni hace un afeitado que te deja nuevo. Ritual completo.","s":5,"src":"Google"},{"n":"David L.","t":"Reservé por WhatsApp en un minuto y me atendieron puntuales.","s":5,"src":"WhatsApp"},{"n":"Elena V.","t":"Ambientazo, buena música y saben lo que hacen.","s":5,"src":"Google"},{"n":"Pablo T.","t":"Mejor afeitado de mi vida. Ritual completo.","s":5,"src":"Doctoralia"},{"n":"Lucía M.","t":"Puntuales y con un ambientazo.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="book" id="reserva">
+  <div class="wrap book-grid">
+    <div>
+      <p class="kick">— tu silla te espera</p>
+      <h2 data-split>Reserva <em>en 3 toques</em></h2>
+      <div class="pick">
+        <div><b>Servicio</b><div class="pills" data-pick="Servicio"><button type="button" aria-pressed="true" data-p="16">Corte</button><button type="button" aria-pressed="false" data-p="19">Skin fade</button><button type="button" aria-pressed="false" data-p="12">Barba</button><button type="button" aria-pressed="false" data-p="25">Corte + barba</button></div></div>
+        <div><b>Barbero</b><div class="pills" data-pick="Barbero"><button type="button" aria-pressed="true">El primero libre</button><button type="button" aria-pressed="false">Toni</button><button type="button" aria-pressed="false">Álex</button><button type="button" aria-pressed="false">Rubén</button></div></div>
+        <div><b>Cuándo</b><div class="pills" data-pick="Cuándo"><button type="button" aria-pressed="true">Hoy</button><button type="button" aria-pressed="false">Mañana</button><button type="button" aria-pressed="false">Esta semana</button></div></div>
+        <div><b>Franja</b><div class="pills" data-pick="Franja"><button type="button" aria-pressed="true">Mañana</button><button type="button" aria-pressed="false">Mediodía</button><button type="button" aria-pressed="false">Tarde</button></div></div>
+      </div>
+    </div>
+    <div class="summary" data-tilt="5">
+      <h3>Tu ticket</h3>
+      <div id="sum"></div>
+      <div class="tot"><span>Total</span><span id="sum-t">16 €</span></div>
+      <a class="btn magnetic" id="sum-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Confirmar por WhatsApp">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="kick">— dónde</p>
+      <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle de la Fe 8, 28012 Madrid</a>
+      <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a data-biz-link="ig" data-biz="instagram" style="color:var(--accent)">@navajabarber</a>
+      <ul data-horario style="margin-top:24px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Navaja</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Barbería El Tupé</span></span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    const groups = FX.$$('[data-pick]');
+    groups.forEach(g => g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); upd(); if (!FX.RM) gsap.fromTo('.summary', { rotation: -1.5 }, { rotation: 0, duration: .6, ease: 'elastic.out(1,.4)' }); }));
+    function upd() {
+      const rows = groups.map(g => [g.dataset.pick, g.querySelector('[aria-pressed=true]')]);
+      FX.$('#sum').innerHTML = rows.map(([k, b]) => '<div><span>' + k + '</span><b>' + b.textContent + '</b></div>').join('');
+      const p = rows[0][1].dataset.p; FX.$('#sum-t').textContent = p + '€';
+      const a = FX.$('#sum-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, quiero reservar:\n' + rows.map(([k, b]) => '• ' + k + ': ' + b.textContent).join('\n'));
+    }
+    upd();
+    // Retrato que crece y gira con el scroll
+    if (!FX.RM) gsap.to('.pwrap', { scale: 1.25, rotation: 6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  },
+  opening(tl, FX) {
+    const logo = FX.$('.op-logo span');
+    tl.from(logo, { scale: 0, rotation: -10, duration: .7, ease: 'back.out(2)' }, .2)
+      .to(logo, { scale: 1.06, duration: .35, yoyo: true, repeat: 1, ease: 'power1.inOut' })
+      .to('.op-slash', { scaleX: 1, duration: .35, ease: 'power4.in' }, '+=.1')
+      .to('.op-slash', { opacity: 0, duration: .25 })
+      .to('.op-logo', { opacity: 0, duration: .15 }, '<')
+      .to('.op-a', { xPercent: -30, yPercent: -110, duration: 1, ease: 'expo.inOut' }, '<')
+      .to('.op-b', { xPercent: 30, yPercent: 110, duration: 1, ease: 'expo.inOut' }, '<');
+  },
+  hero(tl, FX) {
+    tl.from('.row', { xPercent: i => i % 2 ? 60 : -60, opacity: 0, duration: 1.3, ease: 'expo.out', stagger: .1 })
+      .from('.pwrap', { yPercent: 120, rotation: 20, duration: 1.3, ease: 'expo.out' }, .2)
+      .from('.portrait img', { scale: 1.6, duration: 1.6, ease: 'expo.out' }, .2)
+      .from('.stamp', { scale: 0, rotation: -200, duration: 1, ease: 'back.out(2)' }, .9)
+      .from('.hero-foot > *', { y: 40, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out' }, .6);
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="assets/fx-cine.js"></script>
+<script defer src="assets/fx.js"></script>
+</body>
+</html>

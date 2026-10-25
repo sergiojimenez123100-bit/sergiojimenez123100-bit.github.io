@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="cross">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller Pistón · Mecánica sin rodeos</title>
+<meta name="description" content="Taller mecánico en Madrid: diagnosis, frenos, aceite, neumáticos, pre-ITV. Presupuesto cerrado antes de tocar tu coche.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "taller-mecanico",
+  "nombre": "Taller Pistón",
+  "lema": "Mecánica sin rodeos",
+  "zona": "Vallecas, Madrid",
+  "direccion": "Calle de Arroyo del Olivar 40, 28018 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "citas@tallerpiston.es",
+  "instagram": "",
+  "cita": true,
+  "whatsappTexto": "Hola, quiero pedir presupuesto para mi coche.",
+  "horario": {
+    "lun": "08:30-14:00, 15:30-19:30",
+    "mar": "08:30-14:00, 15:30-19:30",
+    "mie": "08:30-14:00, 15:30-19:30",
+    "jue": "08:30-14:00, 15:30-19:30",
+    "vie": "08:30-15:00",
+    "sab": "09:00-13:30",
+    "dom": "Cerrado"
+  },
+  "avisos": [
+    "🔧 Presupuesto de frenos pedido hace un momento",
+    "🚗 Un Seat León acaba de pasar la pre-ITV",
+    "⭐ Nueva reseña de 5 estrellas",
+    "📅 Quedan 3 huecos para mañana por la mañana"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.389819,
+  "lng": -3.656984,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Buenos Aires",
+      "d": 331,
+      "b": 53
+    },
+    {
+      "t": "metro",
+      "n": "Portazgo",
+      "d": 402,
+      "b": 332
+    },
+    {
+      "t": "metro",
+      "n": "Alto del Arenal",
+      "d": 946,
+      "b": 88
+    },
+    {
+      "t": "bus",
+      "n": "Parada 1109",
+      "d": 321,
+      "b": 319
+    },
+    {
+      "t": "bus",
+      "n": "Buenos Aires",
+      "d": 342,
+      "b": 48
+    },
+    {
+      "t": "parking",
+      "n": "Centro Comercial La Albufera",
+      "d": 324,
+      "b": 15
+    },
+    {
+      "t": "parking",
+      "n": "Alcampo Vallecas",
+      "d": 426,
+      "b": 27
+    },
+    {
+      "t": "parque",
+      "n": "Parque Azorín",
+      "d": 134,
+      "b": 73
+    },
+    {
+      "t": "parque",
+      "n": "Parque Juan José García Espartero",
+      "d": 241,
+      "b": 258
+    },
+    {
+      "t": "lugar",
+      "n": "Museo de Bomberos de Madrid",
+      "d": 603,
+      "b": 27
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0a0a0a;--fg:#f1f1ec;--muted:#8d8d86;--accent:#ffd400;--red:#ff3b2f;--line:rgba(241,241,236,.12);--font-d:'Anton',sans-serif;--font-b:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--btn-ink:#000;--btn-r:6px;--btn-hover:#fff;--btn-hover-ink:#000}
+.wrap{width:min(1300px,100% - 40px);margin-inline:auto}
+.tag{font:700 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.tag::before{content:"// "}
+h2{font:400 clamp(54px,8vw,130px)/.88 var(--font-d);text-transform:uppercase;margin:.2em 0 .35em;letter-spacing:.005em}
+h2 em{font-style:normal;color:var(--accent)}
+.hazard{height:16px;background:repeating-linear-gradient(-45deg,var(--accent) 0 18px,#000 18px 36px)}
+
+/* Apertura: cuentarrevoluciones + franjas de peligro */
+#opening{background:#050505;display:grid;place-items:center}
+html.js #opening{display:grid}
+.gauge{width:min(70vw,420px);position:relative}
+.gauge svg{width:100%;overflow:visible}
+.gauge .trk{fill:none;stroke:#222;stroke-width:14}
+.gauge .val{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:butt}
+.gauge .red{fill:none;stroke:var(--red);stroke-width:14}
+.gauge .needle{stroke:var(--red);stroke-width:4;stroke-linecap:round;transform-origin:150px 150px}
+.gauge text{fill:#777;font:700 13px var(--mono)}
+.g-read{position:absolute;left:0;right:0;top:58%;text-align:center;font:700 clamp(34px,6vw,60px)/1 var(--mono);color:#fff}
+.g-read small{display:block;font-size:12px;letter-spacing:.3em;color:var(--muted);margin-top:8px}
+.op-stripes{position:absolute;inset:-20%;background:repeating-linear-gradient(-45deg,var(--accent) 0 60px,#000 60px 120px);visibility:hidden}
+.op-flash{position:absolute;inset:0;background:#fff;opacity:0}
+
+/* Cabecera */
+.fx-nav{padding:14px 0}
+.fx-nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:400 30px/1 var(--font-d);text-transform:uppercase;letter-spacing:.02em;display:flex;gap:10px;align-items:center}
+.logo i{width:14px;height:30px;background:var(--accent);transform:skewX(-14deg)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.85em 1.3em;font-size:14px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:110px 0 0;overflow:hidden;display:flex;flex-direction:column}
+.hero canvas{opacity:.7}
+.hero-photo{position:absolute;right:-4%;top:12%;width:54%;height:70%;clip-path:polygon(18% 0,100% 0,82% 100%,0 100%);overflow:hidden;z-index:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.2) brightness(.7)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg),transparent 40%),linear-gradient(0deg,rgba(255,212,0,.25),transparent 50%);mix-blend-mode:normal}
+.hero .wrap{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center}
+.hud{display:flex;gap:10px;flex-wrap:wrap;font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.hud span{padding:8px 12px;border:1px solid var(--line);background:rgba(0,0,0,.5)}
+.hud .live{color:var(--accent)}
+.hero h1{font:400 clamp(90px,21vw,330px)/.8 var(--font-d);text-transform:uppercase;margin:24px 0 0;letter-spacing:-.01em}
+.hero h1 .l2{display:block;color:transparent;-webkit-text-stroke:2px var(--accent)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin:30px 0 40px}
+.hero-row p{font-size:clamp(17px,1.5vw,21px);max-width:42ch;margin:0;color:#cfcfc8}
+.hero-row p b{color:var(--accent);font-weight:500}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.mini-gauge{position:absolute;right:4%;bottom:18%;z-index:3;width:190px;padding:16px;background:rgba(0,0,0,.65);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.mini-gauge svg{width:100%}
+.mini-gauge p{margin:6px 0 0;font:700 11px var(--mono);letter-spacing:.1em;color:var(--muted);text-transform:uppercase;display:flex;justify-content:space-between}
+.mini-gauge p b{color:var(--accent)}
+
+/* Marquesina diagonal */
+.belt{position:relative;padding:40px 0;overflow:hidden}
+.belt .mq{background:var(--accent);color:#000;padding:16px 0;font:400 clamp(30px,4vw,56px)/1 var(--font-d);text-transform:uppercase;rotate:-3deg;margin:0 -20px}
+.belt .mq.b2{background:#000;color:var(--accent);rotate:2deg;margin-top:-12px;border-block:1px solid var(--accent)}
+.mq .mq-group span{padding:0 22px}
+
+/* Servicios tipo orden de trabajo */
+.serv{padding:140px 0 100px}
+.svc{display:grid;grid-template-columns:90px 1fr 1fr 160px;gap:20px;align-items:center;padding:30px 20px;border-top:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate;transition:color .35s}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+.svc:hover{color:#000}
+.svc:hover::before{transform:scaleY(1)}
+.svc .n{font:700 14px var(--mono);color:var(--muted)}
+.svc:hover .n,.svc:hover p{color:#000}
+.svc h3{font:400 clamp(30px,3.6vw,54px)/1 var(--font-d);text-transform:uppercase;margin:0}
+.svc p{margin:0;color:var(--muted);transition:color .35s}
+.svc .pr{font:700 18px var(--mono);text-align:right}
+.svc .pr small{display:block;font-size:11px;color:var(--muted);font-weight:500}
+.svc:hover .pr small{color:#000}
+
+/* Presupuestador */
+.quote{padding:100px 0;position:relative}
+.q-box{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.q-box>div{padding:clamp(24px,4vw,54px)}
+.q-left{border-right:1px solid var(--line)}
+.q-step{margin-bottom:26px}
+.q-step b{display:block;font:700 12px var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{padding:12px 16px;border:1px solid var(--line);font-weight:500;transition:background .25s,color .25s,border-color .25s}
+.opts button:hover{border-color:var(--accent)}
+.opts button[aria-pressed=true]{background:var(--accent);color:#000;border-color:var(--accent)}
+.q-right{background:repeating-linear-gradient(0deg,transparent 0 31px,rgba(255,255,255,.04) 31px 32px);display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.ticket{font:500 14px/1.9 var(--mono)}
+.ticket div{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line)}
+.q-total{font:400 clamp(70px,9vw,140px)/.9 var(--font-d);color:var(--accent)}
+.q-total small{font:700 14px var(--mono);color:var(--muted);display:block;letter-spacing:.1em}
+
+/* Números */
+.nums{padding:100px 0;background:var(--accent);color:#000}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.num b{display:inline-flex;font:400 clamp(70px,9vw,140px)/1 var(--font-d)}
+.num>span{display:block;font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
+
+/* Garantías */
+.why{padding:140px 0}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.why-c{background:var(--bg);padding:40px 30px;position:relative;overflow:hidden;min-height:280px}
+.why-c b{font:400 80px/1 var(--font-d);color:transparent;-webkit-text-stroke:1px var(--accent)}
+.why-c h3{font:700 22px var(--font-b);margin:20px 0 8px}
+.why-c p{color:var(--muted);margin:0}
+.why-c::after{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,50%),rgba(255,212,0,.14),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.why-c:hover::after{opacity:1}
+
+/* Reseñas */
+.rev{padding:0 0 140px}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rv{border:1px solid var(--line);padding:28px;background:linear-gradient(180deg,rgba(255,212,0,.05),transparent)}
+.rv .s{color:var(--accent);letter-spacing:.2em}
+.rv p{font-size:18px}
+.rv small{font:500 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+/* Contacto */
+.contact{padding:0 0 120px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.ct-grid>div{padding:clamp(24px,4vw,50px)}
+.ct-grid iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(1) invert(.9) contrast(1.1)}
+.big-link{display:block;font:400 clamp(34px,4vw,60px)/1.05 var(--font-d);text-transform:uppercase;margin:6px 0}
+.big-link:hover{color:var(--accent)}
+
+footer{padding:60px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:400 clamp(90px,22vw,380px)/.85 var(--font-d);text-transform:uppercase;text-align:center;white-space:nowrap;color:transparent;-webkit-text-stroke:1px var(--accent)}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font:500 12px var(--mono);color:var(--muted);margin-top:30px;text-transform:uppercase}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero-photo{width:100%;right:0;top:auto;bottom:0;height:45%;opacity:.5;clip-path:polygon(0 20%,100% 0,100% 100%,0 100%)}
+  .hero-row,.q-box,.ct-grid{grid-template-columns:1fr}
+  .q-left{border-right:0;border-bottom:1px solid var(--line)}
+  .mini-gauge{display:none}
+  .svc{grid-template-columns:50px 1fr;}
+  .svc p{grid-column:2}.svc .pr{grid-column:2;text-align:left}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .why-grid,.rv-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i></i><span data-biz="nombre">Taller Pistón</span></a>
+    <ul><li><a href="#servicios" data-scramble>Servicios</a></li><li><a href="#presupuesto" data-scramble>Presupuesto</a></li><li><a href="#garantias" data-scramble>Garantías</a></li><li><a href="#contacto" data-scramble>Contacto</a></li></ul>
+    <a class="btn magnetic" href="#presupuesto" data-cursor="Precio" data-alt="En 1 minuto">Presupuesto</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"urbano","shots":[{"vid":"https://assets.mixkit.co/videos/4716/4716-720.mp4","img":"1486262715619-67b85e0b08d3","k":"Taller","t":"Mecánica <em>sin rodeos</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/13270/13270-720.mp4","img":"1487754180451-c456f719a1fc","k":"Diagnóstico","t":"Te decimos <em>qué tiene</em>","pos":"l"},{"img":"1619642751034-765dfdf7c58e","n":{"v":24,"l":"horas para la mayoría de reparaciones","suf":" h"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/41937/41937-720.mp4","img":"1486262715619-67b85e0b08d3","k":"Precio cerrado","t":"Sin <em>sorpresas</em>","big":"TALLER","pos":"c"},{"vid":"https://assets.mixkit.co/videos/64/64-720.mp4","img":"1487754180451-c456f719a1fc","k":"Tu coche","t":"Como <em>el primer día</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Taller mecánico</span></p>
+  <h1 data-hero-hide>Mecánica <em>sin rodeos</em></h1>
+  <p class="film-p" data-hero-hide>Dinos qué le pasa a tu coche y te damos precio cerrado al momento.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#presupuesto" data-cursor="Calcular">Calcular presupuesto</a></div>
+</div></div>
+</section>
+
+<div class="belt">
+  <div class="mq" data-marquee="1.4" data-skew><div class="mq-group"><span>Pre-ITV</span><span>★</span><span>Frenos</span><span>★</span><span>Aceite y filtros</span><span>★</span><span>Neumáticos</span><span>★</span><span>Embrague</span><span>★</span><span>Aire acondicionado</span><span>★</span></div></div>
+  <div class="mq b2" data-marquee="1" data-dir="right"><div class="mq-group"><span>Diagnosis electrónica</span><span>/</span><span>Distribución</span><span>/</span><span>Híbridos</span><span>/</span><span>Coche de sustitución</span><span>/</span></div></div>
+</div>
+
+<section class="fx-studio" id="configurador" data-scene="coche">
+<script type="application/json">{"eyebrow":"Showroom 3D","title":"Personaliza <em>tu coche</em>","sub":"Píntalo, cambia llantas y lunas, rebájalo o ponle alerón. Activa el modo diagnosis y añade servicios al presupuesto. Todo en tiempo real.","cta":"Pedir presupuesto por WhatsApp","msg":"Hola, he configurado mi coche en vuestra web:"}</script>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="wrap">
+    <p class="tag" data-scramble>Servicios</p>
+    <h2 data-split>Lo arreglamos <em>bien</em> a la primera</h2>
+    <div data-reveal="stagger">
+      <a class="svc" href="#presupuesto" data-cursor="Pedir"><span class="n">01</span><h3>Cambio de aceite</h3><p>Aceite, filtro de aceite y revisión de 20 puntos.</p><span class="pr">desde 59 €<small>IVA incl.</small></span></a>
+      <a class="svc" href="#presupuesto" data-cursor="Pedir"><span class="n">02</span><h3>Frenos</h3><p>Pastillas y discos con material de primera marca.</p><span class="pr">desde 89 €<small>por eje</small></span></a>
+      <a class="svc" href="#presupuesto" data-cursor="Pedir"><span class="n">03</span><h3>Pre-ITV</h3><p>La pasamos por ti y te lo devolvemos aprobado.</p><span class="pr">desde 39 €<small>sin tasas</small></span></a>
+      <a class="svc" href="#presupuesto" data-cursor="Pedir"><span class="n">04</span><h3>Diagnosis</h3><p>Lectura de averías con equipo oficial multimarca.</p><span class="pr">desde 35 €<small>30 min</small></span></a>
+      <a class="svc" href="#presupuesto" data-cursor="Pedir"><span class="n">05</span><h3>Neumáticos</h3><p>Montaje, equilibrado y alineación láser.</p><span class="pr">desde 15 €<small>por rueda</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="presupuesto">
+  <div class="wrap">
+    <p class="tag" data-scramble>Presupuesto al momento</p>
+    <h2 data-split>¿Cuánto <em>me cuesta?</em></h2>
+    <div class="q-box" data-reveal="up">
+      <div class="q-left">
+        <div class="q-step"><b>01 · Tu vehículo</b><div class="opts" data-q="veh"><button type="button" aria-pressed="true" data-k="1">Utilitario</button><button type="button" aria-pressed="false" data-k="1.2">Berlina / SUV</button><button type="button" aria-pressed="false" data-k="1.35">Furgoneta</button><button type="button" aria-pressed="false" data-k="1.5">Premium</button></div></div>
+        <div class="q-step"><b>02 · Qué necesitas</b><div class="opts" data-q="srv" data-multi><button type="button" aria-pressed="true" data-p="59">Aceite</button><button type="button" aria-pressed="false" data-p="89">Frenos</button><button type="button" aria-pressed="false" data-p="39">Pre-ITV</button><button type="button" aria-pressed="false" data-p="35">Diagnosis</button><button type="button" aria-pressed="false" data-p="60">Neumáticos</button><button type="button" aria-pressed="false" data-p="120">Aire acond.</button></div></div>
+        <div class="q-step"><b>03 · ¿Cuándo?</b><div class="opts" data-q="when"><button type="button" aria-pressed="true">Esta semana</button><button type="button" aria-pressed="false">Urgente</button><button type="button" aria-pressed="false">Sin prisa</button></div></div>
+      </div>
+      <div class="q-right">
+        <div class="ticket" id="ticket"></div>
+        <div><div class="q-total"><small>Total orientativo desde</small><span id="q-total">59</span>€</div></div>
+        <a class="btn magnetic" id="q-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Te confirmamos hoy">Reservar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Tu coche hoy","title":"Listo en <em>4 horas</em>","play":"Ver la reparación","metric":{"label":"Minutos en el taller"},"frames":[{"k":"09:00","t":"Recepción","p":"Escuchamos qué le pasa y lo apuntamos todo delante de ti.","img":"1487754180451-c456f719a1fc","v":0},{"k":"09:30","t":"Diagnosis","p":"Equipo oficial multimarca. Te mandamos precio cerrado por WhatsApp.","img":"1486262715619-67b85e0b08d3","v":30},{"k":"11:00","t":"Reparación","p":"Recambios de primera marca y fotos de cada pieza cambiada.","img":"1619642751034-765dfdf7c58e","v":120},{"k":"13:00","t":"Entrega","p":"Prueba en carretera, coche limpio y 12 meses de garantía.","img":"1486262715619-67b85e0b08d3","v":240}],"layout":"cinema"}</script>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="22">22</b><span>años en el barrio</span></div>
+    <div class="num"><b data-count="9800">9800</b><span>coches reparados</span></div>
+    <div class="num"><b data-count="30">30</b><span>min de diagnosis</span></div>
+    <div class="num"><b data-count="12">12</b><span>meses de garantía</span></div>
+  </div>
+</section>
+
+<section class="why" id="garantias">
+  <div class="wrap">
+    <p class="tag" data-scramble>Garantías</p>
+    <h2 data-split>Sin <em>letra pequeña</em></h2>
+    <div class="why-grid" data-reveal="stagger">
+      <div class="why-c" data-tilt="4"><b>01</b><h3>Presupuesto cerrado</h3><p>Si aparece algo nuevo, te llamamos antes. Nunca pagas lo que no aprobaste.</p></div>
+      <div class="why-c" data-tilt="4"><b>02</b><h3>Fotos de todo</h3><p>Te mandamos por WhatsApp las piezas viejas y las nuevas.</p></div>
+      <div class="why-c" data-tilt="4"><b>03</b><h3>12 meses de garantía</h3><p>En mano de obra y recambios, en cualquier reparación.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Palabra de <em>conductor</em>","layout":"chat","rating":"4,9","count":"300","items":[{"n":"Marta G.","t":"Honrados de verdad. Me dijeron que no hacía falta cambiar los discos y me ahorré 200 €.","s":5,"src":"Google"},{"n":"Javier P.","t":"Dejé el coche a las 9 y a las 13 lo tenía listo con la pre-ITV pasada.","s":5,"src":"Google"},{"n":"Ana S.","t":"Precio cerrado y fotos de todo por WhatsApp. Así da gusto.","s":5,"src":"WhatsApp"},{"n":"David L.","t":"Me mandasteis fotos de todo, así da gusto. ¡Gracias!","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="tag">Contacto</p>
+      <a class="big-link" data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a class="big-link" style="font-size:clamp(20px,2vw,28px)" data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle de Arroyo del Olivar 40</a>
+      <ul data-horario style="margin-top:30px;font-family:var(--mono);font-size:14px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters data-biz="nombre">Taller Pistón</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Taller Pistón</span></span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    // Presupuestador
+    const groups = FX.$$('[data-q]');
+    groups.forEach(g => g.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (g.hasAttribute('data-multi')) { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); if (!g.querySelector('[aria-pressed=true]')) b.setAttribute('aria-pressed', 'true'); }
+      else g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+      upd();
+    }));
+    const tot = { v: 59 };
+    function upd() {
+      const veh = FX.$('[data-q=veh] [aria-pressed=true]'), when = FX.$('[data-q=when] [aria-pressed=true]');
+      const srv = FX.$$('[data-q=srv] [aria-pressed=true]'), k = +veh.dataset.k;
+      const rows = srv.map(s => [s.textContent, Math.round(+s.dataset.p * k)]);
+      const sum = rows.reduce((a, r) => a + r[1], 0);
+      FX.$('#ticket').innerHTML = '<div><span>Vehículo</span><span>' + veh.textContent + '</span></div>' + rows.map(r => '<div><span>' + r[0] + '</span><span>' + r[1] + ' €</span></div>').join('') + '<div><span>Cuándo</span><span>' + when.textContent + '</span></div>';
+      gsap.to(tot, { v: sum, duration: .7, ease: 'power3.out', onUpdate: () => FX.$('#q-total').textContent = Math.round(tot.v) });
+      const msg = 'Hola, quiero presupuesto:\n• Vehículo: ' + veh.textContent + '\n• Servicios: ' + rows.map(r => r[0]).join(', ') + '\n• Cuándo: ' + when.textContent + '\n• Orientativo: desde ' + sum + ' €';
+      const a = FX.$('#q-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent(msg);
+    }
+    upd();
+    // Cuentarrevoluciones del hero sigue al ratón
+    const val = FX.$('#mg-val'), nd = FX.$('#mg-n'), t = FX.$('#mg-t'), st = { r: 0 };
+    if (val && nd && t) {
+    let tgt = 0;
+    addEventListener('pointermove', e => { tgt = e.clientX / innerWidth; }, { passive: true });
+    gsap.ticker.add(() => { st.r += (tgt - st.r) * .08; val.style.strokeDashoffset = 157 * (1 - st.r); nd.style.transform = 'rotate(' + (-90 + st.r * 180) + 'deg)'; t.textContent = Math.round(st.r * 8000) + ' rpm'; });
+    }
+  },
+  opening(tl, FX) {
+    const val = FX.$('.gauge .val'), L = val.getTotalLength(), rpm = { v: 0 };
+    gsap.set(val, { strokeDasharray: L, strokeDashoffset: L });
+    gsap.set('.gauge .needle', { rotation: -135 });
+    tl.from('.gauge', { scale: .7, opacity: 0, duration: .5, ease: 'back.out(2)' })
+      .to(rpm, { v: 7800, duration: 1.3, ease: 'power3.in', onUpdate: () => FX.$('#rpm').textContent = String(Math.round(rpm.v)).padStart(4, '0') })
+      .to(val, { strokeDashoffset: L * .03, duration: 1.3, ease: 'power3.in' }, '<')
+      .to('.gauge .needle', { rotation: 128, duration: 1.3, ease: 'power3.in' }, '<')
+      .to('.gauge', { x: 'random(-8,8)', y: 'random(-6,6)', duration: .05, repeat: 9, yoyo: true, ease: 'none' }, '-=.4')
+      .to('.op-flash', { opacity: .9, duration: .08 })
+      .to('.op-flash', { opacity: 0, duration: .3 })
+      .set('.gauge', { opacity: 0 })
+      .fromTo('.op-stripes', { xPercent: -140, visibility: 'visible' }, { xPercent: 140, duration: .7, ease: 'power3.inOut' }, '<')
+      .to('#opening', { clipPath: 'polygon(0 0,100% 0,100% 0,0 0)', duration: .7, ease: 'expo.inOut' })
+      .set('#opening', { clipPath: 'none' });
+    gsap.set('#opening', { clipPath: 'polygon(0 0,100% 0,100% 100%,0 100%)' });
+  },
+  hero(tl, FX) {
+    const chars = FX.splitChars(FX.$('.l1'));
+    tl.from(chars, { xPercent: -120, skewX: 30, opacity: 0, duration: .8, ease: 'expo.out', stagger: .04 })
+      .from('.l2', { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'expo.inOut' }, .25)
+      .from('.hero-photo', { clipPath: 'polygon(18% 0,18% 0,0 100%,0 100%)', duration: 1.2, ease: 'expo.inOut' }, .1)
+      .from('.hero-photo img', { scale: 1.4, duration: 1.6, ease: 'expo.out' }, .1)
+      .from('.hud > *, .hero-row > *, .mini-gauge', { y: 30, opacity: 0, stagger: .08, duration: .7, ease: 'power3.out' }, .4);
+    gsap.to('.hero h1', { xPercent: -12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="blend">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nautilus Acuarios · Peces, plantas y acuarios a medida en Madrid</title>
+<meta name="description" content="Tienda de acuarios en Madrid: peces tropicales, marinos y de agua fría, plantas, comida y equipos. Diseña tu acuario en 3D, montaje a domicilio y análisis de agua gratis.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "tienda-acuarios",
+  "nombre": "Nautilus Acuarios",
+  "lema": "Un trozo de río en tu salón",
+  "zona": "Tetuán, Madrid",
+  "direccion": "Calle de Bravo Murillo 210, 28020 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "hola@nautilusacuarios.es",
+  "instagram": "@nautilusacuarios",
+  "cita": true,
+  "whatsappTexto": "Hola, quiero información sobre un acuario.",
+  "horario": {
+    "lun": "10:30-14:00, 17:00-20:30",
+    "mar": "10:30-14:00, 17:00-20:30",
+    "mie": "10:30-14:00, 17:00-20:30",
+    "jue": "10:30-14:00, 17:00-20:30",
+    "vie": "10:30-14:00, 17:00-20:30",
+    "sab": "10:00-14:30",
+    "dom": "Cerrado"
+  },
+  "avisos": [
+    "🐠 Acaban de llegar discos y escalares de criadero",
+    "🧪 Alguien acaba de pedir su análisis de agua gratis",
+    "⭐ Nueva reseña de 5 estrellas",
+    "🌿 Plantas naturales nuevas esta semana"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.4597,
+  "lng": -3.6987,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Tetuán",
+      "d": 135,
+      "b": 17
+    },
+    {
+      "t": "metro",
+      "n": "Valdeacederas",
+      "d": 621,
+      "b": 30
+    },
+    {
+      "t": "metro",
+      "n": "Estrecho",
+      "d": 671,
+      "b": 211
+    },
+    {
+      "t": "bus",
+      "n": "Plaza de la Remonta",
+      "d": 417,
+      "b": 22
+    },
+    {
+      "t": "bus",
+      "n": "General Cabrera",
+      "d": 451,
+      "b": 148
+    },
+    {
+      "t": "parking",
+      "n": "Vinci Park",
+      "d": 423,
+      "b": 120
+    },
+    {
+      "t": "parking",
+      "n": "Parking",
+      "d": 430,
+      "b": 25
+    },
+    {
+      "t": "parque",
+      "n": "Plaza de San Germán",
+      "d": 227,
+      "b": 170
+    },
+    {
+      "t": "parque",
+      "n": "Plaza Canal Isabel II",
+      "d": 322,
+      "b": 229
+    },
+    {
+      "t": "lugar",
+      "n": "Museo Tiflológico",
+      "d": 517,
+      "b": 195
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#04161a;--fg:#e4f8f4;--muted:#8fb3ad;--accent:#2fe0c2;--accent2:#ff8a5c;--line:rgba(228,248,244,.13);--font-d:'Fraunces',serif;--font-b:'Outfit',sans-serif;--btn-ink:#04161a;--btn-r:99px;--btn-hover:#ff8a5c;--btn-hover-ink:#04161a;--cursor-ink:#04161a}
+body{font-family:var(--font-b)}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.kick{font:500 13px/1 var(--font-b);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+h2{font:400 clamp(46px,7vw,112px)/.95 var(--font-d);margin:.2em 0 .35em;letter-spacing:-.03em}
+h2 em{font-style:italic;color:var(--accent)}
+
+/* Apertura: el agua sube y aparece el nombre entre burbujas */
+#opening{background:#020a0c;overflow:hidden}
+.op-water{position:absolute;left:0;right:0;bottom:0;height:100%;transform:scaleY(0);transform-origin:50% 100%;will-change:transform;background:linear-gradient(180deg,#0d6e6a,#04161a);box-shadow:0 -2px 0 rgba(255,255,255,.35)}
+.op-water::before{content:"";position:absolute;left:-10%;right:-10%;top:-18px;height:36px;border-radius:50%;background:#0d6e6a;opacity:.8;animation:opWave 2.4s ease-in-out infinite}
+@keyframes opWave{50%{transform:translateX(4%) scaleY(1.3)}}
+.op-name{position:absolute;inset:0;display:grid;place-items:center;font:italic 400 clamp(46px,9vw,140px)/1 var(--font-d);color:var(--fg);opacity:0}
+.op-b{position:absolute;bottom:-20px;width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(228,248,244,.7)}
+
+/* Cabecera */
+.fx-nav{padding:14px 0}
+.fx-nav.scrolled{background:rgba(4,22,26,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font:700 22px/1 var(--font-d)}
+.logo i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#bff7ec,var(--accent) 45%,#0b5f58);box-shadow:0 0 18px rgba(47,224,194,.5)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:500 14px var(--font-b)}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.85em 1.4em;font-size:14px}
+
+/* HERO: acuario plantado a pantalla completa, luz que ondula y burbujas */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:110px 0 44px}
+.hero .bgp{position:absolute;inset:0;z-index:0}
+.hero .bgp img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.hero .bgp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,22,26,.55),rgba(4,22,26,.1) 35%,rgba(4,22,26,.9) 88%)}
+.hero .caus{position:absolute;inset:0;z-index:1;mix-blend-mode:soft-light;opacity:.55;background:repeating-radial-gradient(circle at 30% 20%,rgba(255,255,255,.35) 0 2px,transparent 3px 26px),repeating-radial-gradient(circle at 70% 60%,rgba(255,255,255,.25) 0 2px,transparent 3px 34px);animation:caus 9s ease-in-out infinite alternate}
+@keyframes caus{to{background-position:40px 30px,-50px 20px;transform:scale(1.05)}}
+.hero canvas{z-index:2}
+.ttl{position:relative;z-index:3}
+.ttl h1{font:400 clamp(56px,10.5vw,176px)/.88 var(--font-d);margin:0;letter-spacing:-.04em;max-width:11ch}
+.ttl h1 em{font-style:italic;color:var(--accent)}
+.hero-foot{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:26px}
+.hero-foot p{max-width:42ch;margin:0;font-size:18px;color:#cfe9e4}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.meta{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
+.badge{position:absolute;z-index:3;right:5%;top:22%;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(4,22,26,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(47,224,194,.45);font:400 15px/1.2 var(--font-d);padding:18px}
+.badge b{display:block;font:700 34px/1 var(--font-d);color:var(--accent)}
+
+/* Catálogo */
+.cat{padding:120px 0}
+.c-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.pc{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;isolation:isolate}
+.pc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:scale 1s cubic-bezier(.2,.8,.2,1)}
+.pc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,22,26,.95),transparent 58%)}
+.pc:hover img{scale:1.07}
+.pc div{position:absolute;left:18px;right:18px;bottom:16px}
+.pc h3{font:400 26px/1.05 var(--font-d);margin:0 0 6px}
+.pc p{margin:0;color:#cfe9e4;font-size:14px}
+.pc b{position:absolute;top:14px;left:14px;background:var(--accent);color:var(--bg);padding:6px 11px;border-radius:99px;font:700 12px var(--font-b)}
+
+/* Servicios */
+.serv{padding:0 0 120px}
+.s-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px;border-top:1px solid var(--line)}
+.sv{padding:26px 22px 10px 0;border-right:1px solid var(--line);margin-right:22px}
+.sv:last-child{border:0;margin:0}
+.sv i{font-style:normal;font-size:30px}
+.sv h3{font:400 24px/1.1 var(--font-d);margin:12px 0 8px}
+.sv p{margin:0 0 10px;color:var(--muted);font-size:15px;line-height:1.5}
+.sv b{color:var(--accent);font-weight:500;font-size:14px}
+
+/* Reserva */
+.book{padding:120px 0}
+.book-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}
+.pick{display:grid;gap:20px}
+.pick>div>b{display:block;font:500 12px var(--font-b);text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{padding:12px 18px;border:1px solid var(--line);border-radius:99px;font:500 15px var(--font-b);transition:all .3s}
+.pills button:hover{border-color:var(--fg)}
+.pills button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.tank-card{border-radius:28px;padding:28px;background:linear-gradient(160deg,rgba(47,224,194,.16),rgba(4,22,26,.6));border:1px solid rgba(47,224,194,.3);position:relative;overflow:hidden}
+.tank-card::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(47,224,194,.35),transparent 70%)}
+.tank-card h3{font:400 34px/1 var(--font-d);margin:0 0 16px}
+.tank-card div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line)}
+.tank-card .tot{border:0;color:var(--accent)}
+.tank-card .btn{width:100%;margin-top:16px}
+
+.contact{padding:0 0 110px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ct-grid iframe{width:100%;min-height:360px;border:0;border-radius:24px}
+.ct-grid a{display:block;font:400 clamp(26px,3vw,40px)/1.2 var(--font-d)}
+.ct-grid a:hover{color:var(--accent)}
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:400 clamp(80px,19vw,320px)/.85 var(--font-d);text-align:center;white-space:nowrap;letter-spacing:-.05em;font-style:italic}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:24px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .badge{width:112px;height:112px;font-size:12px;top:16%;right:4%}.badge b{font-size:26px}
+  .c-grid{grid-template-columns:1fr 1fr}
+  .s-grid{grid-template-columns:1fr 1fr}.sv{border-right:0;margin-right:0;border-bottom:1px solid var(--line)}
+  .book-grid,.ct-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i></i><span data-biz="nombre">Nautilus Acuarios</span></a>
+    <ul><li><a href="#configurador">Diseña tu acuario</a></li><li><a href="#catalogo">Catálogo</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#reserva">Cita</a></li></ul>
+    <a class="btn magnetic" href="#configurador" data-cursor="Diseñar" data-alt="En 3D">Diseñar acuario</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"calma","shots":[{"vid":"https://assets.mixkit.co/videos/45376/45376-720.mp4","img":"1764175760902-9cf284d444de","k":"Acuarios","t":"Un trozo de río <em>en tu salón</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/4021/4021-720.mp4","img":"1764175760954-e99714c7dd98","k":"Plantado","t":"Vida <em>que crece</em>","pos":"c"},{"img":"1535591273668-578e31182c4f","n":{"v":120,"l":"especies en tienda"},"pos":"c"},{"vid":"https://assets.mixkit.co/videos/6966/6966-720.mp4","img":"1691387896833-dba10ea7d614","k":"Montaje","t":"Te lo dejamos <em>listo</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/14490/14490-720.mp4","img":"1519657635301-68bb60c798f7","k":"Tu acuario","t":"Diséñalo <em>en 3D</em>","pos":"c"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Tienda de acuarios</span></p>
+  <h1 data-hero-hide>Un trozo de río <em>en tu salón</em></h1>
+  <p class="film-p" data-hero-hide>Diseña tu acuario en 3D con peces reales y te lo montamos en casa.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#configurador" data-cursor="Diseñar">Diseñar mi acuario</a><a class="btn ghost magnetic" href="#catalogo" data-cursor="Ver">Ver catálogo</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="acuario">
+<script type="application/json">{"eyebrow":"Diseña tu acuario en 3D","title":"Tu acuario, <em>pez a pez</em>","sub":"Elige tamaño y tipo de agua, añade peces de verdad, rocas, raíces y plantas, y cambia el cristal, el marco, el fondo y la luz. Te decimos si las especies son compatibles y cuánto cuesta montado. Pulsa en el agua para darles de comer.","cta":"Reservar mi acuario","msg":"Hola, he diseñado este acuario en vuestra web:"}</script>
+</section>
+
+<section class="cat" id="catalogo">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">Todo para tu acuario</p>
+    <h2 data-split>El <em>catálogo</em></h2>
+    <div class="c-grid" data-reveal="stagger">
+      <div class="pc"><img src="https://images.unsplash.com/photo-1764175760954-e99714c7dd98?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1764175760954-e99714c7dd98?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1764175760954-e99714c7dd98?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Banco de peces tropicales" loading="lazy"><b>Tropicales</b><div><h3>Peces de agua dulce</h3><p>Neones, guppys, escalares, discos y corydoras de criadero.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Pez payaso" loading="lazy"><b>Marino</b><div><h3>Peces y corales</h3><p>Payasos, cirujanos, anémonas y roca viva.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1691387896833-dba10ea7d614?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1691387896833-dba10ea7d614?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1691387896833-dba10ea7d614?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Acuario plantado" loading="lazy"><b>Plantas</b><div><h3>Plantas naturales</h3><p>Musgos, helechos, tapizantes y plantas de tallo.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1519657635301-68bb60c798f7?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1519657635301-68bb60c798f7?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1519657635301-68bb60c798f7?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Pez betta" loading="lazy"><b>Comida y salud</b><div><h3>Comida y cuidados</h3><p>Escamas, congelado, vivo, acondicionadores y tratamientos.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1630094129983-2c90e1fa129d?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1630094129983-2c90e1fa129d?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1630094129983-2c90e1fa129d?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Plantas verdes en pecera" loading="lazy"><b>Acuarios</b><div><h3>Acuarios y muebles</h3><p>De 20 a 600 L, cristal extraclaro y a medida.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Pez de agua fría" loading="lazy"><b>Agua fría</b><div><h3>Carasius y estanque</h3><p>Cometas, orandas y peces para estanque.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1617994679330-2883951d0073?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1617994679330-2883951d0073?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1617994679330-2883951d0073?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Arrecife de coral" loading="lazy"><b>Equipos</b><div><h3>Filtros, luz y CO₂</h3><p>Pantallas LED, filtros, calentadores y difusores.</p></div></div>
+      <div class="pc"><img src="https://images.unsplash.com/photo-1785665615505-1d15eea8fe6b?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1785665615505-1d15eea8fe6b?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1785665615505-1d15eea8fe6b?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Pez disco" loading="lazy"><b>Encargos</b><div><h3>Especies a pedido</h3><p>¿Buscas algo concreto? Lo traemos de criadero.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">Te acompañamos siempre</p>
+    <h2 data-split>Más que <em>una tienda</em></h2>
+    <div class="s-grid" data-reveal="stagger">
+      <div class="sv"><i>🧪</i><h3>Análisis de agua gratis</h3><p>Trae una muestra y medimos amoniaco, nitritos, nitratos y pH al momento.</p><b>Gratis, siempre</b></div>
+      <div class="sv"><i>🏠</i><h3>Montaje a domicilio</h3><p>Llevamos el acuario, lo montamos, lo ciclamos y te enseñamos a cuidarlo.</p><b>desde 49 €</b></div>
+      <div class="sv"><i>🧽</i><h3>Mantenimiento</h3><p>Cambios de agua, filtros y plantas en tu casa, oficina o negocio.</p><b>desde 39 €/mes</b></div>
+      <div class="sv"><i>🏖️</i><h3>Cuidado en vacaciones</h3><p>Pasamos a darles de comer y a revisar que todo va bien.</p><b>desde 9 €/visita</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"De cero a tu acuario","title":"Cuatro semanas <em>hasta el primer pez</em>","play":"Ver el proceso","metric":{"label":"Días de ciclado"},"frames":[{"k":"Día 1","t":"Lo diseñamos","p":"Medimos tu hueco y elegimos acuario, mueble, peces y plantas contigo.","img":"1580140404772-decde5a9cc9f","v":1},{"k":"Día 2","t":"Lo montamos","p":"Sustrato, rocas, raíces y plantas en tu casa, con filtro y luz funcionando.","img":"1691387824643-227cc84127cf","v":2},{"k":"Día 15","t":"Lo ciclamos","p":"Bacterias y análisis semanales hasta que el agua está lista.","img":"1779436852850-bc11329b07b3","v":15},{"k":"Día 28","t":"Llegan los peces","p":"Entran poco a poco, aclimatados, y te quedas con una guía de cuidados.","img":"1764175760902-9cf284d444de","v":28}],"layout":"cinema"}</script>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Lo dicen <em>sus acuarios</em>","layout":"wall","rating":"4,9","count":"340","items":[{"n":"Alberto R.","t":"Me diseñaron el acuario en la web y quedó igual en mi salón. Los peces, sanísimos.","s":5,"src":"Google"},{"n":"Marina G.","t":"Me analizaron el agua gratis y en dos días se me fue el agua verde.","s":5,"src":"Google"},{"n":"Restaurante Kōji","t":"Nos llevan el mantenimiento del acuario del comedor cada mes. Siempre impecable.","s":5,"src":"Google"},{"n":"Pablo y Lucía","t":"El primer acuario de nuestros hijos. Paciencia infinita para explicarlo todo.","s":5,"src":"Instagram"},{"n":"Jorge T.","t":"Me trajeron discos de criadero que no encontraba en ningún sitio.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="book" id="reserva">
+  <div class="wrap book-grid">
+    <div>
+      <p class="kick">Asesoramiento sin compromiso</p>
+      <h2 data-split>Pide <em>tu cita</em></h2>
+      <div class="pick">
+        <div><b>Te interesa</b><div class="pills" data-pick="Interés"><button type="button" aria-pressed="true">Acuario nuevo</button><button type="button" aria-pressed="false">Peces y plantas</button><button type="button" aria-pressed="false">Mantenimiento</button><button type="button" aria-pressed="false">Análisis de agua</button></div></div>
+        <div><b>Tipo</b><div class="pills" data-pick="Tipo"><button type="button" aria-pressed="true">Tropical</button><button type="button" aria-pressed="false">Marino</button><button type="button" aria-pressed="false">Agua fría</button><button type="button" aria-pressed="false">Aún no lo sé</button></div></div>
+        <div><b>Dónde</b><div class="pills" data-pick="Dónde"><button type="button" aria-pressed="true">En la tienda</button><button type="button" aria-pressed="false">En mi casa</button><button type="button" aria-pressed="false">En mi negocio</button></div></div>
+      </div>
+    </div>
+    <div class="tank-card" data-tilt="5">
+      <h3>Tu cita</h3>
+      <div id="sum"></div>
+      <div class="tot"><span>Asesoramiento</span><span>Gratis</span></div>
+      <a class="btn magnetic" id="sum-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Confirmar por WhatsApp">Pedir cita por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="kick">La tienda</p>
+      <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle de Bravo Murillo 210, 28020 Madrid</a>
+      <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a data-biz-link="ig" data-biz="instagram" style="color:var(--accent)">@nautilusacuarios</a>
+      <ul data-horario style="margin-top:24px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Nautilus</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Nautilus Acuarios</span></span><span>Aviso legal · Privacidad · Cookies · Los peces vivos se recogen en tienda</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    const groups = FX.$$('[data-pick]');
+    groups.forEach(g => g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); upd(); if (!FX.RM) gsap.fromTo('.tank-card', { y: -8 }, { y: 0, duration: .7, ease: 'elastic.out(1,.4)' }); }));
+    function upd() {
+      const rows = groups.map(g => [g.dataset.pick, g.querySelector('[aria-pressed=true]')]);
+      FX.$('#sum').innerHTML = rows.map(([k, b]) => '<div><span>' + k + '</span><b>' + b.textContent + '</b></div>').join('');
+      const a = FX.$('#sum-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, quiero pedir cita:\n' + rows.map(([k, b]) => '• ' + k + ': ' + b.textContent).join('\n'));
+    }
+    upd();
+    if (!FX.RM) gsap.to('.hero .bgp img', { scale: 1.18, yPercent: 6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  },
+  opening(tl, FX) {
+    const op = FX.$('#opening');
+    for (let i = 0; i < 18; i++) { const b = document.createElement('i'); b.className = 'op-b'; b.style.left = (5 + Math.random() * 90) + '%'; b.style.scale = .4 + Math.random(); op.appendChild(b); tl.to(b, { y: -innerHeight - 60, x: (Math.random() - .5) * 60, duration: 1.4 + Math.random(), ease: 'power1.in' }, Math.random() * .8); }
+    tl.to('.op-water', { scaleY: 1, duration: 1.5, ease: 'power2.inOut' }, 0)
+      .to('.op-name', { opacity: 1, duration: .5 }, .9)
+      .to('#opening', { clipPath: 'inset(0 0 100% 0)', duration: .9, ease: 'expo.inOut' }, 2);
+  },
+  hero(tl, FX) {
+    tl.from('.hero .bgp img', { scale: 1.35, duration: 2, ease: 'expo.out' })
+      .from('.ttl h1', { y: 70, opacity: 0, duration: 1.2, ease: 'expo.out' }, .2)
+      .from('.badge', { scale: 0, rotation: -40, duration: 1, ease: 'back.out(2)' }, .7)
+      .from('.hero-foot > *', { y: 30, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out' }, .6);
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="blend">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reformas Arco · Reformas integrales en Madrid</title>
+<meta name="description" content="Reformas integrales, cocinas y baños en Madrid con precio cerrado, plazos por contrato y un solo interlocutor.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "reformas",
+  "nombre": "Reformas Arco",
+  "lema": "Reformas integrales en Madrid",
+  "zona": "Madrid y alrededores",
+  "direccion": "Calle de Bravo Murillo 200, 28020 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "obra@reformasarco.es",
+  "instagram": "@reformasarco",
+  "cita": true,
+  "whatsappTexto": "Hola, quiero pedir presupuesto para una reforma.",
+  "horario": {
+    "lun": "08:00-18:00",
+    "mar": "08:00-18:00",
+    "mie": "08:00-18:00",
+    "jue": "08:00-18:00",
+    "vie": "08:00-15:00",
+    "sab": "Cerrado",
+    "dom": "Cerrado"
+  },
+  "avisos": [
+    "🏠 Nueva visita de medición en Chamberí",
+    "🧮 Alguien ha calculado una reforma de 85 m²",
+    "🔑 Entregadas las llaves de una cocina en Retiro",
+    "⭐ Nueva reseña de 5 estrellas"
+  ],
+  "mapa": {
+    "estilo": "calles"
+  },
+  "lat": 40.455977,
+  "lng": -3.7021,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Estrecho",
+      "d": 172,
+      "b": 199
+    },
+    {
+      "t": "metro",
+      "n": "Tetuán",
+      "d": 634,
+      "b": 31
+    },
+    {
+      "t": "metro",
+      "n": "Alvarado",
+      "d": 666,
+      "b": 190
+    },
+    {
+      "t": "bus",
+      "n": "Estrecho",
+      "d": 182,
+      "b": 226
+    },
+    {
+      "t": "bus",
+      "n": "Infanta Mercedes",
+      "d": 377,
+      "b": 77
+    },
+    {
+      "t": "parking",
+      "n": "Garaje Lope de Haro",
+      "d": 98,
+      "b": 314
+    },
+    {
+      "t": "parking",
+      "n": "Justeat",
+      "d": 130,
+      "b": 272
+    },
+    {
+      "t": "parque",
+      "n": "Plaza Canal Isabel II",
+      "d": 209,
+      "b": 12
+    },
+    {
+      "t": "parque",
+      "n": "Plaza de San Germán",
+      "d": 379,
+      "b": 60
+    },
+    {
+      "t": "lugar",
+      "n": "Museo Tiflológico",
+      "d": 175,
+      "b": 119
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#f1eee7;--fg:#141414;--muted:#6c6a63;--accent:#ff5b1f;--blue:#0f2c4c;--bl-line:rgba(160,200,255,.18);--line:rgba(20,20,20,.12);--font-d:'Archivo',sans-serif;--font-b:'Archivo',sans-serif;--mono:'IBM Plex Mono',monospace;--btn-ink:#fff;--btn-r:0;--btn-hover:#141414;--btn-hover-ink:#fff;--cursor-ink:#fff}
+body{font-variation-settings:'wdth' 100}
+.wrap{width:min(1320px,100% - 40px);margin-inline:auto}
+.lbl{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+.lbl::after{content:"";flex:0 0 60px;height:1px;background:currentColor}
+h2{font:800 clamp(46px,7vw,112px)/.9 var(--font-d);font-variation-settings:'wdth' 72;text-transform:uppercase;letter-spacing:-.01em;margin:.25em 0 .4em}
+h2 em{font-style:normal;color:var(--accent)}
+
+/* Apertura: plano que se dibuja */
+#opening{background:var(--blue);display:grid;place-items:center;overflow:hidden}
+html.js #opening{display:grid}
+#opening::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bl-line) 1px,transparent 1px),linear-gradient(90deg,var(--bl-line) 1px,transparent 1px);background-size:40px 40px}
+.plan{width:min(80vw,640px);position:relative}
+.plan svg{width:100%;overflow:visible}
+.plan .wall{fill:none;stroke:#e9f2ff;stroke-width:5;stroke-linecap:square}
+.plan .thin{fill:none;stroke:#9cc3ff;stroke-width:1.2}
+.plan .door{fill:none;stroke:#9cc3ff;stroke-width:1.2;stroke-dasharray:4 4}
+.plan text{fill:#9cc3ff;font:500 12px var(--mono)}
+.plan .fill{fill:var(--accent);opacity:0}
+.op-title{position:absolute;left:0;right:0;bottom:12%;text-align:center;font:800 clamp(30px,5vw,70px)/1 var(--font-d);font-variation-settings:'wdth' 120;text-transform:uppercase;color:#fff;letter-spacing:.04em}
+.op-wipe{position:absolute;inset:0;background:var(--bg);transform:scaleY(0);transform-origin:bottom}
+
+/* Cabecera */
+.fx-nav{padding:16px 0}
+.fx-nav.scrolled{background:rgba(241,238,231,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:800 22px/1 var(--font-d);font-variation-settings:'wdth' 125;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.logo svg{width:30px;height:30px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font:500 13px var(--mono);text-transform:uppercase}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.9em 1.4em;font-size:14px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:110px 0 50px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero canvas{opacity:.8}
+.coords{position:fixed;left:0;top:0;z-index:5;pointer-events:none;font:500 11px var(--mono);color:var(--accent);opacity:0;transition:opacity .3s;white-space:nowrap}
+.hero:hover~.coords,.coords.on{opacity:1}
+.xh{position:absolute;inset:0;pointer-events:none;z-index:1}
+.xh i{position:absolute;background:rgba(255,91,31,.35)}
+.xh .hx{left:0;right:0;height:1px;top:var(--y,50%)}
+.xh .vx{top:0;bottom:0;width:1px;left:var(--x,50%)}
+.hero h1{position:relative;z-index:2;font:900 clamp(64px,13.5vw,230px)/.82 var(--font-d);text-transform:uppercase;margin:0;letter-spacing:-.02em}
+.hero h1 .a{display:block;font-variation-settings:'wdth' 62}
+.hero h1 .b{display:block;font-variation-settings:'wdth' 125;color:var(--accent)}
+.hero h1 .c{display:block;font-variation-settings:'wdth' 90;-webkit-text-stroke:2px var(--fg);color:transparent}
+.hero-bottom{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:end;margin-top:34px;padding-top:24px;border-top:1px solid var(--fg)}
+.hero-bottom p{margin:0;max-width:40ch;font-size:17px}
+.hero-meta{font:500 12px/1.8 var(--mono);text-transform:uppercase;color:var(--muted)}
+.hero-meta b{color:var(--fg)}
+.deck{position:absolute;right:5%;top:15%;width:min(30vw,420px);aspect-ratio:4/5;z-index:1}
+.deck figure{position:absolute;inset:0;margin:0;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25);border:8px solid #fff}
+.deck img{width:100%;height:100%;object-fit:cover}
+.deck figcaption{position:absolute;left:0;bottom:0;background:#fff;padding:6px 10px;font:500 11px var(--mono);text-transform:uppercase}
+.tape{position:absolute;left:0;right:0;top:96px;height:26px;z-index:2;background:#ffd84d;display:flex;align-items:flex-end;overflow:hidden;transform-origin:0 50%}
+.tape i{flex:0 0 10px;height:8px;border-left:1px solid #000}
+.tape i:nth-child(10n){height:16px}
+
+/* Antes / después */
+.ba{padding:140px 0 100px}
+.compare{position:relative;aspect-ratio:16/8;overflow:hidden;user-select:none;touch-action:pan-y;--pos:50%;margin-top:30px}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .before{filter:grayscale(1) sepia(.35) brightness(.75) contrast(1.1) blur(1px);clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.compare .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--accent)}
+.compare .bar b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--accent);color:#fff;padding:10px 14px;font:500 12px var(--mono);white-space:nowrap}
+.compare .t{position:absolute;top:16px;padding:6px 10px;background:#000;color:#fff;font:500 11px var(--mono);text-transform:uppercase}
+.compare .t1{left:16px}.compare .t2{right:16px;background:var(--accent)}
+
+/* Servicios */
+.serv{padding:60px 0 120px}
+.s-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fg);border-left:1px solid var(--line)}
+.s-it{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 24px 26px;min-height:300px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.s-it .no{font:500 12px var(--mono);color:var(--muted)}
+.s-it h3{font:800 30px/1 var(--font-d);font-variation-settings:'wdth' 80;text-transform:uppercase;margin:auto 0 10px}
+.s-it p{margin:0;color:var(--muted);font-size:15px}
+.s-it img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);transition:clip-path .7s cubic-bezier(.7,0,.2,1);z-index:-1}
+.s-it{isolation:isolate;transition:color .5s}
+.s-it::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,.1));opacity:0;transition:opacity .6s;z-index:-1}
+.s-it:hover{color:#fff}.s-it:hover p,.s-it:hover .no{color:rgba(255,255,255,.8)}
+.s-it:hover img{clip-path:inset(0 0 0 0)}
+.s-it:hover::after{opacity:1}
+
+/* Calculadora */
+.calc{padding:120px 0;background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.calc::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bl-line) 1px,transparent 1px),linear-gradient(90deg,var(--bl-line) 1px,transparent 1px);background-size:40px 40px;opacity:.6}
+.calc .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.calc h2{color:#fff}
+.calc p{color:#a9bdd6}
+.field{margin-bottom:30px}
+.field>b{display:flex;justify-content:space-between;font:500 12px var(--mono);text-transform:uppercase;color:#a9bdd6;margin-bottom:12px}
+.field>b span{color:#fff;font-size:16px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #3a5b80}
+.seg button{padding:14px 8px;font:500 13px var(--mono);text-transform:uppercase;border-right:1px solid #3a5b80;transition:background .3s}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed=true]{background:var(--accent)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.result{border:1px solid #3a5b80;padding:34px;background:rgba(0,0,0,.2);display:flex;flex-direction:column;gap:20px}
+.result .big{font:900 clamp(48px,6vw,90px)/.9 var(--font-d);font-variation-settings:'wdth' 70}
+.result .big small{display:block;font:500 12px var(--mono);color:#a9bdd6;text-transform:uppercase;margin-bottom:10px}
+.bars{display:grid;gap:10px;font:500 12px var(--mono);text-transform:uppercase}
+.bars div{display:grid;grid-template-columns:110px 1fr 60px;gap:10px;align-items:center}
+.bars i{height:8px;background:#3a5b80;position:relative;overflow:hidden}
+.bars i b{position:absolute;inset:0;background:var(--accent);transform-origin:0 50%;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+
+/* Proyectos horizontales */
+.proj{padding:100px 0 0}
+.hs-track{gap:30px;padding:30px 5vw 100px;align-items:flex-start}
+.hs-item{width:clamp(300px,42vw,620px);flex-shrink:0;margin:0}
+.hs-item .im{aspect-ratio:3/2;overflow:hidden}
+.hs-item:nth-child(odd) .im{aspect-ratio:4/5;width:75%}
+.hs-item img{width:100%;height:100%;object-fit:cover}
+.hs-item figcaption{display:flex;justify-content:space-between;font:500 12px var(--mono);text-transform:uppercase;padding-top:12px;border-bottom:1px solid var(--fg);padding-bottom:10px}
+.hs-item h4{font:800 32px/1 var(--font-d);font-variation-settings:'wdth' 80;text-transform:uppercase;margin:12px 0 0}
+.hs-head{width:min(440px,80vw);flex-shrink:0;align-self:center}
+
+/* Proceso */
+.proc{padding:120px 0}
+.pr-list{counter-reset:p;margin-top:30px}
+.pr{display:grid;grid-template-columns:120px 1fr 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--fg);align-items:start}
+.pr .d{font:900 64px/1 var(--font-d);font-variation-settings:'wdth' 62;color:var(--accent)}
+.pr h3{font:800 28px/1 var(--font-d);text-transform:uppercase;margin:0}
+.pr p{margin:0;color:var(--muted)}
+
+.nums{padding:0 0 120px}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fg)}
+.num{padding:30px 20px 0 0}
+.num b{display:inline-flex;font:900 clamp(60px,8vw,120px)/1 var(--font-d);font-variation-settings:'wdth' 62}
+.num>span{display:block;font:500 12px var(--mono);text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+/* Contacto */
+.contact{padding:120px 0;background:var(--fg);color:#fff}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact h2{color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font:500 11px var(--mono);text-transform:uppercase;color:#999}
+label.full{grid-column:1/-1}
+input,select,textarea{background:transparent;border:0;border-bottom:1px solid #444;padding:12px 0;color:#fff;outline:none;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+select option{background:#141414}
+form .btn{grid-column:1/-1;margin-top:10px}
+.ct-info a{display:block;font:800 clamp(28px,3vw,44px)/1.15 var(--font-d);font-variation-settings:'wdth' 80;text-transform:uppercase}
+.ct-info a:hover{color:var(--accent)}
+
+footer{background:var(--fg);color:#fff;padding:20px 0 30px;overflow:hidden}
+.foot-word{font:900 clamp(70px,16vw,280px)/.85 var(--font-d);font-variation-settings:'wdth' 125;text-transform:uppercase;text-align:center;white-space:nowrap}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font:500 11px var(--mono);color:#888;margin-top:20px;text-transform:uppercase}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .deck{width:44vw;top:18%;right:4%;opacity:.9}
+  .hero-bottom{grid-template-columns:1fr}
+  .s-grid{grid-template-columns:1fr 1fr}
+  .calc .wrap,.ct-grid{grid-template-columns:1fr}
+  .pr{grid-template-columns:70px 1fr}.pr p{grid-column:2}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  form{grid-template-columns:1fr}
+  .xh,.coords{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><svg viewBox="0 0 30 30"><path d="M3 27 V12 A12 12 0 0 1 27 12 V27" fill="none" stroke="#ff5b1f" stroke-width="4"/></svg><span data-biz="nombre">Reformas Arco</span></a>
+    <ul><li><a href="#antes-despues">Antes/después</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#calculadora">Calculadora</a></li><li><a href="#contacto">Contacto</a></li></ul>
+    <a class="btn magnetic" href="#calculadora" data-cursor="Calcular" data-alt="En 30 segundos">Calcula tu reforma</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"cine","shots":[{"vid":"https://assets.mixkit.co/videos/20874/20874-720.mp4","img":"1503387762-592deb58ef4e","k":"Reformas integrales","t":"Reformamos <em>tu casa</em>","pos":"c"},{"img":"1581858726788-75bc0f6a952d","k":"Proyecto","t":"Lo ves <em>antes de empezar</em>","pos":"l"},{"vid":"https://assets.mixkit.co/videos/1439/1439-720.mp4","img":"1556911220-bff31c812dba","n":{"v":350,"l":"casas reformadas"},"pos":"r"},{"img":"1600607687939-ce8a6c25118c","k":"Plazo","t":"Fecha de entrega <em>por contrato</em>","big":"CASA","pos":"c"},{"vid":"https://assets.mixkit.co/videos/9686/9686-720.mp4","img":"1600585154340-be6161a56a0c","k":"Sin dramas","t":"Entra <em>y estrena</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Reformas en Madrid</span></p>
+  <h1 data-hero-hide>Reformamos tu casa <em>sin dramas</em></h1>
+  <p class="film-p" data-hero-hide>Calcula tu reforma en un minuto y recibe presupuesto con plazo por contrato.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#calculadora" data-cursor="Calcular">Calcular mi reforma</a></div>
+</div></div>
+</section>
+<div class="coords" aria-hidden="true">X 0000 mm · Y 0000 mm</div>
+
+<section class="fx-studio" id="configurador" data-scene="estancia" data-preset="cocina">
+<script type="application/json">{"preset":"cocina","eyebrow":"Reforma en 3D","title":"Diseña tu <em>cocina</em>","sub":"Cambia suelo, paredes, muebles y encimera, mira la luz a cada hora y compara el antes y el después.","cta":"Pedir visita y presupuesto","msg":"Hola, he diseñado mi cocina en vuestra web:"}</script>
+</section>
+
+<section class="ba" id="antes-despues">
+  <div class="wrap">
+    <p class="lbl" data-scramble>Antes / después</p>
+    <h2 data-split>Mueve la <em>línea</em></h2>
+    <div class="compare" data-cursor="Arrastra" data-reveal="clip">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&amp;q=70&amp;auto=format 1200w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&amp;q=70&amp;auto=format 1600w" sizes="(max-width:760px) 100vw, 60vw" alt="Salón después de la reforma" loading="lazy">
+      <img class="before" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&amp;q=70&amp;auto=format 1200w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&amp;q=70&amp;auto=format 1600w" sizes="(max-width:760px) 100vw, 60vw" alt="Salón antes de la reforma" loading="lazy">
+      <span class="t t1">Antes</span><span class="t t2">Después · 6 semanas</span>
+      <div class="bar"><b>⟷ Arrastra</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="wrap">
+    <p class="lbl" data-scramble>Servicios</p>
+    <h2 data-split>Todo, de <em>principio a fin</em></h2>
+    <div class="s-grid" data-reveal="stagger">
+      <a class="s-it" href="#calculadora" data-cursor="Calcular"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&amp;q=60&amp;auto=format" srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&amp;q=60&amp;auto=format 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&amp;q=60&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><span class="no">01</span><h3>Reforma integral</h3><p>Pisos completos llave en mano.</p></a>
+      <a class="s-it" href="#calculadora" data-cursor="Calcular"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&amp;q=60&amp;auto=format" srcset="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=480&amp;q=60&amp;auto=format 480w, https://images.unsplash.com/photo-1556911220-bff31c812dba?w=700&amp;q=60&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><span class="no">02</span><h3>Cocinas</h3><p>Diseño 3D, muebles y encimeras.</p></a>
+      <a class="s-it" href="#calculadora" data-cursor="Calcular"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=700&amp;q=60&amp;auto=format" srcset="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=480&amp;q=60&amp;auto=format 480w, https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=700&amp;q=60&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><span class="no">03</span><h3>Baños</h3><p>Plato de ducha en 5 días.</p></a>
+      <a class="s-it" href="#calculadora" data-cursor="Calcular"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&amp;q=60&amp;auto=format" srcset="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=480&amp;q=60&amp;auto=format 480w, https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&amp;q=60&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><span class="no">04</span><h3>Licencias</h3><p>Proyecto, permisos y comunidad.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="calc" id="calculadora">
+  <div class="wrap">
+    <div>
+      <p class="lbl">Calculadora</p>
+      <h2 data-split>¿Cuánto cuesta <em>mi reforma?</em></h2>
+      <p data-reveal="up">Precio orientativo según los metros y el acabado. Después venimos a medir sin compromiso y te damos un presupuesto cerrado por partidas.</p>
+      <div class="field"><b>Tipo de reforma</b><div class="seg" id="c-type"><button type="button" aria-pressed="true" data-v="620">Integral</button><button type="button" aria-pressed="false" data-v="950">Cocina</button><button type="button" aria-pressed="false" data-v="1100">Baño</button></div></div>
+      <div class="field"><b>Metros cuadrados <span id="c-m2l">80 m²</span></b><input id="c-m2" type="range" min="4" max="200" value="80" aria-label="Metros cuadrados"></div>
+      <div class="field"><b>Acabados</b><div class="seg" id="c-q"><button type="button" aria-pressed="false" data-v=".8">Básico</button><button type="button" aria-pressed="true" data-v="1">Medio</button><button type="button" aria-pressed="false" data-v="1.35">Premium</button></div></div>
+    </div>
+    <div class="result" data-reveal="up">
+      <div class="big"><small>Rango orientativo</small><span id="c-out">40.000 – 49.000 €</span></div>
+      <div class="bars" id="c-bars">
+        <div><span>Albañilería</span><i><b style="transform:scaleX(.35)"></b></i><span>35%</span></div>
+        <div><span>Instalaciones</span><i><b style="transform:scaleX(.25)"></b></i><span>25%</span></div>
+        <div><span>Acabados</span><i><b style="transform:scaleX(.3)"></b></i><span>30%</span></div>
+        <div><span>Gestión</span><i><b style="transform:scaleX(.1)"></b></i><span>10%</span></div>
+      </div>
+      <div class="hero-meta" style="color:#a9bdd6">Plazo estimado: <b id="c-weeks" style="color:#fff">8 semanas</b></div>
+      <a class="btn magnetic" id="c-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Te llamamos hoy">Pedir visita gratis</a>
+    </div>
+  </div>
+</section>
+
+<section class="proj" data-hscroll>
+  <div class="hs-track">
+    <div class="hs-head"><p class="lbl">Proyectos</p><h2 data-split>Obras <em>entregadas</em></h2><p style="color:var(--muted)">Cada proyecto, con fecha de inicio y de entrega por contrato.</p></div>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="Cocina" loading="lazy"></div><figcaption><span>Chamberí</span><span>32 m² · 5 sem</span></figcaption><h4>Cocina abierta</h4></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="Salón" loading="lazy"></div><figcaption><span>Retiro</span><span>110 m² · 10 sem</span></figcaption><h4>Piso integral</h4></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="Interior" loading="lazy"></div><figcaption><span>Arganzuela</span><span>75 m² · 8 sem</span></figcaption><h4>Luz y madera</h4></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="Vivienda" loading="lazy"></div><figcaption><span>Pozuelo</span><span>240 m² · 16 sem</span></figcaption><h4>Chalet completo</h4></figure>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Una obra real","title":"De piso viejo <em>a hogar</em>","play":"Ver la obra en vídeo","metric":{"label":"Obra completada","suf":" %"},"frames":[{"k":"Semana 1","t":"Proyecto y licencia","p":"Medimos, diseñamos en 3D y gestionamos los permisos.","img":"1503387762-592deb58ef4e","v":5},{"k":"Semana 3","t":"Obra","p":"Demolición, instalaciones nuevas y fotos del avance cada viernes.","img":"1581858726788-75bc0f6a952d","v":40},{"k":"Semana 6","t":"Cocina y baños","p":"Muebles a medida, encimeras y alicatados.","img":"1556911220-bff31c812dba","v":75},{"k":"Semana 8","t":"Entrega de llaves","p":"Limpieza final y 2 años de garantía. En la fecha del contrato.","img":"1600607687939-ce8a6c25118c","v":100}],"layout":"polaroid"}</script>
+</section>
+
+<section class="proc">
+  <div class="wrap">
+    <p class="lbl" data-scramble>Proceso</p>
+    <h2 data-split>Así <em>trabajamos</em></h2>
+    <div class="pr-list" data-reveal="stagger">
+      <div class="pr"><span class="d">01</span><h3>Visita y medición</h3><p>Vamos a tu casa, medimos y escuchamos lo que quieres. Gratis.</p></div>
+      <div class="pr"><span class="d">02</span><h3>Diseño 3D y presupuesto</h3><p>Ves la reforma antes de empezar. Presupuesto cerrado por partidas.</p></div>
+      <div class="pr"><span class="d">03</span><h3>Obra con calendario</h3><p>Fechas por contrato y fotos del avance cada semana por WhatsApp.</p></div>
+      <div class="pr"><span class="d">04</span><h3>Entrega y garantía</h3><p>Limpieza final y 2 años de garantía en todo lo que hacemos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="340">340</b><span>reformas entregadas</span></div>
+    <div class="num"><b data-count="18">18</b><span>años de oficio</span></div>
+    <div class="num"><b data-count="0">0</b><span>sobrecostes no avisados</span></div>
+    <div class="num"><b data-count="2">2</b><span>años de garantía</span></div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Casas que <em>cambiaron</em>","layout":"big","rating":"4,9","count":"300","items":[{"n":"Javier P.","t":"Nos entregaron la cocina el día que dijeron. Ni uno más.","s":5,"src":"Google"},{"n":"Ana S.","t":"Cada viernes fotos del avance por WhatsApp. Tranquilidad total.","s":5,"src":"Google"},{"n":"David L.","t":"El presupuesto fue el que firmamos. Sin sorpresas.","s":5,"src":"WhatsApp"},{"n":"Elena V.","t":"Reformaron el piso entero de mi madre y parece nuevo.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="lbl">Contacto</p>
+      <h2 data-split>Hablemos de <em>tu obra</em></h2>
+      <div class="ct-info">
+        <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+        <a data-biz-link="mail" data-biz="email" style="font-size:clamp(18px,2vw,26px)">obra@reformasarco.es</a>
+      </div>
+    </div>
+    <form data-wa-form="Hola, quiero presupuesto de reforma:">
+      <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+      <label>Teléfono<input name="Teléfono" type="tel" autocomplete="tel"></label>
+      <label>Tipo<select name="Tipo"><option>Reforma integral</option><option>Cocina</option><option>Baño</option><option>Otra</option></select></label>
+      <label>Barrio / municipio<input name="Zona"></label>
+      <label class="full">Cuéntanos<textarea name="Detalles" rows="3"></textarea></label>
+      <button class="btn magnetic" type="submit" data-cursor="Enviar" data-alt="Abrir WhatsApp">Pedir visita sin compromiso</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters data-biz="nombre">Reformas Arco</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Reformas Arco</span> · <span data-biz="direccion"></span></span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    // Antes / después
+    const cmp = FX.$('.compare');
+    const setPos = x => { const r = cmp.getBoundingClientRect(); cmp.style.setProperty('--pos', Math.max(2, Math.min(98, (x - r.left) / r.width * 100)) + '%'); };
+    let drag = false;
+    cmp.addEventListener('pointerdown', e => { drag = true; cmp.setPointerCapture(e.pointerId); setPos(e.clientX); });
+    cmp.addEventListener('pointermove', e => { if (drag || FX.FINE) setPos(e.clientX); });
+    cmp.addEventListener('pointerup', () => drag = false);
+    // Calculadora
+    const m2 = FX.$('#c-m2'), out = FX.$('#c-out'), st = { lo: 0, hi: 0 };
+    const pick = id => +FX.$(id + ' [aria-pressed=true]').dataset.v;
+    FX.$$('.seg').forEach(s => s.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; s.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); calc(); }));
+    m2.addEventListener('input', calc);
+    const fmt = n => Math.round(n / 500) * 500;
+    function calc() {
+      const t = pick('#c-type'), q = pick('#c-q'), m = +m2.value, base = t * m * q;
+      FX.$('#c-m2l').textContent = m + ' m²';
+      gsap.to(st, { lo: base * .92, hi: base * 1.12, duration: .6, ease: 'power3.out', onUpdate: () => out.textContent = fmt(st.lo).toLocaleString('es-ES') + ' – ' + fmt(st.hi).toLocaleString('es-ES') + ' €' });
+      const weeks = Math.max(1, Math.round(m / (t > 900 ? 6 : 11)) + (q > 1 ? 2 : 0));
+      FX.$('#c-weeks').textContent = weeks + (weeks === 1 ? ' semana' : ' semanas');
+      const mix = t > 1000 ? [.3, .35, .27, .08] : t > 900 ? [.2, .25, .45, .1] : [.35, .25, .3, .1];
+      FX.$$('#c-bars div').forEach((d, i) => { d.querySelector('b').style.transform = 'scaleX(' + mix[i] + ')'; d.lastElementChild.textContent = Math.round(mix[i] * 100) + '%'; });
+      const tipo = FX.$('#c-type [aria-pressed=true]').textContent, acab = FX.$('#c-q [aria-pressed=true]').textContent;
+      const a = FX.$('#c-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, quiero una visita para presupuesto:\n• Reforma: ' + tipo + '\n• Metros: ' + m + ' m²\n• Acabados: ' + acab + '\n• Rango orientativo: ' + out.textContent);
+    }
+    calc();
+  },
+  opening(tl, FX) {
+    const strokes = FX.$$('.plan .wall, .plan .thin, .plan .door');
+    strokes.forEach(p => { const L = p.getTotalLength(); gsap.set(p, { strokeDasharray: L, strokeDashoffset: L }); });
+    gsap.set('.plan text', { opacity: 0 });
+    const title = FX.splitChars(FX.$('.op-title'));
+    tl.to(strokes[0], { strokeDashoffset: 0, duration: 1, ease: 'power2.inOut' })
+      .to(strokes.slice(1), { strokeDashoffset: 0, duration: .8, stagger: .12, ease: 'power2.out' }, '-=.3')
+      .to('.plan text', { opacity: 1, stagger: .06, duration: .2 }, '-=.6')
+      .from(title, { yPercent: 100, opacity: 0, stagger: .03, duration: .5, ease: 'expo.out' }, '-=.5')
+      .to('.plan .fill', { opacity: .9, duration: .35 })
+      .to('.plan', { scale: 3, opacity: 0, duration: .8, ease: 'expo.in' }, '+=.1')
+      .to('.op-title', { opacity: 0, duration: .3 }, '<')
+      .to('.op-wipe', { scaleY: 1, duration: .55, ease: 'expo.inOut' }, '-=.35');
+  },
+  hero(tl, FX) {
+    const a = FX.splitChars(FX.$('.hero h1 .a')), b = FX.splitChars(FX.$('.hero h1 .b'));
+    tl.from('.tape', { scaleX: 0, duration: 1.2, ease: 'expo.inOut' })
+      .from(a, { yPercent: 110, duration: .9, ease: 'expo.out', stagger: .035 }, .1)
+      .from(b, { yPercent: 110, duration: .9, ease: 'expo.out', stagger: .045 }, .25)
+      .from('.hero h1 .c', { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'expo.inOut' }, .4)
+      .from('.hero-bottom', { clipPath: 'inset(0 100% 0 0)', duration: 1.2, ease: 'expo.inOut' }, .5)
+      .from('.deck figure', { yPercent: 60, rotation: i => [-14, 8, -4][i], opacity: 0, stagger: .14, duration: 1.1, ease: 'expo.out' }, .3)
+      .to('.deck figure', { rotation: i => [-9, 5, -1][i], xPercent: i => [-16, 2, 14][i], duration: 1.2, ease: 'power3.inOut' }, '-=.5');
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

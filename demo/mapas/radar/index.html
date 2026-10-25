@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa radar · propuesta para las maquetas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+:root{--acc:#d7262f;--bg:#0e0f12;--panel:#15161a;--fg:#f1efe9;--mut:#8d8b86;--line:rgba(255,255,255,.08);--ring:rgba(255,255,255,.16)}
+:root.light{--bg:#f3f2ee;--panel:#ffffff;--fg:#1b1b1d;--mut:#77756f;--line:rgba(0,0,0,.08);--ring:rgba(0,0,0,.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 Inter,system-ui,sans-serif;transition:background .5s,color .5s}
+.wrap{width:min(1180px,100% - 32px);margin:0 auto;padding:28px 0 40px}
+.top{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+h1{margin:0;font:600 clamp(26px,3.4vw,38px)/1.1 Inter;letter-spacing:-.03em}
+h1 span{color:var(--acc)}
+.top p{margin:6px 0 0;color:var(--mut);max-width:58ch}
+.seg{display:flex;padding:4px;border-radius:99px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line)}
+.seg button{border:0;background:none;color:var(--mut);padding:8px 14px;border-radius:99px;font:500 13px Inter;cursor:pointer}
+.seg button.on{background:var(--fg);color:var(--bg)}
+.box>*{min-width:0}
+.box{display:grid;grid-template-columns:minmax(0,1fr) 320px;border-radius:24px;overflow:hidden;background:var(--panel);box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(0,0,0,.25)}
+.mapw{position:relative;height:min(70vh,620px);min-height:440px}
+#map{position:absolute;inset:0}
+/* Radar: anillos y barrido dibujados encima del mapa, centrados en el negocio */
+#rad{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.sweep{position:absolute;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 84%,color-mix(in srgb,var(--acc) 14%,transparent) 97%,color-mix(in srgb,var(--acc) 55%,transparent) 99.6%,transparent 100%);opacity:.8}
+.rlab{position:absolute;transform:translate(-50%,-50%);font:500 10.5px 'JetBrains Mono';color:var(--mut);background:color-mix(in srgb,var(--bg) 82%,transparent);padding:2px 7px;border-radius:99px;white-space:nowrap;box-shadow:0 0 0 1px var(--line)}
+.pin{position:absolute;width:18px;height:18px;margin:-9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 25%,transparent),0 4px 14px rgba(0,0,0,.35)}
+.pin b{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);white-space:nowrap;font:600 12px Inter;color:var(--fg);background:var(--panel);padding:5px 10px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+/* Puntos cercanos */
+.pt{position:absolute;z-index:3;width:28px;height:28px;margin:-14px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--panel);box-shadow:0 0 0 1px var(--line),0 4px 12px rgba(0,0,0,.25);cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .4s;pointer-events:auto;border:0;padding:0}
+.pt::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--c);opacity:0;transform:scale(.6);transition:all .6s}
+.pt.lit::after{opacity:.9;transform:scale(1.25)}
+.pt.lit{box-shadow:0 0 0 2px var(--c),0 0 18px color-mix(in srgb,var(--c) 60%,transparent)}
+.pt.sel{transform:scale(1.25);box-shadow:0 0 0 2.5px var(--c),0 6px 18px rgba(0,0,0,.3)}
+.pt.off{opacity:0;pointer-events:none;transform:scale(.4)}
+.tip{position:absolute;z-index:4;transform:translate(-50%,calc(-100% - 22px));background:var(--panel);color:var(--fg);padding:9px 12px;border-radius:12px;font:500 12.5px Inter;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.3);pointer-events:none;opacity:0;transition:opacity .3s}
+.tip.on{opacity:1}
+.tip b{display:block;font-weight:600;font-size:13px}
+.tip span{color:var(--mut)}
+.tools{position:absolute;z-index:4;left:14px;top:14px;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 28px)}
+.tools button{display:flex;align-items:center;gap:6px;border:0;padding:8px 12px;border-radius:99px;background:var(--panel);color:var(--fg);font:500 12.5px Inter;cursor:pointer;box-shadow:0 0 0 1px var(--line),0 4px 12px rgba(0,0,0,.18);transition:all .3s}
+.tools button i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.tools button.off{opacity:.45}
+.me{position:absolute;z-index:4;right:14px;bottom:14px;border:0;padding:10px 14px;border-radius:99px;background:var(--fg);color:var(--bg);font:600 13px Inter;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+/* Lista lateral */
+.list{border-left:1px solid var(--line);display:flex;flex-direction:column;max-height:min(70vh,620px);min-height:440px}
+.list h3{margin:0;padding:18px 18px 4px;font:600 15px Inter}
+.list>p{margin:0;padding:0 18px 12px;color:var(--mut);font-size:12.5px}
+.items{overflow:auto;padding:0 8px 8px;scrollbar-width:thin}
+.it{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;width:100%;border:0;background:none;color:inherit;text-align:left;padding:10px;border-radius:14px;cursor:pointer;font:inherit;transition:background .25s}
+.it:hover,.it.sel{background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.it .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:color-mix(in srgb,var(--c) 18%,transparent)}
+.it b{display:block;font-weight:600;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it small{color:var(--mut)}
+.it .dist{text-align:right;font:500 12px 'JetBrains Mono'}
+.it .dist em{display:block;font-style:normal;color:var(--mut);font-size:11px}
+.it[hidden]{display:none}
+.go{margin:8px 16px 16px;display:none;text-align:center;padding:12px;border-radius:14px;background:var(--acc);color:#fff;text-decoration:none;font:600 13.5px Inter}
+.go.on{display:block}
+.note{margin-top:18px;color:var(--mut);font-size:13px}
+.maplibregl-ctrl-attrib{font-size:10px!important;opacity:.6}
+@media (max-width:860px){
+  .box{grid-template-columns:minmax(0,1fr)}
+  .mapw{height:58vh;min-height:380px}
+  .list{border-left:0;border-top:1px solid var(--line);max-height:none;min-height:0}
+  .items{display:flex;overflow-x:auto;gap:6px;padding:0 12px 6px;scroll-snap-type:x mandatory}
+  .it{flex:none;width:250px;scroll-snap-align:start;background:color-mix(in srgb,var(--fg) 4%,transparent)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>Mapa <span>radar</span>, limpio y útil</h1><p>Toca un punto o la lista: ves a cuántos metros y minutos andando está, con la ruta en línea recta y el botón para ir. Ejemplo: barbería en Lavapiés con sus paradas y parkings reales.</p></div>
+    <div class="seg"><button class="on" data-th="dark">Oscuro</button><button data-th="light">Claro</button></div>
+  </div>
+  <div class="box">
+    <div class="mapw">
+      <div id="map"></div>
+      <div id="rad"></div>
+      <div class="tools" id="tools"></div>
+      <button class="me" id="me">📍 ¿A cuánto estoy yo?</button>
+    </div>
+    <aside class="list">
+      <h3>Qué hay cerca</h3>
+      <p>A pie, desde la puerta · 80 m por minuto</p>
+      <div class="items" id="items"></div>
+      <a class="go" id="go" target="_blank" rel="noopener">Cómo llegar andando →</a>
+    </aside>
+  </div>
+  <p class="note">El color del radar sería el de cada marca (aquí, el rojo de la barbería). Si te gusta, lo pongo en todas las maquetas.</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+const BIZ = { n: 'Navaja Barber Club', ll: [-3.700183, 40.408957] };
+const CERCA = [{"t":"metro","n":"Lavapiés","d":69,"b":216},{"t":"metro","n":"Antón Martín","d":382,"b":14},{"t":"metro","n":"Embajadores","d":474,"b":209},{"t":"bus","n":"Magdalena","d":364,"b":339},{"t":"bus","n":"Ronda Atocha","d":400,"b":126},{"t":"parking","n":"Agustín Lara","d":297,"b":255},{"t":"parking","n":"Atocha 70","d":354,"b":36},{"t":"parque","n":"Esta es una Plaza","d":224,"b":137},{"t":"parque","n":"Huerta del Bayo","d":448,"b":257}];
+const T = { metro: ['Metro', '🚇', '#3b82f6'], bus: ['Bus', '🚌', '#f59e0b'], parking: ['Parking', '🅿️', '#a78bfa'], parque: ['Parques', '🌳', '#22c55e'] };
+const RINGS = [100, 250, 500], WALK = 80;
+// Punto a d metros con rumbo b (grados) desde el negocio
+const dest = (ll, d, b) => { const R = 6371000, la = ll[1] * Math.PI / 180, lo = ll[0] * Math.PI / 180, br = b * Math.PI / 180, a = d / R; const la2 = Math.asin(Math.sin(la) * Math.cos(a) + Math.cos(la) * Math.sin(a) * Math.cos(br)); const lo2 = lo + Math.atan2(Math.sin(br) * Math.sin(a) * Math.cos(la), Math.cos(a) - Math.sin(la) * Math.sin(la2)); return [lo2 * 180 / Math.PI, la2 * 180 / Math.PI]; };
+const circle = (ll, r) => ({ type: 'Feature', geometry: { type: 'LineString', coordinates: Array.from({ length: 121 }, (_, i) => dest(ll, r, i * 3)) } });
+CERCA.forEach(p => { p.ll = dest(BIZ.ll, p.d, p.b); p.min = Math.max(1, Math.round(p.d / WALK)); });
+
+const PAL = { dark: { bg: '#121317', water: '#141b24', park: '#141b16', land: '#131418', bld: '#17181d', road: '#23252b', major: '#2b2e35', text: '#5f5e5a', ring: 'rgba(255,255,255,.26)', style: 'dark' },
+  light: { bg: '#f1f0ec', water: '#dde4ea', park: '#e3e9dc', land: '#efeee9', bld: '#e8e6e0', road: '#ffffff', major: '#ffffff', text: '#a19e96', ring: 'rgba(0,0,0,.22)', style: 'positron' } };
+let theme = 'dark', map, sel = null, me = null, hidden = new Set();
+const rad = document.getElementById('rad'), tools = document.getElementById('tools'), items = document.getElementById('items'), go = document.getElementById('go');
+
+// Filtros y lista (se construyen una vez)
+tools.innerHTML = Object.entries(T).map(([k, t]) => `<button data-k="${k}" style="--c:${t[2]}"><i></i>${t[0]}</button>`).join('');
+items.innerHTML = CERCA.slice().sort((a, b) => a.d - b.d).map(p => `<button class="it" data-n="${p.n}" style="--c:${T[p.t][2]}"><span class="ic">${T[p.t][1]}</span><span><b>${p.n}</b><small>${T[p.t][0]}</small></span><span class="dist">${p.d} m<em>${p.min} min</em></span></button>`).join('');
+tools.onclick = e => { const b = e.target.closest('button'); if (!b) return; const k = b.dataset.k; hidden.has(k) ? hidden.delete(k) : hidden.add(k); b.classList.toggle('off', hidden.has(k)); CERCA.forEach(p => { p.el && p.el.classList.toggle('off', hidden.has(p.t)); }); items.querySelectorAll('.it').forEach(it => it.hidden = hidden.has(CERCA.find(p => p.n === it.dataset.n).t)); if (sel && hidden.has(sel.t)) select(null); };
+items.onclick = e => { const b = e.target.closest('.it'); if (b) select(CERCA.find(p => p.n === b.dataset.n), true); };
+
+function build() {
+  const P = PAL[theme];
+  document.documentElement.classList.toggle('light', theme === 'light');
+  if (map) map.remove();
+  map = new maplibregl.Map({ container: 'map', style: 'https://tiles.openfreemap.org/styles/' + P.style, center: BIZ.ll, zoom: 15.6, attributionControl: { compact: true }, dragRotate: false, pitchWithRotate: false });
+  map.touchZoomRotate.disableRotation();
+  map.on('load', () => {
+    // Base muy apagada: sin etiquetas salvo calles, sin 3D, colores casi planos
+    map.getStyle().layers.forEach(l => { const id = l.id, sl = l['source-layer'] || ''; try {
+      if (l.type === 'background') map.setPaintProperty(id, 'background-color', P.bg);
+      else if (l.type === 'fill' && sl === 'water') map.setPaintProperty(id, 'fill-color', P.water);
+      else if (l.type === 'fill' && (sl === 'park' || /park|wood|grass/.test(id))) map.setPaintProperty(id, 'fill-color', P.park);
+      else if (l.type === 'fill' && (sl === 'landuse' || sl === 'landcover')) map.setPaintProperty(id, 'fill-color', P.land);
+      else if (l.type === 'fill' && sl === 'building') { map.setPaintProperty(id, 'fill-color', P.bld); map.setPaintProperty(id, 'fill-outline-color', P.bld); }
+      else if (l.type === 'line' && sl === 'transportation') map.setPaintProperty(id, 'line-color', /motorway|trunk|primary/.test(id) ? P.major : P.road);
+      else if (l.type === 'line') map.setLayoutProperty(id, 'visibility', 'none');
+      else if (l.type === 'fill-extrusion') map.setLayoutProperty(id, 'visibility', 'none');
+      else if (l.type === 'symbol') { if (/transportation_name|road/.test(id)) { map.setPaintProperty(id, 'text-color', P.text); map.setPaintProperty(id, 'text-halo-color', P.bg); } else map.setLayoutProperty(id, 'visibility', 'none'); }
+    } catch (e) {} });
+    // Anillos de distancia reales (en metros) y línea al punto elegido
+    map.addSource('rings', { type: 'geojson', data: { type: 'FeatureCollection', features: RINGS.map(r => circle(BIZ.ll, r)) } });
+    map.addLayer({ id: 'rings', type: 'line', source: 'rings', paint: { 'line-color': P.ring, 'line-width': 1.2, 'line-dasharray': [2, 3] } });
+    map.addSource('link', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+    map.addLayer({ id: 'link', type: 'line', source: 'link', paint: { 'line-color': getComputedStyle(document.documentElement).getPropertyValue('--acc').trim(), 'line-width': 2.5, 'line-dasharray': [1, 1.6] }, layout: { 'line-cap': 'round' } });
+    map.resize(); overlay(); fit(); if (sel) select(sel); if (me) showMe(me);
+  });
+  map.on('move', place); map.on('resize', place);
+}
+new ResizeObserver(() => { if (map) { map.resize(); place(); } }).observe(document.getElementById('map'));
+function overlay() {
+  rad.innerHTML = '<div class="sweep" id="sw"></div>' + RINGS.map(r => `<span class="rlab" data-r="${r}">${r} m · ${Math.max(1, Math.round(r / WALK))} min</span>`).join('') + `<div class="pin" id="pin"><b>${BIZ.n}</b></div><div class="tip" id="tip"></div>`;
+  CERCA.forEach(p => { const b = document.createElement('button'); b.className = 'pt' + (hidden.has(p.t) ? ' off' : ''); b.style.setProperty('--c', T[p.t][2]); b.textContent = T[p.t][1]; b.setAttribute('aria-label', p.n + ', ' + p.d + ' metros'); b.onclick = () => select(p); p.el = b; rad.appendChild(b); });
+  place();
+}
+function place() {
+  if (!map) return;
+  const c = map.project(BIZ.ll), edge = map.project(dest(BIZ.ll, RINGS[RINGS.length - 1], 90)), R = Math.abs(edge.x - c.x);
+  const sw = document.getElementById('sw'), pin = document.getElementById('pin');
+  if (!sw) return;
+  Object.assign(sw.style, { left: c.x - R + 'px', top: c.y - R + 'px', width: 2 * R + 'px', height: 2 * R + 'px' });
+  pin.style.left = c.x + 'px'; pin.style.top = c.y + 'px';
+  rad.querySelectorAll('.rlab').forEach(l => { const q = map.project(dest(BIZ.ll, +l.dataset.r, 0)); l.style.left = q.x + 'px'; l.style.top = q.y + 'px'; });
+  CERCA.forEach(p => { const q = map.project(p.ll); p.el.style.left = q.x + 'px'; p.el.style.top = q.y + 'px'; });
+  if (sel) tipAt(sel); if (me && me.el) { const q = map.project(me.ll); me.el.style.left = q.x + 'px'; me.el.style.top = q.y + 'px'; }
+}
+// Barrido lento: los puntos se iluminan cuando pasa por encima
+let t0 = performance.now();
+(function loop() { const sw = document.getElementById('sw'); if (sw) { const a = ((performance.now() - t0) / 7000 * 360) % 360; sw.style.transform = `rotate(${a}deg)`; CERCA.forEach(p => { if (!p.el) return; const dd = (a - p.b + 360) % 360; p.el.classList.toggle('lit', dd < 50); }); } requestAnimationFrame(loop); })();
+
+function tipAt(p) { const tip = document.getElementById('tip'), q = map.project(p.ll); tip.innerHTML = `<b>${T[p.t][1]} ${p.n}</b><span>${p.d} m · ${p.min} min andando</span>`; tip.style.left = q.x + 'px'; tip.style.top = q.y + 'px'; tip.classList.add('on'); }
+function select(p, fly) {
+  sel = p; CERCA.forEach(x => x.el && x.el.classList.toggle('sel', x === p)); items.querySelectorAll('.it').forEach(it => it.classList.toggle('sel', p && it.dataset.n === p.n));
+  const src = map && map.getSource('link'); if (src) src.setData({ type: 'FeatureCollection', features: p ? [{ type: 'Feature', geometry: { type: 'LineString', coordinates: [BIZ.ll, p.ll] } }] : [] });
+  const tip = document.getElementById('tip'); if (!p) { tip && tip.classList.remove('on'); go.classList.remove('on'); return; }
+  tipAt(p); go.classList.add('on'); go.href = `https://www.google.com/maps/dir/?api=1&origin=${p.ll[1]},${p.ll[0]}&destination=${BIZ.ll[1]},${BIZ.ll[0]}&travelmode=walking`; go.textContent = `Ir desde ${p.n} · ${p.min} min →`;
+  if (fly) map.easeTo({ center: [(BIZ.ll[0] + p.ll[0]) / 2, (BIZ.ll[1] + p.ll[1]) / 2], duration: 700 });
+}
+function fit() { const b = new maplibregl.LngLatBounds(); RINGS.slice(-1).forEach(r => [0, 90, 180, 270].forEach(a => b.extend(dest(BIZ.ll, r, a)))); map.fitBounds(b, { padding: 30, duration: 0 }); }
+// ¿A cuánto estoy? (ubicación del visitante)
+function showMe(m) { if (!m.el) { m.el = document.createElement('div'); m.el.className = 'pt'; m.el.style.setProperty('--c', '#0ea5e9'); m.el.textContent = '🧍'; } rad.appendChild(m.el); const d = map.getSource('link'); d && d.setData({ type: 'FeatureCollection', features: [{ type: 'Feature', geometry: { type: 'LineString', coordinates: [BIZ.ll, m.ll] } }] }); place(); }
+document.getElementById('me').onclick = () => {
+  if (!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(pos => {
+    const ll = [pos.coords.longitude, pos.coords.latitude], dm = Math.round(map.getCenter().distanceTo ? new maplibregl.LngLat(...ll).distanceTo(new maplibregl.LngLat(...BIZ.ll)) : 0);
+    me = { ll }; select(null); showMe(me); const tip = document.getElementById('tip'), q = map.project(ll);
+    tip.innerHTML = `<b>Estás a ${dm > 1500 ? (dm / 1000).toFixed(1) + ' km' : dm + ' m'}</b><span>${dm > 2500 ? 'unos ' + Math.round(dm / 400) + ' min en metro o coche' : Math.max(1, Math.round(dm / WALK)) + ' min andando'}</span>`; tip.style.left = q.x + 'px'; tip.style.top = q.y + 'px'; tip.classList.add('on');
+    const b = new maplibregl.LngLatBounds(); b.extend(ll); b.extend(BIZ.ll); map.fitBounds(b, { padding: 70, maxZoom: 16, duration: 900 });
+    go.classList.add('on'); go.href = `https://www.google.com/maps/dir/?api=1&destination=${BIZ.ll[1]},${BIZ.ll[0]}&travelmode=${dm > 2500 ? 'transit' : 'walking'}`; go.textContent = 'Cómo llegar desde aquí →';
+  }, () => alert('No se ha podido obtener tu ubicación.'));
+};
+document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { document.querySelectorAll('.seg button').forEach(x => x.classList.toggle('on', x === b)); theme = b.dataset.th; build(); });
+build();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Cliente: Barbería El Tupé
+Nicho: Barberías y peluquerías
+Zona: Usera, Madrid
+Teléfono: 600 333 444
+Precio orientativo: 390–790 € + 25 €/mes
+Argumento: Reservas 24 h sin coger el teléfono con las manos ocupadas.
+
+Para cambiar textos, fotos, colores u horario: abre la web añadiendo ?personalizar=1 a la dirección, cámbialo y descarga la configuración.
+Después: node robot/robot.js importar archivo.json
+Avisos en vivo: solo con hechos reales del negocio, nunca inventados.
+Para publicarla: sube la carpeta completa (index.html + assets) a Netlify, Vercel o tu hosting.

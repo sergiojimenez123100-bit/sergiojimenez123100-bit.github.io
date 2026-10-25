@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="ring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Dental Nácar · Sonríe sin miedo</title>
+<meta name="description" content="Clínica dental en Madrid: implantes, ortodoncia invisible, estética dental y urgencias. Primera visita sin coste.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "clinica-dental",
+  "nombre": "Clínica Dental Nácar",
+  "lema": "Sonríe sin miedo",
+  "zona": "Chamberí, Madrid",
+  "direccion": "Calle de Santa Engracia 50, 28010 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "hola@dentalnacar.es",
+  "instagram": "@dentalnacar",
+  "cita": true,
+  "whatsappTexto": "Hola, quiero pedir cita para una primera visita.",
+  "horario": {
+    "lun": "09:30-14:00, 16:00-20:30",
+    "mar": "09:30-14:00, 16:00-20:30",
+    "mie": "09:30-14:00, 16:00-20:30",
+    "jue": "09:30-14:00, 16:00-20:30",
+    "vie": "09:30-15:00",
+    "sab": "Cerrado",
+    "dom": "Cerrado"
+  },
+  "avisos": [
+    "🦷 Nueva primera visita reservada para mañana",
+    "✨ Alguien ha calculado su financiación de ortodoncia",
+    "⭐ Nueva reseña de 5 estrellas en Google",
+    "📅 Quedan 2 huecos libres esta semana"
+  ],
+  "mapa": {
+    "estilo": "color"
+  },
+  "lat": 40.434124,
+  "lng": -3.698209,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Iglesia",
+      "d": 144,
+      "b": 332
+    },
+    {
+      "t": "metro",
+      "n": "Alonso Cano",
+      "d": 489,
+      "b": 350
+    },
+    {
+      "t": "metro",
+      "n": "Quevedo",
+      "d": 542,
+      "b": 259
+    },
+    {
+      "t": "bus",
+      "n": "Iglesia",
+      "d": 140,
+      "b": 292
+    },
+    {
+      "t": "bus",
+      "n": "Plaza Chamberí",
+      "d": 197,
+      "b": 152
+    },
+    {
+      "t": "parking",
+      "n": "Garaje Collado",
+      "d": 472,
+      "b": 93
+    },
+    {
+      "t": "parking",
+      "n": "Señorial",
+      "d": 494,
+      "b": 64
+    },
+    {
+      "t": "parque",
+      "n": "Plaza de los chisperos de Chamberí",
+      "d": 404,
+      "b": 197
+    },
+    {
+      "t": "parque",
+      "n": "Jardín de Concha Méndez",
+      "d": 629,
+      "b": 28
+    },
+    {
+      "t": "lugar",
+      "n": "Museo de Historia de la Comunidad Judía de Madrid",
+      "d": 207,
+      "b": 316
+    },
+    {
+      "t": "lugar",
+      "n": "Andén Cero - Estación de Chamberí",
+      "d": 211,
+      "b": 169
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#f4f8f7;--fg:#0b1f1c;--muted:#5d716d;--accent:#00b39b;--accent2:#7be0cf;--soft:#dff3ef;--line:rgba(11,31,28,.1);--font-d:'Instrument Serif',serif;--font-b:'Plus Jakarta Sans',sans-serif;--btn-ink:#fff;--btn-hover:#0b1f1c;--btn-hover-ink:#fff;--cursor-ink:#fff}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 var(--font-b);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+h2{font:400 clamp(44px,6.4vw,96px)/.95 var(--font-d);letter-spacing:-.02em;margin:.25em 0 .4em}
+h2 em{color:var(--accent)}
+
+/* Apertura: círculo que se dibuja, sonrisa y un iris que se abre */
+#opening{background:#fff;display:grid;place-items:center;clip-path:circle(150% at 50% 50%)}
+html.js #opening{display:grid}
+.op-mark{width:min(34vw,220px)}
+.op-mark circle,.op-mark path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.op-name{position:absolute;left:0;right:0;top:calc(50% + min(19vw,130px));text-align:center;font:400 clamp(30px,4.4vw,56px)/1 var(--font-d)}
+.op-name em{color:var(--accent)}
+
+/* Cabecera */
+.fx-nav{padding:16px 0}
+.fx-nav.scrolled{background:rgba(244,248,247,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font:800 17px/1 var(--font-b);letter-spacing:-.02em}
+.logo i{width:32px;height:32px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff;font:italic 400 20px/1 var(--font-d)}
+.nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:6px;font-size:14px;font-weight:600;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:99px}
+.nav ul a{display:block;padding:8px 14px;border-radius:99px;transition:background .3s,color .3s}
+.nav ul a:hover{background:var(--fg);color:#fff}
+.nav .btn{padding:.8em 1.3em;font-size:14px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:130px 0 70px;overflow:hidden;display:grid;align-items:center}
+.hero canvas{z-index:0;opacity:.9}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font:400 clamp(60px,8.6vw,140px)/.9 var(--font-d);letter-spacing:-.03em;margin:18px 0 26px}
+.rotor{display:inline-grid;color:var(--accent);font-style:italic;vertical-align:top;overflow:hidden;padding-bottom:.1em}
+.rotor span{grid-area:1/1}
+html.js .rotor span:not(.on){visibility:hidden}
+.hero p.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:44ch;margin:0 0 32px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:14px;margin-top:34px;font-size:14px;color:var(--muted)}
+.avs{display:flex}
+.avs i{width:38px;height:38px;border-radius:50%;border:3px solid var(--bg);margin-left:-10px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;color:#fff;font:italic 400 17px var(--font-d)}
+.avs i:first-child{margin-left:0}
+.trust b{color:var(--fg)}
+.blob-wrap{position:relative;aspect-ratio:1;max-width:560px;justify-self:end;width:100%}
+.blob{position:absolute;inset:0;border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;overflow:hidden;animation:morph 12s ease-in-out infinite;box-shadow:0 40px 100px rgba(0,179,155,.25)}
+.blob img{width:100%;height:100%;object-fit:cover;scale:1.1}
+.blob-ring{position:absolute;inset:-22px;border:1.5px dashed rgba(0,179,155,.4);border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 12s ease-in-out infinite reverse,spin 40s linear infinite}
+@keyframes morph{0%,100%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%}33%{border-radius:63% 37% 46% 54% / 55% 62% 38% 45%}66%{border-radius:38% 62% 35% 65% / 62% 38% 62% 38%}}
+@keyframes spin{to{rotate:360deg}}
+.glass{position:absolute;z-index:3;padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 20px 50px rgba(11,31,28,.12);font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.glass small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.glass .ic{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:18px}
+.g1{left:-8%;top:16%}.g2{right:-4%;top:52%}.g3{left:4%;bottom:4%}
+
+/* Marquesina */
+.mq{background:var(--fg);color:#fff;padding:22px 0;font:400 clamp(30px,4vw,54px)/1 var(--font-d);rotate:-1.5deg;margin:20px -10px}
+.mq .mq-group span{padding:0 28px}
+.mq .mq-group i{font-style:normal;color:var(--accent2)}
+
+/* Tratamientos */
+.treat{padding:140px 0 100px}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.t-card{position:relative;padding:30px;border-radius:26px;background:#fff;border:1px solid var(--line);overflow:hidden;min-height:250px;display:flex;flex-direction:column;transition:background .5s,color .5s}
+.t-card .ic{width:58px;height:58px;border-radius:18px;background:var(--soft);display:grid;place-items:center;font-size:26px;margin-bottom:auto;transition:background .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.t-card h3{font:400 34px/1 var(--font-d);margin:30px 0 8px}
+.t-card p{margin:0;color:var(--muted);font-size:15px;transition:color .5s}
+.t-card .arrow{position:absolute;right:24px;top:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .5s,background .5s,border-color .5s}
+.t-card:hover{background:var(--fg);color:#fff}
+.t-card:hover p{color:rgba(255,255,255,.65)}
+.t-card:hover .ic{background:var(--accent);transform:rotate(-12deg) scale(1.08)}
+.t-card:hover .arrow{transform:rotate(-45deg);background:var(--accent);border-color:var(--accent)}
+
+/* Antes / después */
+.ba{padding:80px 0 120px}
+.ba-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.compare{position:relative;aspect-ratio:4/3;border-radius:30px;overflow:hidden;user-select:none;touch-action:pan-y;--pos:50%}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .before{filter:sepia(.55) saturate(.8) brightness(.92) hue-rotate(-8deg);clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff}
+.compare .handle b{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);color:var(--accent)}
+.compare .tag{position:absolute;top:18px;padding:6px 12px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.compare .tl{left:18px}.compare .tr{right:18px;background:var(--accent)}
+
+/* Financiación */
+.fin{padding:120px 0;background:var(--fg);color:#fff;border-radius:40px;margin:0 14px;position:relative;overflow:hidden}
+.fin canvas{opacity:.5}
+.fin-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.fin p{color:rgba(255,255,255,.65)}
+.calc{padding:34px;border-radius:28px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.calc label{display:flex;justify-content:space-between;font-size:14px;color:rgba(255,255,255,.7);margin:18px 0 10px}
+.calc label b{color:#fff}
+.calc input[type=range]{width:100%;accent-color:var(--accent)}
+.calc .out{font:400 clamp(60px,7vw,96px)/1 var(--font-d);color:var(--accent2);margin-top:26px}
+.calc .out small{font:500 16px var(--font-b);color:rgba(255,255,255,.6)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{padding:9px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.2);font-size:13px;font-weight:600;transition:background .3s,color .3s}
+.chips button[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+
+/* Pasos */
+.steps{padding:140px 0}
+.st-list{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px;position:relative}
+.st-line{position:absolute;left:0;right:0;top:30px;height:2px;background:var(--line)}
+.st-line i{position:absolute;inset:0;background:var(--accent);transform-origin:0 50%;transform:scaleX(0)}
+.st{position:relative}
+.st b{width:60px;height:60px;border-radius:50%;background:#fff;border:2px solid var(--accent);display:grid;place-items:center;font:400 28px var(--font-d);color:var(--accent);margin-bottom:22px;position:relative}
+.st h3{font:700 19px var(--font-b);margin:0 0 6px}
+.st p{margin:0;color:var(--muted);font-size:15px}
+
+/* Números + reseñas */
+.nums{padding:40px 0 120px}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.num{padding:30px;border-radius:24px;background:var(--soft)}
+.num b{display:inline-flex;font:400 clamp(54px,6vw,86px)/1 var(--font-d);color:var(--fg)}
+.num>span{display:block;color:var(--muted);font-size:14px;margin-top:10px}
+.reviews{padding:0 0 130px}
+.rv-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.rv{padding:28px;border-radius:24px;background:#fff;border:1px solid var(--line)}
+.rv .st5{color:#f5b301;letter-spacing:.15em}
+.rv p{font:400 24px/1.25 var(--font-d);margin:14px 0}
+.rv small{color:var(--muted)}
+
+/* FAQ */
+.faq{padding:0 0 130px}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.acc>div{border-bottom:1px solid var(--line)}
+.acc-h{padding:24px 0;font:600 19px var(--font-b)}
+.acc-h i{width:34px;height:34px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-style:normal;color:var(--accent);transition:transform .5s,background .3s;flex-shrink:0}
+.open .acc-h i{transform:rotate(45deg);background:var(--accent);color:#fff}
+.acc-b p{margin:0 0 24px;color:var(--muted);max-width:60ch}
+
+/* Cita + contacto */
+.cita{padding:0 0 120px}
+.cita-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:36px;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.cita-card>div{padding:clamp(28px,4vw,56px)}
+.cita-side{background:radial-gradient(500px circle at var(--mx,30%) var(--my,30%),rgba(0,179,155,.22),transparent 60%),var(--soft)}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--muted)}
+input,select,textarea{border:1.5px solid var(--line);background:var(--bg);border-radius:14px;padding:14px;outline:none;transition:border-color .3s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,179,155,.15)}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.ct iframe{width:100%;min-height:340px;border:0;border-radius:28px;filter:saturate(.3) hue-rotate(120deg)}
+.ct-info a{display:block;font:400 30px/1.3 var(--font-d)}
+.ct-info a:hover{color:var(--accent)}
+
+footer{padding:60px 0 30px;overflow:hidden}
+.foot-word{font:400 clamp(60px,13vw,220px)/.9 var(--font-d);text-align:center;white-space:nowrap;letter-spacing:-.03em}
+.foot-word .ch.hot .ci{color:var(--accent);font-style:italic}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:30px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero-grid,.ba-grid,.fin-grid,.faq-grid,.cita-card,.ct{grid-template-columns:1fr}
+  .blob-wrap{justify-self:center;max-width:420px}
+  .g1{left:0}.g2{right:0}
+  .t-grid,.rv-row{grid-template-columns:1fr}
+  .st-list,.nums-grid{grid-template-columns:1fr 1fr}
+  .st-line{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i>n</i><span data-biz="nombre">Clínica Dental Nácar</span></a>
+    <ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#financiacion">Financiación</a></li><li><a href="#cita">Contacto</a></li></ul>
+    <a class="btn magnetic" href="#cita" data-cursor="Cita" data-alt="Sin coste">Pedir cita</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"cine","shots":[{"vid":"https://assets.mixkit.co/videos/6592/6592-720.mp4","img":"1609840114035-3c981b782dfe","k":"Clínica dental","t":"Sonríe <em>sin miedo</em>","pos":"c"},{"img":"1588776814546-1ffcf47267a5","k":"Sin dolor","t":"Tecnología que <em>no se nota</em>","pos":"l"},{"vid":"https://assets.mixkit.co/videos/8975/8975-720.mp4","img":"1629909613654-28e377c37b09","n":{"v":1,"l":"primera visita gratis"},"pos":"r"},{"img":"1606811971618-4486d14f3f99","k":"Estética","t":"Tu sonrisa, <em>en su mejor tono</em>","big":"SONRÍE","pos":"c"},{"vid":"https://assets.mixkit.co/videos/12344/12344-720.mp4","img":"1654373535457-383a0a4d00f9","k":"Diagnóstico","t":"Lo ves <em>antes de empezar</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Clínica dental</span></p>
+  <h1 data-hero-hide>Sonríe <em>sin miedo</em></h1>
+  <p class="film-p" data-hero-hide>Mira cómo quedaría tu sonrisa antes de empezar y pide tu primera visita gratis.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#cita" data-cursor="Cita">Pedir primera visita</a><a class="btn ghost magnetic" href="#tratamientos" data-cursor="Ver">Tratamientos</a></div>
+</div></div>
+</section>
+
+<div class="mq" data-marquee="1">
+  <div class="mq-group"><span>Implantes</span><i>✦</i><span>Ortodoncia invisible</span><i>✦</i><span>Blanqueamiento</span><i>✦</i><span>Carillas</span><i>✦</i><span>Odontopediatría</span><i>✦</i><span>Urgencias</span><i>✦</i></div>
+</div>
+
+<section class="fx-studio" id="configurador" data-scene="sonrisa">
+<script type="application/json">{"eyebrow":"Simulador de sonrisa","title":"Tu sonrisa, <em>antes y después</em>","sub":"Compara el blanqueamiento tono a tono sobre una sonrisa real, mira cada tratamiento con su precio y, si te duele algo, cuéntaselo al chat de urgencias.","cta":"Pedir primera visita por WhatsApp","msg":"Hola, he probado el simulador de sonrisa:"}</script>
+</section>
+
+<section class="treat" id="tratamientos">
+  <div class="wrap">
+    <span class="eyebrow" data-scramble>Tratamientos</span>
+    <h2 data-split>Todo lo que tu boca <em>necesita</em></h2>
+    <div class="t-grid" data-reveal="stagger">
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Cita"><span class="arrow">↗</span><span class="ic">🦷</span><h3>Implantes</h3><p>Recupera piezas en una sola cirugía guiada por ordenador.</p></a>
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Cita"><span class="arrow">↗</span><span class="ic">😁</span><h3>Ortodoncia invisible</h3><p>Alineadores transparentes. Nadie se dará cuenta.</p></a>
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Cita"><span class="arrow">↗</span><span class="ic">✨</span><h3>Blanqueamiento</h3><p>Dientes hasta 8 tonos más blancos en una sesión.</p></a>
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Cita"><span class="arrow">↗</span><span class="ic">💎</span><h3>Carillas</h3><p>Diseño digital de sonrisa antes de tocar un diente.</p></a>
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Cita"><span class="arrow">↗</span><span class="ic">🧸</span><h3>Odontopediatría</h3><p>Los peques salen con ganas de volver.</p></a>
+      <a class="t-card" href="#cita" data-tilt="6" data-cursor="Llamar"><span class="arrow">↗</span><span class="ic">⚡</span><h3>Urgencias</h3><p>¿Dolor? Te vemos hoy mismo.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="resultados">
+  <div class="wrap ba-grid">
+    <div>
+      <span class="eyebrow" data-scramble>Resultados</span>
+      <h2 data-split>Arrastra y <em>compara</em></h2>
+      <p style="color:var(--muted);font-size:18px" data-reveal="read">Un blanqueamiento profesional y una limpieza a fondo cambian una sonrisa en una sola visita. Desliza el control para ver la diferencia.</p>
+    </div>
+    <div class="compare" data-cursor="Arrastra" data-reveal="scale">
+      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1100&amp;q=70&amp;auto=format 1100w" sizes="(max-width:760px) 100vw, 40vw" alt="Después" loading="lazy">
+      <img class="before" src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1100&amp;q=70&amp;auto=format 1100w" sizes="(max-width:760px) 100vw, 40vw" alt="Antes" loading="lazy">
+      <span class="tag tl">Antes</span><span class="tag tr">Después</span>
+      <div class="handle"><b>⇆</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="fin" id="financiacion">
+  <canvas data-amb="web" data-color="#7be0cf"></canvas>
+  <div class="wrap fin-grid">
+    <div>
+      <span class="eyebrow">Financiación</span>
+      <h2 data-split style="color:#fff">Tu sonrisa, <em>a tu ritmo</em></h2>
+      <p data-reveal="up">Elige tratamiento y plazo y mira cuánto pagarías al mes. Sin intereses hasta 12 meses. Cálculo orientativo: te damos el presupuesto exacto tras la primera visita.</p>
+    </div>
+    <div class="calc" data-reveal="up">
+      <div class="chips" id="fin-t">
+        <button type="button" aria-pressed="true" data-v="1200">Implante</button>
+        <button type="button" aria-pressed="false" data-v="2900">Ortodoncia invisible</button>
+        <button type="button" aria-pressed="false" data-v="290">Blanqueamiento</button>
+        <button type="button" aria-pressed="false" data-v="1800">Carillas</button>
+      </div>
+      <label>Plazo <b id="fin-m">12 meses</b></label>
+      <input id="fin-r" type="range" min="3" max="24" step="3" value="12" aria-label="Meses">
+      <div class="out"><span id="fin-o">100</span> €<small> / mes</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <span class="eyebrow" data-scramble>Cómo trabajamos</span>
+    <h2 data-split>Sin sorpresas, <em>paso a paso</em></h2>
+    <div class="st-list">
+      <div class="st-line"><i></i></div>
+      <div class="st" data-reveal="up"><b>1</b><h3>Primera visita</h3><p>Revisión, fotos y escáner 3D sin coste.</p></div>
+      <div class="st" data-reveal="up"><b>2</b><h3>Plan claro</h3><p>Presupuesto cerrado y opciones de pago.</p></div>
+      <div class="st" data-reveal="up"><b>3</b><h3>Tratamiento</h3><p>Sin dolor y con citas que se adaptan a ti.</p></div>
+      <div class="st" data-reveal="up"><b>4</b><h3>Seguimiento</h3><p>Revisiones incluidas durante el primer año.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Tu tratamiento","title":"Tu sonrisa, <em>paso a paso</em>","play":"Ver el proceso","metric":{"label":"Tratamiento completado","suf":" %"},"frames":[{"k":"Día 1","t":"Diagnóstico 3D","p":"Escáner intraoral y radiografía digital. Ves tu boca en pantalla y te explicamos todo.","img":"1588776814546-1ffcf47267a5","v":0},{"k":"Semana 1","t":"Plan sin sorpresas","p":"Presupuesto cerrado y simulación de cómo quedará tu sonrisa.","img":"1629909613654-28e377c37b09","v":25},{"k":"Mes 3","t":"Tratamiento","p":"Citas cortas, sin dolor y con seguimiento por WhatsApp.","img":"1606811971618-4486d14f3f99","v":70},{"k":"Mes 6","t":"Sonrisa nueva","p":"Revisiones incluidas el primer año. Y ganas de sonreír en todas las fotos.","img":"1609840114035-3c981b782dfe","v":100}],"layout":"split"}</script>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="15">15</b><span>años cuidando sonrisas</span></div>
+    <div class="num"><b data-count="4,9">4,9</b><span>valoración en Google</span></div>
+    <div class="num"><b data-count="2400">2400</b><span>implantes colocados</span></div>
+    <div class="num"><b data-count="98%">98%</b><span>pacientes que repiten</span></div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Nos lo <em>cuentan</em> ellos","layout":"deck","rating":"4,9","count":"300","items":[{"n":"Carlos R.","t":"Tenía pánico al dentista y salí sin enterarme de nada. Trato de diez.","s":5,"src":"Google"},{"n":"Marta G.","t":"Me explicaron el presupuesto con calma y lo pagué en cómodos plazos.","s":5,"src":"Google"},{"n":"Javier P.","t":"Mis hijos piden venir. Eso lo dice todo.","s":5,"src":"WhatsApp"},{"n":"Ana S.","t":"Me pusieron dos implantes y no me dolió nada. Ojalá hubiera venido antes.","s":5,"src":"Google"},{"n":"David L.","t":"Puntuales, limpios y con muchísima paciencia.","s":5,"src":"Doctoralia"}]}</script>
+</section>
+
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div><span class="eyebrow" data-scramble>Dudas</span><h2 data-split>Preguntas <em>frecuentes</em></h2></div>
+    <div class="acc" data-acc>
+      <div><button class="acc-h" aria-expanded="false">¿La primera visita tiene coste? <i>+</i></button><div class="acc-b"><p>No. Incluye revisión, radiografía y un plan de tratamiento por escrito.</p></div></div>
+      <div><button class="acc-h" aria-expanded="false">¿Duele ponerse un implante? <i>+</i></button><div class="acc-b"><p>Se hace con anestesia local y cirugía guiada. La mayoría de pacientes vuelve a hacer vida normal al día siguiente.</p></div></div>
+      <div><button class="acc-h" aria-expanded="false">¿Trabajáis con seguros? <i>+</i></button><div class="acc-b"><p>Sí, consulta por WhatsApp si trabajamos con el tuyo y te lo confirmamos al momento.</p></div></div>
+      <div><button class="acc-h" aria-expanded="false">¿Atendéis urgencias? <i>+</i></button><div class="acc-b"><p>Sí, reservamos huecos cada día para urgencias. Escríbenos y te damos hora.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cita" id="cita">
+  <div class="wrap">
+    <div class="cita-card">
+      <div class="cita-side" data-spot>
+        <span class="eyebrow">Pide cita</span>
+        <h2 data-split>Te esperamos <em>esta semana</em></h2>
+        <p style="color:var(--muted)">Déjanos tus datos y te escribimos por WhatsApp con los huecos disponibles.</p>
+        <ul data-horario style="margin-top:24px"></ul>
+      </div>
+      <div>
+        <form data-wa-form="Hola, quiero pedir cita:">
+          <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+          <label>Motivo<select name="Motivo"><option>Primera visita</option><option>Implantes</option><option>Ortodoncia invisible</option><option>Blanqueamiento</option><option>Urgencia</option><option>Otro</option></select></label>
+          <label>Preferencia<select name="Preferencia"><option>Mañanas</option><option>Tardes</option><option>Me da igual</option></select></label>
+          <label>Comentario<textarea name="Comentario" rows="3"></textarea></label>
+          <button class="btn magnetic" type="submit" data-cursor="Enviar" data-alt="Abrir WhatsApp">Pedir cita</button>
+        </form>
+      </div>
+    </div>
+    <div class="ct">
+      <div class="ct-info">
+        <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle de Santa Engracia 50, 28010 Madrid</a>
+        <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+        <a data-biz-link="mail" data-biz="email">hola@dentalnacar.es</a>
+      </div>
+      <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Sonríe.</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Clínica Dental Nácar</span> · Nº registro sanitario: pendiente</span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    // Antes / después arrastrable
+    const cmp = FX.$('.compare');
+    const setPos = x => { const r = cmp.getBoundingClientRect(); cmp.style.setProperty('--pos', Math.max(2, Math.min(98, (x - r.left) / r.width * 100)) + '%'); };
+    let drag = false;
+    cmp.addEventListener('pointerdown', e => { drag = true; cmp.setPointerCapture(e.pointerId); setPos(e.clientX); });
+    cmp.addEventListener('pointermove', e => { if (drag || FX.FINE) setPos(e.clientX); });
+    cmp.addEventListener('pointerup', () => drag = false);
+    // Calculadora de financiación
+    let base = 1200;
+    const r = FX.$('#fin-r'), o = FX.$('#fin-o'), m = FX.$('#fin-m'), val = { v: 100 };
+    const calc = () => { const months = +r.value, fee = base * (months > 12 ? 1.06 : 1) / months; m.textContent = months + ' meses'; gsap.to(val, { v: fee, duration: .6, ease: 'power3.out', onUpdate: () => o.textContent = Math.round(val.v) }); };
+    FX.$$('#fin-t button').forEach(b => b.addEventListener('click', () => { FX.$$('#fin-t button').forEach(x => x.setAttribute('aria-pressed', x === b)); base = +b.dataset.v; calc(); }));
+    r.addEventListener('input', calc); calc();
+    // Línea de pasos
+    if (!FX.RM) gsap.to('.st-line i', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '.st-list', start: 'top 75%', end: 'bottom 50%', scrub: true } });
+    // Palabra rotatoria del titular
+    const rs = FX.$$('.rotor span'); let ri = 0;
+    if (!FX.RM && rs.length > 1) setInterval(() => {
+      const a = rs[ri], b = rs[ri = (ri + 1) % rs.length];
+      gsap.fromTo(a, { yPercent: 0 }, { yPercent: -105, duration: .7, ease: 'expo.inOut', onComplete: () => a.classList.remove('on') });
+      b.classList.add('on');
+      gsap.fromTo(b, { yPercent: 105 }, { yPercent: 0, duration: .7, ease: 'expo.inOut' });
+    }, 2600);
+  },
+  opening(tl, FX) {
+    const parts = FX.$$('.op-mark circle, .op-mark path');
+    parts.forEach(p => { const L = p.getTotalLength(); gsap.set(p, { strokeDasharray: L, strokeDashoffset: L }); });
+    const name = FX.splitChars(FX.$('.op-name'));
+    tl.to(parts[0], { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' })
+      .to(parts[1], { strokeDashoffset: 0, duration: .7, ease: 'power2.out' }, '-=.2')
+      .to(parts[2], { strokeDashoffset: 0, duration: .3 }, '-=.3')
+      .from(name, { yPercent: 110, duration: .7, stagger: .025, ease: 'expo.out' }, '-=.5')
+      .to('.op-mark', { scale: 1.15, rotation: 8, duration: .4, ease: 'back.out(3)' })
+      .to('.op-mark, .op-name', { opacity: 0, scale: .8, duration: .4, ease: 'power2.in' }, '+=.25')
+      .to('#opening', { clipPath: 'circle(0% at 50% 50%)', duration: 1.1, ease: 'expo.inOut' }, '-=.1');
+  },
+  hero(tl, FX) {
+    const chars = FX.splitChars(FX.$('.h1a'));
+    tl.from(chars, { yPercent: 120, duration: 1, ease: 'expo.out', stagger: .05 })
+      .from('.rotor', { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'expo.inOut' }, .3)
+      .from('.hero .eyebrow, .hero .lead, .hero-ctas, .trust', { y: 30, opacity: 0, stagger: .1, duration: .8, ease: 'power3.out' }, .2)
+      .from('.blob-wrap', { scale: .5, opacity: 0, rotation: -20, duration: 1.4, ease: 'expo.out' }, 0)
+      .from('.glass', { scale: 0, opacity: 0, stagger: .12, duration: .8, ease: 'back.out(1.8)' }, .7);
+    gsap.to('.blob-wrap', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

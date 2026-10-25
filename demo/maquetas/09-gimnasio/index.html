@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="trail">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulso Gym · Sin excusas</title>
+<meta name="description" content="Gimnasio en Madrid: sala de fuerza, clases dirigidas, entrenamiento personal. Prueba un día gratis.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "gimnasio",
+  "nombre": "Pulso Gym",
+  "lema": "Sin excusas",
+  "zona": "Tetuán, Madrid",
+  "direccion": "Calle de Bravo Murillo 300, 28020 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "hola@pulsogym.es",
+  "instagram": "@pulsogym",
+  "whatsappTexto": "Hola, quiero probar un día gratis.",
+  "horario": {
+    "lun": "06:30-23:00",
+    "mar": "06:30-23:00",
+    "mie": "06:30-23:00",
+    "jue": "06:30-23:00",
+    "vie": "06:30-22:00",
+    "sab": "09:00-21:00",
+    "dom": "09:00-15:00"
+  },
+  "avisos": [
+    "💪 Alguien acaba de pedir su día de prueba",
+    "🔥 Clase de Hiit de las 19:00 casi completa",
+    "🏆 Nuevo récord de peso muerto en sala",
+    "⭐ Nueva reseña de 5 estrellas"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.46261,
+  "lng": -3.696992,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Tetuán",
+      "d": 221,
+      "b": 208
+    },
+    {
+      "t": "metro",
+      "n": "Valdeacederas",
+      "d": 272,
+      "b": 38
+    },
+    {
+      "t": "metro",
+      "n": "Cuzco",
+      "d": 685,
+      "b": 120
+    },
+    {
+      "t": "bus",
+      "n": "Intercambiador de Plaza de Castilla (Isla 2, Dársena 24)",
+      "d": 668,
+      "b": 39
+    },
+    {
+      "t": "bus",
+      "n": "Intercambiador de Plaza de Castilla (Isla 2, Dársena 29)",
+      "d": 686,
+      "b": 43
+    },
+    {
+      "t": "parking",
+      "n": "Parking",
+      "d": 76,
+      "b": 30
+    },
+    {
+      "t": "parking",
+      "n": "Aida",
+      "d": 764,
+      "b": 141
+    },
+    {
+      "t": "parque",
+      "n": "Parque",
+      "d": 133,
+      "b": 339
+    },
+    {
+      "t": "parque",
+      "n": "Plaza de San Germán",
+      "d": 557,
+      "b": 191
+    },
+    {
+      "t": "lugar",
+      "n": "Museo Tiflológico",
+      "d": 868,
+      "b": 199
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#060606;--fg:#f5f5f0;--muted:#8a8a85;--accent:#d4ff00;--line:rgba(245,245,240,.12);--font-d:'Unbounded',sans-serif;--font-b:'Space Grotesk',sans-serif;--btn-ink:#060606;--btn-r:0;--btn-hover:#f5f5f0;--btn-hover-ink:#060606}
+.wrap{width:min(1300px,100% - 40px);margin-inline:auto}
+.lab{font:700 12px/1 var(--font-b);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+h2{font:900 clamp(42px,6.4vw,104px)/.92 var(--font-d);text-transform:uppercase;letter-spacing:-.04em;margin:.3em 0 .4em}
+h2 em{font-style:normal;color:var(--accent)}
+
+/* Apertura: 3, 2, 1, YA */
+#opening{background:var(--bg);display:grid;place-items:center;overflow:hidden}
+html.js #opening{display:grid}
+.cd{position:absolute;inset:0;display:grid;place-items:center;font:900 min(60vw,60vh)/1 var(--font-d);color:var(--fg);opacity:0}
+.cd.go{color:var(--accent);font-size:min(40vw,50vh)}
+.op-flash{position:absolute;inset:0;background:var(--accent);opacity:0}
+.op-ring{position:absolute;left:50%;top:50%;width:80vmin;height:80vmin;margin:-40vmin;border-radius:50%;border:3px solid var(--accent);opacity:0}
+.op-bar{position:absolute;left:0;bottom:0;height:6px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%}
+
+/* Cabecera */
+.fx-nav{padding:16px 0;mix-blend-mode:difference;color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:900 22px/1 var(--font-d);text-transform:uppercase;letter-spacing:-.04em;display:flex;align-items:center;gap:8px}
+.logo i{width:20px;height:20px;background:#fff;clip-path:polygon(0 50%,30% 50%,45% 0,60% 100%,75% 50%,100% 50%,100% 60%,80% 60%,60% 100%,45% 20%,35% 60%,0 60%)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:700 13px var(--font-b);text-transform:uppercase;letter-spacing:.1em}
+.nav .btn{padding:.85em 1.3em;font-size:13px;text-transform:uppercase;letter-spacing:.08em;background:#fff;--btn-ink:#000}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:90px 0 30px}
+.krows{position:relative;z-index:1;display:grid;gap:4px}
+.krow{font:900 clamp(64px,11vw,190px)/.95 var(--font-d);text-transform:uppercase;letter-spacing:-.05em;white-space:nowrap}
+.krow .mq-group span{padding:0 .25em}
+.krow .o{color:transparent;-webkit-text-stroke:2px var(--fg)}
+.krow .a{color:var(--accent)}
+.athlete{position:absolute;left:50%;top:50%;width:clamp(240px,30vw,440px);aspect-ratio:1;translate:-50% -50%;z-index:2;border-radius:50%;overflow:hidden;border:4px solid var(--accent);box-shadow:0 0 0 14px rgba(212,255,0,.12),0 0 120px rgba(212,255,0,.35)}
+.athlete img{width:100%;height:100%;object-fit:cover}
+.athlete .bw{filter:grayscale(1) contrast(1.4)}
+.athlete .col{position:absolute;inset:0;-webkit-mask:radial-gradient(140px circle at var(--mx,50%) var(--my,50%),#000 60%,transparent 100%);mask:radial-gradient(140px circle at var(--mx,50%) var(--my,50%),#000 60%,transparent 100%)}
+.hero-bar{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:40px}
+.hero-bar p{max-width:36ch;margin:0;font-size:18px}
+.hero-bar p b{color:var(--accent)}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.live{font:700 12px var(--font-b);letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--line)}
+.bpm{position:absolute;right:4%;top:22%;z-index:3;font:900 14px var(--font-d);color:var(--accent);display:flex;align-items:center;gap:8px}
+.bpm i{width:12px;height:12px;border-radius:50%;background:var(--accent);animation:beat .8s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.5)}30%{transform:scale(1)}45%{transform:scale(1.3)}}
+
+/* Clases: horario por días */
+.classes{padding:140px 0 100px}
+.days{display:flex;gap:6px;flex-wrap:wrap;margin:30px 0}
+.days button{padding:12px 18px;border:1px solid var(--line);font:700 13px var(--font-b);text-transform:uppercase;letter-spacing:.1em;transition:all .25s}
+.days button[aria-pressed=true]{background:var(--accent);color:#000;border-color:var(--accent)}
+.sched{display:grid;gap:8px}
+.cl{display:grid;grid-template-columns:110px 1fr 1fr 120px;gap:20px;align-items:center;padding:22px 24px;border:1px solid var(--line);position:relative;overflow:hidden;isolation:isolate;transition:color .3s}
+.cl::before{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.cl:hover{color:#000}.cl:hover::before{transform:scaleX(1)}
+.cl .h{font:900 24px var(--font-d)}
+.cl h3{font:700 22px var(--font-d);text-transform:uppercase;margin:0;letter-spacing:-.03em}
+.cl .c{color:var(--muted);transition:color .3s}
+.cl:hover .c{color:#000}
+.cl .lvl{display:flex;gap:4px;justify-content:flex-end}
+.cl .lvl i{width:18px;height:8px;background:var(--line)}
+.cl .lvl i.on{background:var(--accent)}
+.cl:hover .lvl i.on{background:#000}
+
+/* Tarifas */
+.plans{padding:60px 0 140px}
+.toggle{display:inline-flex;border:1px solid var(--line);margin:20px 0 40px;position:relative}
+.toggle button{position:relative;z-index:1;padding:12px 22px;font:700 13px var(--font-b);text-transform:uppercase;letter-spacing:.1em;transition:color .3s}
+.toggle button[aria-pressed=true]{color:#000}
+.toggle .knob{position:absolute;top:0;bottom:0;left:0;background:var(--accent);transition:transform .5s cubic-bezier(.7,0,.2,1),width .5s}
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.plan{border:1px solid var(--line);padding:34px;display:flex;flex-direction:column;gap:16px;position:relative;background:#0c0c0c}
+.plan.hot{background:var(--accent);color:#000;border-color:var(--accent)}
+.plan h3{font:900 26px var(--font-d);text-transform:uppercase;margin:0}
+.plan .pr{font:900 clamp(56px,6vw,84px)/1 var(--font-d);letter-spacing:-.05em}
+.plan .pr small{font:500 15px var(--font-b);letter-spacing:0}
+.plan ul{list-style:none;padding:0;margin:0 0 auto;display:grid;gap:10px}
+.plan li::before{content:"→ ";color:var(--accent)}
+.plan.hot li::before{color:#000}
+.plan.hot .btn{background:#000;color:var(--accent);--btn-hover:#fff;--btn-hover-ink:#000}
+.badge{position:absolute;top:-14px;right:20px;background:#000;color:var(--accent);padding:6px 12px;font:700 11px var(--font-b);letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--accent)}
+
+/* Entrenadores */
+.coach{padding:0 0 140px}
+.c-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-top:30px}
+.c-card{position:relative;aspect-ratio:3/4;overflow:hidden}
+.c-card:first-child{aspect-ratio:auto;grid-row:span 1}
+.c-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.2);transition:filter .5s,scale .8s}
+.c-card:hover img{filter:grayscale(0);scale:1.05}
+.c-card .in{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent)}
+.c-card h3{font:900 28px var(--font-d);text-transform:uppercase;margin:0}
+.c-card p{margin:4px 0 0;color:var(--accent);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+
+.nums{padding:100px 0;background:var(--accent);color:#000;overflow:hidden}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.num b{display:inline-flex;font:900 clamp(60px,7.4vw,120px)/1 var(--font-d);letter-spacing:-.06em}
+.num>span{display:block;font:700 13px var(--font-b);text-transform:uppercase;letter-spacing:.12em;margin-top:6px}
+
+.rev{padding:140px 0}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.rv{border:1px solid var(--line);padding:30px}
+.rv p{font:700 20px/1.35 var(--font-d);letter-spacing:-.02em}
+.rv .s{color:var(--accent);letter-spacing:.2em}
+.rv small{color:var(--muted)}
+
+.trial{padding:0 0 120px}
+.trial-in{border:2px solid var(--accent);padding:clamp(28px,5vw,70px);display:grid;grid-template-columns:1fr 1fr;gap:50px;position:relative;overflow:hidden;isolation:isolate}
+.trial-in canvas{z-index:-1;opacity:.5}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;font:700 11px var(--font-b);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+input,select{background:#111;border:1px solid var(--line);padding:15px;color:var(--fg);outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:#111}
+
+.contact{padding:0 0 100px}
+.ct-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.ct-grid iframe{width:100%;min-height:340px;border:0;filter:grayscale(1) invert(.92) contrast(1.2)}
+.ct-grid a{display:block;font:900 clamp(24px,2.6vw,38px)/1.3 var(--font-d);text-transform:uppercase;letter-spacing:-.04em}
+.ct-grid a:hover{color:var(--accent)}
+
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:900 clamp(70px,17vw,300px)/.85 var(--font-d);text-transform:uppercase;letter-spacing:-.07em;text-align:center;white-space:nowrap}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:20px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .athlete{width:56vw;top:44%}
+  .bpm{display:none}
+  .cl{grid-template-columns:70px 1fr}.cl .c,.cl .lvl{grid-column:2;justify-content:flex-start}
+  .p-grid,.c-grid,.rv-grid,.trial-in,.ct-grid{grid-template-columns:1fr}
+  .nums-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i></i><span data-biz="nombre">Pulso Gym</span></a>
+    <ul><li><a href="#clases" data-scramble>Clases</a></li><li><a href="#tarifas" data-scramble>Tarifas</a></li><li><a href="#equipo" data-scramble>Equipo</a></li><li><a href="#prueba" data-scramble>Prueba</a></li></ul>
+    <a class="btn magnetic" href="#prueba" data-cursor="Gratis" data-alt="1 día gratis">Pruébalo</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"urbano","shots":[{"vid":"https://assets.mixkit.co/videos/52317/52317-720.mp4","img":"1517836357463-d25dfeac3438","k":"Gimnasio","t":"Sin <em>excusas</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/52089/52089-720.mp4","img":"1534438327276-14e5300c3a48","k":"Fuerza","t":"Más fuerte <em>cada semana</em>","pos":"l"},{"img":"1571902943202-507ec2618e8f","n":{"v":24,"l":"horas abierto","suf":" h"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/52112/52112-720.mp4","img":"1549060279-7e168fcee0c2","k":"Comunidad","t":"Entrena <em>con nosotros</em>","big":"SIN EXCUSAS","pos":"c"},{"img":"1517836357463-d25dfeac3438","k":"Primer día","t":"Pruébalo <em>gratis</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Gimnasio</span></p>
+  <h1 data-hero-hide>Sin <em>excusas</em></h1>
+  <p class="film-p" data-hero-hide>Monta tu barra, calcula tus discos y prueba un día gratis.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#prueba" data-cursor="Empezar">Prueba 1 día gratis</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="barra">
+<script type="application/json">{"eyebrow":"Zona de pesas 3D","title":"Carga <em>tu barra</em>","sub":"Añade discos, levanta, bate tu récord y calcula cuántas semanas te faltan para tu objetivo.","cta":"Quiero mi día de prueba","msg":"Hola, quiero probar el gimnasio. Mi reto:"}</script>
+</section>
+
+<section class="classes" id="clases">
+  <div class="wrap">
+    <p class="lab" data-scramble>Clases dirigidas</p>
+    <h2 data-split>Elige tu <em>batalla</em></h2>
+    <div class="days" id="days"></div>
+    <div class="sched" id="sched"></div>
+  </div>
+</section>
+
+<section class="plans" id="tarifas">
+  <div class="wrap">
+    <p class="lab" data-scramble>Tarifas</p>
+    <h2 data-split>Sin matrícula. <em>Sin permanencia.</em></h2>
+    <div class="toggle" id="tg"><span class="knob"></span><button type="button" aria-pressed="true" data-m="1">Mensual</button><button type="button" aria-pressed="false" data-m=".83">Anual -17%</button></div>
+    <div class="p-grid" data-reveal="stagger">
+      <div class="plan" data-tilt="5"><h3>Básico</h3><div class="pr"><span data-price="29">29</span>€<small>/mes</small></div><ul><li>Sala de fuerza y cardio</li><li>Horario completo</li><li>App de entrenamiento</li></ul><a class="btn ghost magnetic" href="#prueba" data-cursor="Quiero">Empezar</a></div>
+      <div class="plan hot" data-tilt="5"><span class="badge">El más elegido</span><h3>Total</h3><div class="pr"><span data-price="45">45</span>€<small>/mes</small></div><ul><li>Todo lo del Básico</li><li>Clases dirigidas ilimitadas</li><li>Valoración física mensual</li></ul><a class="btn magnetic" href="#prueba" data-cursor="Quiero">Empezar</a></div>
+      <div class="plan" data-tilt="5"><h3>Personal</h3><div class="pr"><span data-price="149">149</span>€<small>/mes</small></div><ul><li>Todo lo del Total</li><li>8 sesiones con entrenador</li><li>Plan de nutrición</li></ul><a class="btn ghost magnetic" href="#prueba" data-cursor="Quiero">Empezar</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Un socio real","title":"Doce semanas <em>de cambio</em>","play":"Ver la transformación","metric":{"label":"Peso muerto","suf":" kg"},"frames":[{"k":"Semana 1","t":"Primer día","p":"Valoración física, técnica básica y un plan a tu medida.","img":"1534438327276-14e5300c3a48","v":40},{"k":"Semana 4","t":"Constancia","p":"Tres días por semana y la técnica ya sale sola.","img":"1571902943202-507ec2618e8f","v":60},{"k":"Semana 8","t":"Fuerza","p":"Las clases dirigidas ya no cuestan: se disfrutan.","img":"1549060279-7e168fcee0c2","v":80},{"k":"Semana 12","t":"Récord","p":"Cien kilos y otra persona en el espejo.","img":"1517836357463-d25dfeac3438","v":100}],"layout":"phone"}</script>
+</section>
+
+<section class="coach" id="equipo">
+  <div class="wrap">
+    <p class="lab" data-scramble>Entrenadores</p>
+    <h2 data-split>Te <em>empujamos</em></h2>
+    <div class="c-grid" data-reveal="stagger">
+      <div class="c-card"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Sala de entrenamiento" loading="lazy"><div class="in"><h3>La sala</h3><p>800 m² de hierro</p></div></div>
+      <div class="c-card"><img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Entrenador" loading="lazy"><div class="in"><h3>Dani</h3><p>Fuerza · Powerlifting</p></div></div>
+      <div class="c-card"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Entrenadora" loading="lazy"><div class="in"><h3>Laura</h3><p>Hiit · Funcional</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="800">800</b><span>m² de sala</span></div>
+    <div class="num"><b data-count="40">40</b><span>clases a la semana</span></div>
+    <div class="num"><b data-count="1200">1200</b><span>socios activos</span></div>
+    <div class="num"><b data-count="16">16</b><span>horas abierto al día</span></div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Resultados <em>reales</em>","layout":"wall","rating":"4,9","count":"300","items":[{"n":"Javier P.","t":"Llevo un año y he perdido 14 kilos. Los entrenadores están encima de verdad.","s":5,"src":"Google"},{"n":"Ana S.","t":"Las clases de hiit a las 7 de la mañana son mi café.","s":5,"src":"Google"},{"n":"David L.","t":"Sin permanencia y sin agobios. Material nuevo y limpio.","s":5,"src":"WhatsApp"},{"n":"Elena V.","t":"Los entrenadores se saben tu nombre desde el primer día.","s":5,"src":"Google"},{"n":"Pablo T.","t":"Abren pronto y cierran tarde: no hay excusas.","s":5,"src":"Doctoralia"}]}</script>
+</section>
+
+<section class="trial" id="prueba">
+  <div class="wrap">
+    <div class="trial-in">
+      <canvas data-amb="speed" data-color="#d4ff00"></canvas>
+      <div>
+        <p class="lab">Día de prueba</p>
+        <h2 data-split>Ven a <em>sudar gratis</em></h2>
+        <p style="color:var(--muted)">Un día completo con acceso a sala y clases. Sin tarjeta, sin compromiso. Te esperamos.</p>
+      </div>
+      <form data-wa-form="Hola, quiero mi día de prueba gratis:">
+        <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+        <label>¿Qué te interesa?<select name="Interés"><option>Sala de fuerza</option><option>Clases dirigidas</option><option>Entrenador personal</option><option>Un poco de todo</option></select></label>
+        <label>¿Cuándo vienes?<select name="Cuándo"><option>Hoy</option><option>Mañana</option><option>Este fin de semana</option></select></label>
+        <button class="btn magnetic" type="submit" data-cursor="Ir" data-alt="Abrir WhatsApp">Quiero mi día gratis</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap ct-grid">
+    <div>
+      <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle de Bravo Murillo 300</a>
+      <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a data-biz-link="ig" data-biz="instagram" style="color:var(--accent)">@pulsogym</a>
+      <ul data-horario style="margin-top:20px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Sin excusas</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Pulso Gym</span></span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    // Horario de clases por día
+    const D = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    const C = [['07:00', 'Hiit', 'Laura', 3], ['09:30', 'Pilates', 'Marta', 1], ['13:30', 'Cross training', 'Dani', 3], ['18:00', 'Spinning', 'Rober', 2], ['19:00', 'Boxeo', 'Iván', 2], ['20:30', 'Yoga', 'Marta', 1], ['21:00', 'Glúteo', 'Laura', 2]];
+    const days = FX.$('#days'), sched = FX.$('#sched');
+    days.innerHTML = D.map((d, i) => '<button type="button" aria-pressed="' + (i === 0) + '">' + d + '</button>').join('');
+    const show = i => {
+      const list = C.filter((_, k) => (k + i) % 5 !== 0).slice(0, 5);
+      sched.innerHTML = list.map(c => '<a class="cl" href="#prueba" data-cursor="Apuntarme"><span class="h">' + c[0] + '</span><h3>' + c[1] + '</h3><span class="c">con ' + c[2] + '</span><span class="lvl">' + [1, 2, 3].map(n => '<i class="' + (n <= c[3] ? 'on' : '') + '"></i>').join('') + '</span></a>').join('');
+      if (!FX.RM) gsap.from(sched.children, { x: -40, opacity: 0, stagger: .06, duration: .5, ease: 'power3.out' });
+    };
+    days.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; [...days.children].forEach(x => x.setAttribute('aria-pressed', x === b)); show([...days.children].indexOf(b)); });
+    show(0);
+    // Tarifas mensual / anual
+    const tg = FX.$('#tg'), knob = tg.querySelector('.knob');
+    const place = b => { knob.style.width = b.offsetWidth + 'px'; knob.style.transform = 'translateX(' + b.offsetLeft + 'px)'; };
+    tg.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      tg.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); place(b);
+      FX.$$('[data-price]').forEach(p => { const o = { v: +p.textContent }; gsap.to(o, { v: Math.round(+p.dataset.price * +b.dataset.m), duration: .6, ease: 'power3.out', onUpdate: () => p.textContent = Math.round(o.v) }); });
+    });
+    requestAnimationFrame(() => place(tg.querySelector('[aria-pressed=true]')));
+    // Pulsaciones que suben con el scroll
+    const hb = FX.$('#hbpm');
+    if (hb && !FX.RM) ScrollTrigger.create({ start: 0, end: 'max', onUpdate: s => hb.textContent = Math.round(128 + s.progress * 60) });
+  },
+  opening(tl, FX) {
+    const cds = FX.$$('.cd');
+    cds.forEach((c, i) => {
+      tl.fromTo(c, { scale: 3, opacity: 0, rotation: i % 2 ? 8 : -8 }, { scale: 1, opacity: 1, rotation: 0, duration: .32, ease: 'power4.in' })
+        .fromTo('.op-ring', { scale: .2, opacity: 1 }, { scale: 1.6, opacity: 0, duration: .5, ease: 'expo.out' })
+        .to('#opening', { x: 'random(-14,14)', y: 'random(-10,10)', duration: .04, repeat: 5, yoyo: true }, '<')
+        .to(c, { opacity: 0, scale: .6, duration: .15 }, i < 3 ? '+=.05' : '+=.25');
+    });
+    tl.to('.op-flash', { opacity: 1, duration: .08 })
+      .to('.op-bar', { scaleX: 1, duration: .01 })
+      .to('#opening', { clipPath: 'inset(0 0 100% 0)', duration: .7, ease: 'expo.inOut' });
+    gsap.set('#opening', { clipPath: 'inset(0 0 0% 0)' });
+  },
+  hero(tl, FX) {
+    tl.from('.krow', { yPercent: 120, skewY: 8, opacity: 0, stagger: .1, duration: 1.1, ease: 'expo.out' })
+      .from('.athlete', { scale: 0, rotation: -60, duration: 1.3, ease: 'expo.out' }, .2)
+      .from('.bpm, .hero-bar > *', { y: 30, opacity: 0, stagger: .1, duration: .7, ease: 'power3.out' }, .6);
+    gsap.to('.athlete', { scale: .6, rotation: 20, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.krows', { scale: 1.3, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

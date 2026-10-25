@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="trail">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasa &amp; Sal · Cocina de fuego lento</title>
+<meta name="description" content="Restaurante de cocina a la brasa en Madrid. Reserva tu mesa online.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "restaurante",
+  "nombre": "Brasa & Sal",
+  "lema": "Cocina de fuego lento",
+  "zona": "Malasaña, Madrid",
+  "direccion": "Calle del Pez 12, 28004 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "reservas@brasaysal.es",
+  "instagram": "@brasaysal",
+  "whatsappTexto": "Hola, quiero reservar una mesa.",
+  "horario": {
+    "lun": "Cerrado",
+    "mar": "13:00-16:30, 20:00-23:30",
+    "mie": "13:00-16:30, 20:00-23:30",
+    "jue": "13:00-16:30, 20:00-23:30",
+    "vie": "13:00-16:30, 20:00-00:30",
+    "sab": "13:00-17:00, 20:00-00:30",
+    "dom": "13:00-17:00"
+  },
+  "avisos": [
+    "🍽️ Mesa para 4 reservada para esta noche",
+    "🔥 Alguien acaba de reservar para el chuletón del sábado",
+    "⭐ Nueva reseña de 5 estrellas en Google",
+    "🥂 Reserva para un cumpleaños de 10 personas"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.423391,
+  "lng": -3.7048,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Noviciado",
+      "d": 267,
+      "b": 305
+    },
+    {
+      "t": "metro",
+      "n": "Callao",
+      "d": 357,
+      "b": 195
+    },
+    {
+      "t": "metro",
+      "n": "Tribunal",
+      "d": 446,
+      "b": 45
+    },
+    {
+      "t": "bus",
+      "n": "Noviciado",
+      "d": 291,
+      "b": 309
+    },
+    {
+      "t": "bus",
+      "n": "Callao",
+      "d": 410,
+      "b": 208
+    },
+    {
+      "t": "parking",
+      "n": "Parking San Bernardo",
+      "d": 268,
+      "b": 307
+    },
+    {
+      "t": "parking",
+      "n": "Mostenses",
+      "d": 367,
+      "b": 254
+    },
+    {
+      "t": "parque",
+      "n": "Plaza del Dos de Mayo",
+      "d": 402,
+      "b": 9
+    },
+    {
+      "t": "parque",
+      "n": "Jardines del Arquitecto Ribera",
+      "d": 510,
+      "b": 52
+    },
+    {
+      "t": "lugar",
+      "n": "Museo Davinci",
+      "d": 235,
+      "b": 277
+    },
+    {
+      "t": "lugar",
+      "n": "Espacio Fundación Telefónica",
+      "d": 428,
+      "b": 141
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0d0806;--fg:#f4e9da;--muted:#a8978a;--accent:#ff6a1a;--accent2:#ffc46b;--line:rgba(244,233,218,.14);--font-d:'Fraunces',serif;--font-b:'Manrope',sans-serif;--btn-ink:#160a04}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.eyebrow{font:500 12px/1 var(--font-b);letter-spacing:.32em;text-transform:uppercase;color:var(--accent)}
+h2{font:400 clamp(44px,7vw,110px)/.92 var(--font-d);letter-spacing:-.03em;margin:.25em 0 .35em}
+h2 em{color:var(--accent);font-style:italic}
+section{position:relative}
+
+/* Apertura: una línea de fuego que se enciende y abre el telón */
+#opening{background:#000}
+.op-half{position:absolute;left:0;right:0;height:50%;background:#070403}
+.op-top{top:0}.op-bot{bottom:0}
+.op-line{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--accent) 20%,#fff3c4 50%,var(--accent) 80%,transparent);transform:scaleX(0);box-shadow:0 0 30px 6px rgba(255,106,26,.6),0 0 90px 20px rgba(255,106,26,.25)}
+.op-word{position:absolute;inset:0;display:grid;place-items:center;font:italic 300 clamp(40px,8vw,120px)/1 var(--font-d);color:var(--fg);letter-spacing:-.02em;text-shadow:0 0 40px rgba(255,106,26,.6)}
+.op-sub{position:absolute;left:0;right:0;top:calc(50% + 70px);text-align:center;font:500 11px/1 var(--font-b);letter-spacing:.5em;text-transform:uppercase;color:var(--accent2);opacity:0}
+#opening canvas{opacity:0}
+
+/* Cabecera */
+.fx-nav{padding:18px 0}
+.fx-nav.scrolled{background:rgba(13,8,6,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:italic 600 24px/1 var(--font-d)}
+.logo span{color:var(--accent)}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav ul a{position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:.75em 1.3em;font-size:14px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;padding:120px 0 60px;isolation:isolate}
+.hero-bg{position:absolute;inset:-6%;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.45)}
+.hero-light{position:absolute;inset:0;z-index:-2;background:radial-gradient(420px circle at var(--mx,70%) var(--my,40%),rgba(255,150,60,.28),transparent 60%),linear-gradient(180deg,rgba(13,8,6,.2) 0%,rgba(13,8,6,.55) 55%,var(--bg) 100%)}
+.hero canvas{z-index:-1}
+.hero-title{font:300 clamp(64px,min(17vw,calc(190vw / var(--len,10))),260px)/.82 var(--font-d);letter-spacing:-.05em;margin:0;font-variation-settings:'opsz' 144}
+.hero-title .ch:nth-child(odd) .ci{font-style:italic}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:28px}
+.hero-lead{font-size:clamp(17px,1.6vw,22px);max-width:30ch;color:var(--fg)}
+.hero-lead b{color:var(--accent2);font-weight:500}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.chip{display:inline-flex;align-items:center;gap:.6em;padding:8px 14px;border:1px solid var(--line);border-radius:99px;font-size:13px;background:rgba(13,8,6,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hero-top{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.plate{position:absolute;border-radius:50%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);z-index:-1}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate-1{width:min(26vw,340px);aspect-ratio:1;right:6%;top:14%}
+.plate-2{width:min(14vw,180px);aspect-ratio:1;right:32%;top:9%}
+.badge{position:absolute;right:5%;bottom:30%;width:130px;height:130px;z-index:2}
+.badge svg{width:100%;height:100%;animation:spin 16s linear infinite}
+.badge b{position:absolute;inset:0;display:grid;place-items:center;font:italic 600 30px/1 var(--font-d);color:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-cue{position:absolute;left:50%;bottom:18px;width:1px;height:46px;background:linear-gradient(var(--accent),transparent);animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Marquesina */
+.mq{padding:34px 0;border-block:1px solid var(--line);font:italic 300 clamp(40px,7vw,100px)/1 var(--font-d)}
+.mq .mq-group span{padding:0 .4em}
+.mq .mq-group i{font-style:normal;color:var(--accent);font-size:.5em}
+.mq .o{color:transparent;-webkit-text-stroke:1px var(--fg)}
+
+/* Historia */
+.story{padding:150px 0}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story p.big{font:300 clamp(24px,2.6vw,38px)/1.25 var(--font-d)}
+.story .ph{border-radius:300px 300px 20px 20px;overflow:hidden;aspect-ratio:4/5}
+.story .ph img{width:100%;height:100%;object-fit:cover}
+.wm{position:absolute;top:40px;left:0;white-space:nowrap;font:italic 900 22vw/1 var(--font-d);color:transparent;-webkit-text-stroke:1px rgba(255,106,26,.12);pointer-events:none;z-index:-1}
+
+/* Carta */
+.menu{padding:120px 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;position:relative;margin:30px 0 40px}
+.tab{padding:12px 22px;border-radius:99px;border:1px solid var(--line);font-weight:500;transition:color .3s,border-color .3s}
+.tab[aria-selected=true]{color:var(--btn-ink);border-color:var(--accent);background:var(--accent)}
+.dish{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);position:relative}
+.dish .n{font:500 13px var(--font-b);color:var(--muted)}
+.dish h3{font:400 clamp(26px,3vw,44px)/1.05 var(--font-d);margin:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),color .3s}
+.dish p{margin:.3em 0 0;color:var(--muted);font-size:15px}
+.dish .pr{font:italic 400 28px var(--font-d);color:var(--accent2)}
+.dish:hover h3{transform:translateX(18px);color:var(--accent)}
+.panel[hidden]{display:none}
+.float-img{position:fixed;left:0;top:0;width:260px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;pointer-events:none;z-index:90;opacity:0;scale:.6;transition:opacity .3s,scale .4s cubic-bezier(.2,.8,.2,1)}
+.float-img.on{opacity:1;scale:1}
+.float-img img{width:100%;height:100%;object-fit:cover}
+
+/* Galería horizontal */
+.gal{padding:100px 0 0}
+.hs-track{gap:28px;padding:40px 6vw 100px}
+.hs-item{width:clamp(280px,38vw,560px);flex-shrink:0}
+.hs-item .im{aspect-ratio:4/5;overflow:hidden;border-radius:18px}
+.hs-item:nth-child(even) .im{aspect-ratio:1;margin-top:80px}
+.hs-item img{width:100%;height:100%;object-fit:cover}
+.hs-item h4{font:italic 400 30px/1 var(--font-d);margin:18px 0 4px}
+.hs-item p{margin:0;color:var(--muted)}
+.hs-intro{width:min(460px,80vw);flex-shrink:0;align-self:center}
+
+/* Números */
+.nums{padding:110px 0;border-block:1px solid var(--line)}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.num b{display:block;font:300 clamp(54px,7vw,110px)/1 var(--font-d);color:var(--accent)}
+.num>span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+
+/* Opiniones */
+.reviews{padding:130px 0}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.rv{padding:30px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--line)}
+.rv .st{color:var(--accent2);letter-spacing:.2em}
+.rv p{font:300 21px/1.4 var(--font-d)}
+.rv small{color:var(--muted)}
+
+/* Reserva */
+.book{padding:130px 0;overflow:hidden}
+.book-card{position:relative;border-radius:32px;padding:clamp(28px,5vw,70px);background:radial-gradient(600px circle at var(--mx,20%) var(--my,20%),rgba(255,106,26,.22),transparent 60%),#160d09;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:50px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+label.full{grid-column:1/-1}
+input,select,textarea{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--fg);outline:none;transition:border-color .3s,background .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);background:rgba(255,106,26,.06)}
+select option{background:#160d09}
+form .btn{grid-column:1/-1;margin-top:6px}
+
+/* Contacto */
+.contact{padding:60px 0 120px}
+.ct-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px}
+.ct-grid iframe{width:100%;height:100%;min-height:360px;border:0;border-radius:24px;filter:grayscale(1) invert(.92) contrast(.9) sepia(.3)}
+.ct-info p{font-size:19px;margin:.3em 0}
+.ct-info a:hover{color:var(--accent)}
+
+/* Pie */
+footer{padding:80px 0 30px;border-top:1px solid var(--line);overflow:hidden}
+.foot-word{font:italic 300 clamp(70px,16vw,260px)/.9 var(--font-d);letter-spacing:-.05em;white-space:nowrap;text-align:center}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:40px}
+
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero-row,.story-grid,.book-card,.ct-grid{grid-template-columns:1fr}
+  .hero-ctas{justify-content:flex-start}
+  .plate-1{width:44vw;right:-8%;top:13%}.plate-2{display:none}
+  .badge{width:96px;height:96px;bottom:auto;top:46%}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .rv-grid{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  .hs-track{display:flex;padding:20px 20px 60px}
+  .hs-intro{width:80vw}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top" data-biz="nombre">Brasa &amp; Sal</a>
+    <ul><li><a href="#historia">Historia</a></li><li><a href="#carta">Carta</a></li><li><a href="#galeria">Sala</a></li><li><a href="#reservar">Reservar</a></li></ul>
+    <a class="btn magnetic" href="#reservar" data-cursor="Mesa" data-alt="Esta noche">Reservar</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"cine","shots":[{"vid":"https://assets.mixkit.co/videos/4678/4678-720.mp4","img":"1517248135467-4c7edcad34c4","k":"Fuego de encina","t":"La brasa <em>manda</em>","pos":"c"},{"img":"1414235077428-338989a2e8c0","k":"Mercado","t":"Producto <em>de temporada</em>","pos":"l"},{"vid":"https://assets.mixkit.co/videos/39535/39535-720.mp4","img":"1504674900247-0877df9cc836","k":"Cocina abierta","t":"Sin prisas, <em>a fuego lento</em>","big":"BRASA","pos":"c"},{"img":"1555396273-367ea4eb4db5","n":{"v":180,"l":"vinos en la bodega"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/4672/4672-720.mp4","img":"1559339352-11d035aa65de","k":"Tu mesa","t":"Te esperamos <em>esta noche</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Restaurante de brasa</span></p>
+  <h1 data-hero-hide>Cocina de <em>fuego lento</em></h1>
+  <p class="film-p" data-hero-hide>Monta tu mesa en 3D, mira los platos servidos y reserva en un minuto.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#reservar" data-cursor="Reservar">Reservar mesa</a><a class="btn ghost magnetic" href="#carta" data-cursor="Ver">Ver la carta</a></div>
+</div></div>
+</section>
+
+<div class="mq" data-marquee="1.2" data-skew>
+  <div class="mq-group"><span>Brasa de encina</span><i>✦</i><span class="o">Producto de mercado</span><i>✦</i><span>Vinos naturales</span><i>✦</i><span class="o">Terraza</span><i>✦</i></div>
+</div>
+
+<section class="fx-studio" id="configurador" data-scene="mesa">
+<script type="application/json">{"eyebrow":"Tu mesa en 3D","title":"Monta tu <em>mesa</em>","sub":"Pulsa platos de la carta y míralos servidos, elige bebidas, mantel y luz. Imagina tu cena antes de reservar.","cta":"Reservar esta mesa por WhatsApp","msg":"Hola, quiero reservar mesa y me apetece:"}</script>
+</section>
+
+<section class="story" id="historia">
+  <div class="wm" data-wm="6" aria-hidden="true">fuego lento</div>
+  <div class="wrap story-grid">
+    <div>
+      <p class="eyebrow" data-scramble>Nuestra historia</p>
+      <h2 data-split>Cocinamos con <em>paciencia</em></h2>
+      <p class="big" data-reveal="read">Encendemos la parrilla dos horas antes de abrir. La encina se convierte en brasa, la brasa en sabor y cada plato sale cuando está en su punto, no antes. Así de sencillo, así de difícil.</p>
+    </div>
+    <div class="ph" data-reveal="clip" data-tilt="6"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Interior del restaurante" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="menu" id="carta">
+  <div class="wrap">
+    <p class="eyebrow" data-scramble>La carta</p>
+    <h2 data-split>Para <em>compartir</em> (o no)</h2>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-tab="0">Para empezar</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="1">De la brasa</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="2">Dulces</button>
+    </div>
+    <div class="panel" data-panel="0">
+      <div class="dish" data-img="1504674900247-0877df9cc836"><span class="n">01</span><div><h3>Croquetas de jamón ibérico</h3><p>Bechamel de leche fresca, 6 unidades</p></div><span class="pr">12 €</span></div>
+      <div class="dish" data-img="1565299624946-b28f40a0ae38"><span class="n">02</span><div><h3>Coca de verduras asadas</h3><p>Masa madre, romesco y burrata</p></div><span class="pr">14 €</span></div>
+      <div class="dish" data-img="1414235077428-338989a2e8c0"><span class="n">03</span><div><h3>Tartar de tomate rosa</h3><p>Encurtidos, aceite de albahaca</p></div><span class="pr">11 €</span></div>
+    </div>
+    <div class="panel" data-panel="1" hidden>
+      <div class="dish" data-img="1414235077428-338989a2e8c0"><span class="n">04</span><div><h3>Chuletón de vaca madurada</h3><p>45 días de maduración, sal en escamas · 1 kg</p></div><span class="pr">68 €</span></div>
+      <div class="dish" data-img="1504674900247-0877df9cc836"><span class="n">05</span><div><h3>Pulpo a la brasa</h3><p>Parmentier ahumado y pimentón de la Vera</p></div><span class="pr">24 €</span></div>
+      <div class="dish" data-img="1555396273-367ea4eb4db5"><span class="n">06</span><div><h3>Verduras de temporada</h3><p>Del mercado de esta mañana</p></div><span class="pr">16 €</span></div>
+    </div>
+    <div class="panel" data-panel="2" hidden>
+      <div class="dish" data-img="1559339352-11d035aa65de"><span class="n">07</span><div><h3>Tarta de queso a la brasa</h3><p>Centro cremoso, un toque ahumado</p></div><span class="pr">8 €</span></div>
+      <div class="dish" data-img="1517248135467-4c7edcad34c4"><span class="n">08</span><div><h3>Torrija caramelizada</h3><p>Helado de vainilla de Madagascar</p></div><span class="pr">7 €</span></div>
+    </div>
+  </div>
+</section>
+<div class="float-img" aria-hidden="true"><img alt=""></div>
+
+<section class="gal" id="galeria" data-hscroll>
+  <div class="hs-track">
+    <div class="hs-intro"><p class="eyebrow">La casa</p><h2 data-split>Una sala <em>para quedarse</em></h2><p style="color:var(--muted)">Arrastra el scroll: te enseñamos el sitio antes de que vengas.</p></div>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Sala principal" loading="lazy"></div><h4>La sala</h4><p>60 comensales, luz cálida</p></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Terraza" loading="lazy"></div><h4>La terraza</h4><p>Abierta todo el año</p></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Plato" loading="lazy"></div><h4>El pase</h4><p>Cada plato, revisado</p></figure>
+    <figure class="hs-item"><div class="im"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Barra" loading="lazy"></div><h4>La barra</h4><p>Vermut y vinos por copa</p></figure>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Un día en la casa","title":"Del mercado <em>a tu mesa</em>","play":"Ver el día en vídeo","metric":{"label":"Platos servidos hoy","dec":0},"frames":[{"k":"07:30","t":"Mercado","p":"Elegimos pescado, carne y verdura de temporada a primera hora. Lo que no nos convence, no entra.","img":"1504674900247-0877df9cc836","v":0},{"k":"11:00","t":"Se enciende la encina","p":"Dos horas de brasa antes de abrir. Sin prisa: el fuego manda.","img":"1555396273-367ea4eb4db5","v":40},{"k":"14:00","t":"Sala llena","p":"Cada plato pasa por el pase y sale en su punto exacto.","img":"1517248135467-4c7edcad34c4","v":180},{"k":"23:30","t":"Sobremesa","p":"La terraza se queda tranquila. Mañana, otra vez a empezar.","img":"1559339352-11d035aa65de","v":260}],"layout":"film"}</script>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="12">12</b><span>años encendiendo la parrilla</span></div>
+    <div class="num"><b data-count="4,8">4,8</b><span>de media en Google</span></div>
+    <div class="num"><b data-count="180">180</b><span>referencias de vino</span></div>
+    <div class="num"><b data-count="60">60</b><span>comensales en sala</span></div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Vuelven. <em>Siempre.</em>","layout":"google","rating":"4,8","count":"1.240","items":[{"n":"Elena V.","t":"El mejor chuletón que he comido en Madrid. La tarta de queso, de otro planeta.","s":5,"src":"Google"},{"n":"Pablo T.","t":"Servicio cercano, ambiente precioso y precio justo. Reservamos para el cumple de mi padre.","s":5,"src":"Google"},{"n":"Lucía M.","t":"La terraza en verano es un lujo. Pedid el pulpo, no os arrepentiréis.","s":5,"src":"WhatsApp"},{"n":"Carlos R.","t":"Reservamos para 12 personas y nos trataron como en casa.","s":5,"src":"Google"},{"n":"Marta G.","t":"El pulpo y la tarta de queso, imprescindibles.","s":5,"src":"Doctoralia"}]}</script>
+</section>
+
+<section class="book" id="reservar">
+  <div class="wrap">
+    <div class="book-card" data-spot>
+      <div>
+        <p class="eyebrow">Reservas</p>
+        <h2 data-split>Te guardamos <em>la mesa</em></h2>
+        <p style="color:var(--muted)">Rellena los datos y te confirmamos por WhatsApp en minutos. Para grupos de más de 10, llámanos.</p>
+        <p><span class="chip" data-open-status></span></p>
+      </div>
+      <form data-wa-form="Hola, quiero reservar mesa:">
+        <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+        <label>Personas<select name="Personas"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select></label>
+        <label>Día<input type="date" name="Día" required></label>
+        <label>Hora<select name="Hora"><option>13:30</option><option>14:00</option><option>14:30</option><option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option></select></label>
+        <label class="full">Comentarios<textarea name="Comentarios" rows="2" placeholder="Alergias, celebraciones, trona…"></textarea></label>
+        <button class="btn magnetic" type="submit" data-cursor="Enviar" data-alt="Confirmar por WhatsApp">Reservar mesa</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div class="ct-info">
+      <p class="eyebrow">Dónde estamos</p>
+      <h2 data-split>Ven a <em>vernos</em></h2>
+      <p><a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle del Pez 12, 28004 Madrid</a></p>
+      <p><a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a></p>
+      <p><a data-biz-link="ig" data-biz="instagram">@brasaysal</a></p>
+      <ul data-horario style="margin-top:24px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters data-biz="nombre">Brasa &amp; Sal</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Brasa &amp; Sal</span></span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    // Carta: pestañas + imagen que sigue al ratón
+    const tabs = FX.$$('.tab'), panels = FX.$$('.panel');
+    tabs.forEach(t => t.addEventListener('click', () => {
+      tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+      panels.forEach(p => p.hidden = p.dataset.panel !== t.dataset.tab);
+      const vis = FX.$('.panel:not([hidden])');
+      if (!FX.RM) gsap.from(vis.children, { y: 40, opacity: 0, stagger: .07, duration: .6, ease: 'power3.out' });
+    }));
+    const fi = FX.$('.float-img'), fimg = fi.querySelector('img');
+    if (FX.FINE) {
+      const xT = gsap.quickTo(fi, 'x', { duration: .6, ease: 'power3' }), yT = gsap.quickTo(fi, 'y', { duration: .6, ease: 'power3' }), rT = gsap.quickTo(fi, 'rotation', { duration: .8, ease: 'power3' });
+      let lx = 0;
+      addEventListener('pointermove', e => { xT(e.clientX + 30); yT(e.clientY - 160); rT(Math.max(-12, Math.min(12, (e.clientX - lx) * .6))); lx = e.clientX; });
+      FX.$$('.dish').forEach(d => {
+        d.addEventListener('pointerenter', () => { fimg.src = 'https://images.unsplash.com/photo-' + d.dataset.img + '?w=500&q=70&auto=format'; fi.classList.add('on'); });
+        d.addEventListener('pointerleave', () => fi.classList.remove('on'));
+      });
+    }
+  },
+  opening(tl, FX) {
+    const word = FX.splitChars(FX.$('.op-word'));
+    tl.set(word, { opacity: 0, yPercent: 60, filter: 'blur(8px)' })
+      .to('.op-line', { scaleX: 1, duration: 1.1, ease: 'expo.inOut' })
+      .to('#opening canvas', { opacity: 1, duration: .6 }, '<.3')
+      .to(word, { opacity: 1, yPercent: 0, filter: 'blur(0px)', stagger: .045, duration: .8, ease: 'expo.out' }, '<.2')
+      .to('.op-sub', { opacity: 1, letterSpacing: '.8em', duration: 1 }, '<.3')
+      .to('.op-word, .op-sub', { opacity: 0, scale: 1.08, duration: .5, ease: 'power2.in' }, '+=.45')
+      .to('.op-line', { scaleY: 40, opacity: 0, duration: .5, ease: 'power2.in' }, '<.1')
+      .to('.op-top', { yPercent: -100, duration: 1, ease: 'expo.inOut' }, '<.15')
+      .to('.op-bot', { yPercent: 100, duration: 1, ease: 'expo.inOut' }, '<')
+      .to('#opening canvas', { opacity: 0, duration: .5 }, '<');
+  },
+  hero(tl, FX) {
+    const chars = FX.splitChars(FX.$('.hero-title'));
+    tl.from('.hero-bg img', { scale: 1.3, duration: 2.2, ease: 'expo.out' })
+      .from(chars, { yPercent: 120, rotation: 10, duration: 1.2, ease: 'expo.out', stagger: .05 }, 0)
+      .from('.hero-top > *', { y: 20, opacity: 0, stagger: .08, duration: .7 }, .3)
+      .from('.hero-lead, .hero-ctas', { y: 30, opacity: 0, stagger: .12, duration: .9, ease: 'power3.out' }, .5)
+      .from('.plate', { scale: 0, rotation: -90, duration: 1.4, ease: 'back.out(1.4)', stagger: .15 }, .4)
+      .from('.badge', { scale: 0, rotation: 180, duration: 1.2, ease: 'back.out(1.6)' }, .8);
+    gsap.to('.hero-bg', { yPercent: 15, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero-title', { yPercent: -30, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="blend">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percha Studio · Moda de barrio en Madrid</title>
+<meta name="description" content="Tienda de ropa en Madrid: mujer, hombre y zapatillas. Probador online con tu talla, te lo guardamos 48 h y envío en 24–48 h.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "tienda-ropa",
+  "nombre": "Percha Studio",
+  "lema": "Ropa elegida, no amontonada",
+  "zona": "Malasaña, Madrid",
+  "direccion": "Calle del Espíritu Santo 22, 28004 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "hola@perchastudio.es",
+  "instagram": "@perchastudio",
+  "cita": false,
+  "whatsappTexto": "Hola, me interesa una prenda.",
+  "horario": {
+    "lun": "11:00-20:30",
+    "mar": "11:00-20:30",
+    "mie": "11:00-20:30",
+    "jue": "11:00-20:30",
+    "vie": "11:00-21:00",
+    "sab": "11:00-21:00",
+    "dom": "12:00-18:00"
+  },
+  "avisos": [
+    "🛍️ Alguien acaba de reservar un blazer en el probador",
+    "👟 Quedan 2 pares de la edición limitada",
+    "⭐ Nueva reseña de 5 estrellas",
+    "🚲 Envío en bici hoy en el barrio"
+  ],
+  "mapa": {
+    "estilo": "claro"
+  },
+  "lat": 40.4249,
+  "lng": -3.7047,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Noviciado",
+      "d": 228,
+      "b": 266
+    },
+    {
+      "t": "metro",
+      "n": "Tribunal",
+      "d": 340,
+      "b": 64
+    },
+    {
+      "t": "metro",
+      "n": "Callao",
+      "d": 522,
+      "b": 191
+    },
+    {
+      "t": "bus",
+      "n": "Noviciado",
+      "d": 236,
+      "b": 274
+    },
+    {
+      "t": "bus",
+      "n": "San Bernardo-Dos de Mayo",
+      "d": 299,
+      "b": 329
+    },
+    {
+      "t": "parking",
+      "n": "Parking",
+      "d": 126,
+      "b": 321
+    },
+    {
+      "t": "parking",
+      "n": "Parking de Santa Bárbara",
+      "d": 315,
+      "b": 104
+    },
+    {
+      "t": "parque",
+      "n": "Plaza del Dos de Mayo",
+      "d": 236,
+      "b": 13
+    },
+    {
+      "t": "parque",
+      "n": "Jardines del Arquitecto Ribera",
+      "d": 421,
+      "b": 70
+    },
+    {
+      "t": "lugar",
+      "n": "Museo Davinci",
+      "d": 280,
+      "b": 240
+    },
+    {
+      "t": "lugar",
+      "n": "Museo de Historia de Madrid",
+      "d": 348,
+      "b": 73
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#f4efe7;--fg:#141210;--muted:#7c746a;--accent:#b8452f;--line:rgba(20,18,16,.14);--font-d:'Bodoni Moda',serif;--font-b:'Manrope',sans-serif;--btn-ink:#fff;--btn-r:0px;--btn-hover:#141210;--btn-hover-ink:#f4efe7;--cursor-ink:#fff}
+body{font-family:var(--font-b)}
+.wrap{width:min(1280px,100% - 40px);margin-inline:auto}
+.kick{font:700 12px/1 var(--font-b);letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+h2{font:500 clamp(48px,7.5vw,128px)/.92 var(--font-d);margin:.2em 0 .35em;letter-spacing:-.02em}
+h2 em{font-style:italic;font-weight:400;color:var(--accent)}
+
+/* Apertura: telón de tela que se abre en dos */
+#opening{background:var(--bg)}
+.op-l,.op-r{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#1d1a17 0 22px,#2a2622 22px 30px)}
+.op-l{left:0}.op-r{right:0}
+.op-logo{position:absolute;inset:0;display:grid;place-items:center;z-index:2;font:italic 400 clamp(46px,9vw,140px)/1 var(--font-d);color:#f4efe7}
+
+/* Cabecera */
+.fx-nav{padding:14px 0}
+.fx-nav.scrolled{background:rgba(244,239,231,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:800 26px/1 var(--font-d);letter-spacing:-.02em}
+.logo em{font-weight:400;color:var(--accent)}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font:600 12px var(--font-b);letter-spacing:.18em;text-transform:uppercase}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.9em 1.5em;font-size:13px}
+
+/* HERO: portada de revista con tres fotos en columnas */
+.hero{position:relative;min-height:100svh;overflow:hidden;padding:100px 0 30px;display:flex;flex-direction:column}
+.cover{position:relative;flex:1;display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:14px;min-height:62svh}
+.cover figure{margin:0;overflow:hidden;position:relative}
+.cover figure:nth-child(1),.cover figure:nth-child(3){margin-top:12%}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover figcaption{position:absolute;left:12px;bottom:12px;background:var(--bg);padding:6px 10px;font:700 11px var(--font-b);letter-spacing:.14em;text-transform:uppercase}
+.mast{position:absolute;left:0;right:0;top:50%;translate:0 -50%;z-index:3;text-align:center;pointer-events:none;mix-blend-mode:difference;color:#fff}
+.mast h1{font:800 clamp(64px,13vw,230px)/.85 var(--font-d);margin:0;letter-spacing:-.04em}
+.mast h1 em{font-weight:400}
+.hero-foot{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:24px}
+.hero-foot p{max-width:40ch;margin:0;font-size:17px;color:#3d3832}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.meta{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
+
+/* Novedades */
+.news{padding:120px 0}
+.n-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.it{cursor:default}
+.it .ph{aspect-ratio:3/4;overflow:hidden;background:#e7dfd3;position:relative}
+.it img{width:100%;height:100%;object-fit:cover;transition:scale 1s cubic-bezier(.2,.8,.2,1)}
+.it:hover img{scale:1.06}
+.it .ph b{position:absolute;top:10px;left:10px;background:var(--fg);color:var(--bg);padding:5px 9px;font:700 10px var(--font-b);letter-spacing:.14em;text-transform:uppercase}
+.it h3{font:500 20px/1.2 var(--font-d);margin:12px 0 4px}
+.it span{font:700 14px var(--font-b)}
+.it s{color:var(--muted);font-weight:400;margin-left:6px}
+
+/* Ventajas */
+.perks{padding:0 0 120px}
+.pk{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pk div{padding:28px 22px;border-right:1px solid var(--line)}
+.pk div:last-child{border:0}
+.pk b{display:block;font:500 26px/1.1 var(--font-d);margin-bottom:8px}
+.pk p{margin:0;color:var(--muted);font-size:14px}
+
+/* Lookbook */
+.gal{padding:0 0 120px}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:12px;margin-top:30px}
+.mosaic figure{margin:0;overflow:hidden;position:relative}
+.mosaic figure:nth-child(1){grid-row:span 2;grid-column:span 2}
+.mosaic figure:nth-child(4){grid-row:span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:scale 1s cubic-bezier(.2,.8,.2,1)}
+.mosaic figure:hover img{scale:1.06}
+
+/* Reserva en tienda */
+.book{padding:120px 0}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.pick{display:grid;gap:20px}
+.pick>div>b{display:block;font:700 12px var(--font-b);text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{padding:12px 18px;border:1px solid var(--line);font-weight:500;transition:all .3s}
+.pills button:hover{border-color:var(--fg)}
+.pills button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.receipt{background:#fff;padding:30px;box-shadow:0 30px 60px rgba(20,18,16,.12);font-family:ui-monospace,Menlo,monospace;position:relative}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:radial-gradient(circle at 6px 0,transparent 6px,#fff 6.5px) 0 0/12px 12px repeat-x}
+.receipt h3{font:800 30px/1 var(--font-d);margin:0 0 18px}
+.receipt div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.receipt .tot{font-weight:700;border:0}
+.receipt .btn{width:100%;margin-top:16px}
+
+.contact{padding:0 0 110px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ct-grid iframe{width:100%;min-height:360px;border:0}
+.ct-grid a{display:block;font:500 clamp(26px,3vw,40px)/1.2 var(--font-d)}
+.ct-grid a:hover{color:var(--accent)}
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:800 clamp(80px,19vw,320px)/.85 var(--font-d);text-align:center;white-space:nowrap;letter-spacing:-.05em}
+.foot-word .ch.hot .ci{color:var(--accent);font-style:italic}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:24px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .cover{grid-template-columns:1fr 1fr;min-height:56svh}
+  .cover figure:nth-child(3){display:none}
+  .cover figure:nth-child(1){margin-top:0}
+  .n-grid{grid-template-columns:1fr 1fr}
+  .pk{grid-template-columns:1fr 1fr}.pk div:nth-child(2){border-right:0}.pk div{border-bottom:1px solid var(--line)}
+  .mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .book-grid,.ct-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><span data-biz="nombre">Percha Studio</span><em>.</em></a>
+    <ul><li><a href="#novedades">Novedades</a></li><li><a href="#galeria">Lookbook</a></li><li><a href="#reserva">Probador</a></li><li><a href="#contacto">Tienda</a></li></ul>
+    <a class="btn magnetic" href="#configurador" data-cursor="Probar" data-alt="Con tu talla">Probador</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"cine","shots":[{"vid":"https://assets.mixkit.co/videos/49381/49381-720.mp4","img":"1441986300917-64674bd600d8","k":"Malasaña","t":"Ropa elegida, <em>no amontonada</em>","pos":"c"},{"img":"1628102160678-cfb60e4e18e6","k":"Sastre","t":"Piezas <em>que duran</em>","pos":"l"},{"vid":"https://assets.mixkit.co/videos/23327/23327-720.mp4","img":"1617690033147-ce6b332d677b","n":{"v":48,"l":"horas te lo guardamos","suf":" h"},"pos":"r"},{"img":"1483985988355-763728e1935b","k":"Lookbook","t":"Otoño <em>en Malasaña</em>","big":"OTOÑO","pos":"c"},{"vid":"https://assets.mixkit.co/videos/50641/50641-720.mp4","img":"1490481651871-ab68de25d43d","k":"Probador","t":"Pruébatelo <em>sin colas</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Moda de barrio</span></p>
+  <h1 data-hero-hide>Otoño <em>en Malasaña</em></h1>
+  <p class="film-p" data-hero-hide>Pruébate un look online con tu talla y te lo guardamos 48 h.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#configurador" data-cursor="Probar">Probar un look</a><a class="btn ghost magnetic" href="#novedades" data-cursor="Ver">Novedades</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="probador">
+<script type="application/json">{"eyebrow":"Probador online","title":"Pruébatelo <em>sin colas</em>","sub":"Elige un look, pon tu altura y peso y te decimos tu talla. Te lo guardamos 48 h en el probador o te lo enviamos. ¿Dudas? Pregúntale a la estilista.","cta":"Guárdamelo en tienda","msg":"Hola, quiero que me guardéis este look:"}</script>
+</section>
+
+<section class="news" id="novedades">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">Recién llegado</p>
+    <h2 data-split>Novedades <em>de la semana</em></h2>
+    <div class="n-grid" data-reveal="stagger">
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1619086303291-0ef7699e4b31?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1619086303291-0ef7699e4b31?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1619086303291-0ef7699e4b31?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Camisa blanca" loading="lazy"><b>Nuevo</b></div><h3>Camisa de popelín</h3><span>45 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1628102160678-cfb60e4e18e6?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1628102160678-cfb60e4e18e6?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1628102160678-cfb60e4e18e6?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Blazer" loading="lazy"><b>Top ventas</b></div><h3>Blazer oversize</h3><span>79 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Americana de hombre" loading="lazy"></div><h3>Americana de lana</h3><span>129 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Zapatilla roja" loading="lazy"><b>Edición limitada</b></div><h3>Zapatilla roja</h3><span>119 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1617690033147-ce6b332d677b?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1617690033147-ce6b332d677b?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1617690033147-ce6b332d677b?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Vestido" loading="lazy"></div><h3>Vestido midi</h3><span>69 €<s>89 €</s></span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1537261131936-3cdff36a1ac9?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1537261131936-3cdff36a1ac9?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1537261131936-3cdff36a1ac9?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Polo blanco" loading="lazy"></div><h3>Polo de algodón</h3><span>35 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Jerséis de colores" loading="lazy"><b>Nuevo</b></div><h3>Jersey de punto</h3><span>55 €</span></div>
+      <div class="it"><div class="ph"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&amp;q=70&amp;auto=format 600w" sizes="(max-width:760px) 100vw, 40vw" alt="Zapatillas verdes" loading="lazy"></div><h3>Zapatilla verde</h3><span>99 €</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="perks" id="garantias">
+  <div class="wrap pk" data-reveal="stagger">
+    <div><b>Te lo guardamos 48 h</b><p>Resérvalo online y pruébatelo con calma.</p></div>
+    <div><b>Envío 24–48 h</b><p>Gratis desde 60 €. En bici el mismo día en el barrio.</p></div>
+    <div><b>30 días de cambios</b><p>En tienda o por mensajero, sin preguntas.</p></div>
+    <div><b>Arreglos en 48 h</b><p>Bajos, mangas y cintura con nuestra costurera.</p></div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Cómo elegimos","title":"Ropa <em>con criterio</em>","play":"Ver el proceso","metric":{"label":"Prendas descartadas por cada una elegida"},"frames":[{"k":"Viaje","t":"Buscamos","p":"Visitamos talleres pequeños de Portugal y España cada temporada.","img":"1558769132-cb1aea458c5e","v":5},{"k":"Prueba","t":"Probamos","p":"Lavamos y usamos cada prenda antes de traerla a la tienda.","img":"1490481651871-ab68de25d43d","v":9},{"k":"Tienda","t":"Pocas y buenas","p":"Pocas unidades por modelo: así no vas igual que medio Madrid.","img":"1441986300917-64674bd600d8","v":12},{"k":"Tú","t":"Te asesoramos","p":"Te ayudamos a combinarla con lo que ya tienes en el armario.","img":"1483985988355-763728e1935b","v":15}],"layout":"split"}</script>
+</section>
+
+<section class="gal" id="galeria">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">Lookbook</p>
+    <h2 data-split>Así <em>se lleva</em></h2>
+    <div class="mosaic" data-reveal="stagger">
+      <figure><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&amp;q=70&amp;auto=format 900w" sizes="(max-width:760px) 100vw, 40vw" alt="Mujer con bolsas de compra" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1619086291251-5c0e3a841fa6?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1619086291251-5c0e3a841fa6?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1619086291251-5c0e3a841fa6?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Camisa blanca" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1603400521630-9f2de124b33b?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Percheros" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1635913640742-6c49c7d2ce8c?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1635913640742-6c49c7d2ce8c?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1635913640742-6c49c7d2ce8c?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Look de calle" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Perchas de madera" loading="lazy"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=500&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=500&amp;q=70&amp;auto=format 500w" sizes="(max-width:760px) 100vw, 40vw" alt="Camisa de hombre" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Lo dicen <em>quienes repiten</em>","layout":"google","rating":"4,8","count":"380","items":[{"n":"Marta L.","t":"Me guardaron el vestido para la boda y me cogieron el bajo en dos días.","s":5,"src":"Google"},{"n":"Diego F.","t":"Te asesoran sin agobiar. El traje me quedó perfecto.","s":5,"src":"Google"},{"n":"Paula R.","t":"Ropa que no ves en todas partes y a buen precio.","s":5,"src":"Instagram"},{"n":"Hugo S.","t":"Me avisaron por WhatsApp del lanzamiento y conseguí mis zapatillas.","s":5,"src":"WhatsApp"},{"n":"Inés C.","t":"Cambié una talla por mensajero sin ningún problema.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="book" id="reserva">
+  <div class="wrap book-grid">
+    <div>
+      <p class="kick">Probador reservado</p>
+      <h2 data-split>Te lo <em>guardamos</em></h2>
+      <div class="pick">
+        <div><b>Sección</b><div class="pills" data-pick="Sección"><button type="button" aria-pressed="true">Mujer</button><button type="button" aria-pressed="false">Hombre</button><button type="button" aria-pressed="false">Zapatillas</button></div></div>
+        <div><b>Ocasión</b><div class="pills" data-pick="Ocasión"><button type="button" aria-pressed="true">Diario</button><button type="button" aria-pressed="false">Boda / evento</button><button type="button" aria-pressed="false">Trabajo</button><button type="button" aria-pressed="false">Regalo</button></div></div>
+        <div><b>Cuándo vienes</b><div class="pills" data-pick="Cuándo"><button type="button" aria-pressed="true">Hoy</button><button type="button" aria-pressed="false">Mañana</button><button type="button" aria-pressed="false">Este finde</button></div></div>
+      </div>
+    </div>
+    <div class="receipt" data-tilt="4">
+      <h3>Tu probador</h3>
+      <div id="sum"></div>
+      <div class="tot"><span>Reserva</span><span>Gratis · 48 h</span></div>
+      <a class="btn magnetic" id="sum-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Confirmar por WhatsApp">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="kick">La tienda</p>
+      <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Calle del Espíritu Santo 22, 28004 Madrid</a>
+      <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a data-biz-link="ig" data-biz="instagram" style="color:var(--accent)">@perchastudio</a>
+      <ul data-horario style="margin-top:24px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Percha</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Percha Studio</span></span><span>Aviso legal · Privacidad · Cookies · Envíos y devoluciones</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.700-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    const groups = FX.$$('[data-pick]');
+    groups.forEach(g => g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); upd(); if (!FX.RM) gsap.fromTo('.receipt', { y: -10 }, { y: 0, duration: .6, ease: 'bounce.out' }); }));
+    function upd() {
+      const rows = groups.map(g => [g.dataset.pick, g.querySelector('[aria-pressed=true]')]);
+      FX.$('#sum').innerHTML = rows.map(([k, b]) => '<div><span>' + k + '</span><b>' + b.textContent + '</b></div>').join('');
+      const a = FX.$('#sum-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, quiero reservar probador:\n' + rows.map(([k, b]) => '• ' + k + ': ' + b.textContent).join('\n'));
+    }
+    upd();
+    if (!FX.RM) FX.$$('.cover figure').forEach((f, i) => gsap.to(f, { yPercent: [-12, 8, -18][i], ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
+  },
+  opening(tl, FX) {
+    tl.from('.op-logo', { opacity: 0, letterSpacing: '.4em', duration: .9, ease: 'power3.out' }, .1)
+      .to('.op-logo', { opacity: 0, duration: .3 }, '+=.35')
+      .to('.op-l', { xPercent: -100, duration: 1.1, ease: 'expo.inOut' }, '<')
+      .to('.op-r', { xPercent: 100, duration: 1.1, ease: 'expo.inOut' }, '<');
+  },
+  hero(tl, FX) {
+    tl.from('.cover figure', { clipPath: 'inset(100% 0 0 0)', duration: 1.3, ease: 'expo.out', stagger: .12 })
+      .from('.cover img', { scale: 1.4, duration: 1.6, ease: 'expo.out', stagger: .12 }, 0)
+      .from('.mast h1', { yPercent: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, .3)
+      .from('.hero-foot > *', { y: 30, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out' }, .6);
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="cross">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rayo Urgencias · Fontanería y electricidad 24 h</title>
+<meta name="description" content="Fontaneros y electricistas en Madrid 24 horas. Llegamos en 30 minutos, precio cerrado antes de empezar.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "fontanero-electricista",
+  "nombre": "Rayo Urgencias",
+  "lema": "Fontanería y electricidad 24 h",
+  "zona": "Todo Madrid",
+  "direccion": "Calle de Alcalá 400, 28027 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "aviso@rayourgencias.es",
+  "instagram": "",
+  "whatsappTexto": "Hola, tengo una avería urgente.",
+  "horario": {
+    "lun": "00:00-23:59",
+    "mar": "00:00-23:59",
+    "mie": "00:00-23:59",
+    "jue": "00:00-23:59",
+    "vie": "00:00-23:59",
+    "sab": "00:00-23:59",
+    "dom": "00:00-23:59"
+  },
+  "avisos": [
+    "🚐 Técnico en camino a Ciudad Lineal",
+    "💧 Fuga resuelta en Chamberí en 40 minutos",
+    "⚡ Avería eléctrica atendida en Tetuán",
+    "⭐ Nueva reseña de 5 estrellas"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.436768,
+  "lng": -3.640099,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Ciudad Lineal",
+      "d": 238,
+      "b": 57
+    },
+    {
+      "t": "metro",
+      "n": "Pueblo Nuevo",
+      "d": 395,
+      "b": 241
+    },
+    {
+      "t": "metro",
+      "n": "Ascao",
+      "d": 718,
+      "b": 182
+    },
+    {
+      "t": "bus",
+      "n": "Ciudad Lineal",
+      "d": 226,
+      "b": 31
+    },
+    {
+      "t": "bus",
+      "n": "Vital Aza-Albasanz",
+      "d": 413,
+      "b": 122
+    },
+    {
+      "t": "parking",
+      "n": "Parking Lidl",
+      "d": 506,
+      "b": 119
+    },
+    {
+      "t": "parking",
+      "n": "Parking",
+      "d": 531,
+      "b": 88
+    },
+    {
+      "t": "parque",
+      "n": "Parque",
+      "d": 213,
+      "b": 125
+    },
+    {
+      "t": "parque",
+      "n": "Parque Calero",
+      "d": 865,
+      "b": 261
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#060d18;--fg:#eaf4ff;--muted:#7f93ad;--accent:#00e1ff;--alert:#ff4d2e;--water:#2d7dff;--line:rgba(160,210,255,.14);--font-d:'Barlow Condensed',sans-serif;--font-b:'Barlow',sans-serif;--btn-ink:#04121c;--btn-r:10px;--btn-hover:#fff;--btn-hover-ink:#04121c}
+.wrap{width:min(1280px,100% - 40px);margin-inline:auto}
+.tg{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--font-d);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.tg::before{content:"";width:8px;height:8px;background:currentColor;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+h2{font:800 clamp(48px,7vw,112px)/.9 var(--font-d);text-transform:uppercase;margin:.2em 0 .4em}
+h2 em{font-style:normal;color:var(--accent)}
+
+/* Apertura: apagón, bombilla que parpadea, arco eléctrico y vuelve la luz */
+#opening{background:#000;display:grid;place-items:center;overflow:hidden}
+html.js #opening{display:grid}
+.bulb{width:min(26vw,170px);position:relative;z-index:2}
+.bulb svg{width:100%;overflow:visible}
+.bulb .glass{fill:#111;stroke:#333;stroke-width:3;transition:fill .05s}
+.bulb .fil{fill:none;stroke:#333;stroke-width:3}
+.bulb.on .glass{fill:#fff6c8;stroke:#ffe27a;filter:drop-shadow(0 0 40px #ffe27a)}
+.bulb.on .fil{stroke:#ff9d00}
+.arc{position:absolute;left:0;top:50%;width:100%;height:120px;translate:0 -50%;z-index:1}
+.arc svg{width:100%;height:100%;overflow:visible}
+.arc path{fill:none;stroke:var(--accent);stroke-width:3;filter:drop-shadow(0 0 10px var(--accent)) drop-shadow(0 0 30px var(--accent))}
+.op-txt{position:absolute;left:0;right:0;bottom:14%;text-align:center;font:900 clamp(40px,7vw,96px)/1 var(--font-d);text-transform:uppercase;color:#fff;letter-spacing:.02em}
+.op-txt small{display:block;font:700 14px var(--font-d);letter-spacing:.5em;color:var(--alert)}
+.op-white{position:absolute;inset:0;background:#fff;opacity:0;z-index:3}
+
+/* Cabecera */
+.fx-nav{padding:12px 0}
+.fx-nav.scrolled{background:rgba(6,13,24,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font:900 26px/1 var(--font-d);text-transform:uppercase}
+.logo svg{width:26px;height:30px}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font:700 15px var(--font-d);letter-spacing:.12em;text-transform:uppercase}
+.nav ul a:hover{color:var(--accent)}
+.callbtn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;background:var(--alert);color:#fff;font:800 18px var(--font-d);letter-spacing:.04em;position:relative}
+.callbtn::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(255,77,46,.7);animation:ring 1.6s infinite}
+@keyframes ring{to{box-shadow:0 0 0 16px rgba(255,77,46,0)}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;padding:110px 0 50px;overflow:hidden;display:flex;align-items:center}
+.hero canvas{opacity:.65}
+#arc-cv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.live{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:99px;font:600 14px var(--font-b);background:rgba(0,0,0,.35)}
+.live i{width:9px;height:9px;border-radius:50%;background:#2bd97a;box-shadow:0 0 12px #2bd97a;animation:blk 1.2s infinite}
+@keyframes blk{50%{opacity:.3}}
+.hero h1{font:900 clamp(70px,11vw,190px)/.82 var(--font-d);text-transform:uppercase;margin:22px 0 24px}
+.hero h1 .z{color:var(--accent);text-shadow:0 0 40px rgba(0,225,255,.45)}
+.hero h1 .s{display:block;color:transparent;-webkit-text-stroke:2px var(--fg)}
+.hero p.lead{font-size:clamp(17px,1.5vw,21px);color:#bfd0e4;max-width:42ch;margin:0 0 30px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-ctas .callbtn{font-size:24px;padding:16px 26px}
+.eta{border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(160deg,rgba(0,225,255,.08),rgba(0,0,0,.4));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.eta small{font:700 13px var(--font-d);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.clock{font:900 clamp(70px,8vw,120px)/1 var(--font-d);color:var(--accent);font-variant-numeric:tabular-nums;margin:6px 0}
+.eta .row{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.eta .row b{color:var(--fg)}
+.photo-strip{position:absolute;right:-60px;bottom:-60px;width:44vw;max-width:620px;aspect-ratio:16/10;z-index:0;opacity:.32;mask:radial-gradient(closest-side,#000 40%,transparent);-webkit-mask:radial-gradient(closest-side,#000 40%,transparent)}
+.photo-strip img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.3)}
+
+/* ¿Qué te pasa? */
+.what{padding:140px 0 100px}
+.problems{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.pb{border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:10px;min-height:170px;transition:border-color .3s,background .3s,transform .3s}
+.pb .ic{font-size:34px}
+.pb b{font:800 26px/1 var(--font-d);text-transform:uppercase}
+.pb span{color:var(--muted);font-size:14px}
+.pb:hover{border-color:var(--accent)}
+.pb[aria-pressed=true]{background:var(--accent);color:#04121c;border-color:var(--accent)}
+.pb[aria-pressed=true] span{color:#04121c}
+.answer{margin-top:20px;border-radius:22px;padding:30px;background:#0b1a2e;border:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.answer h3{font:800 34px/1 var(--font-d);text-transform:uppercase;margin:0 0 10px}
+.answer ol{margin:0;padding-left:20px;color:#bfd0e4}
+.answer li{margin:4px 0}
+.answer .pr{font:900 64px/1 var(--font-d);color:var(--accent);text-align:right}
+.answer .pr small{display:block;font:600 13px var(--font-b);color:var(--muted)}
+
+/* Servicios */
+.serv{padding:60px 0 120px}
+.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.side{position:relative;border-radius:28px;overflow:hidden;min-height:440px;padding:34px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:scale 1s cubic-bezier(.2,.8,.2,1)}
+.side:hover img{scale:1.06}
+.side::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(6,13,24,.95),rgba(6,13,24,.25))}
+.side.w::before{background:linear-gradient(0deg,rgba(10,30,70,.95),rgba(45,125,255,.2))}
+.side h3{font:900 clamp(44px,5vw,80px)/.9 var(--font-d);text-transform:uppercase;margin:0 0 14px}
+.side ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.side li{padding:7px 12px;border-radius:99px;background:rgba(255,255,255,.12);font-size:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+
+/* Zonas */
+.zones{padding:0 0 120px}
+.z-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.zc{display:inline-flex;gap:10px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:12px;font:700 18px var(--font-d);text-transform:uppercase;letter-spacing:.04em;transition:background .3s,color .3s}
+.zc i{font:600 13px var(--font-b);font-style:normal;color:var(--accent);text-transform:none;letter-spacing:0}
+.zc:hover{background:var(--accent);color:#04121c}.zc:hover i{color:#04121c}
+
+/* Pasos + números */
+.how{padding:0 0 120px}
+.h-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.hw{border-radius:22px;padding:30px;border:1px solid var(--line);position:relative;overflow:hidden}
+.hw b{font:900 90px/1 var(--font-d);color:transparent;-webkit-text-stroke:1px var(--accent)}
+.hw h3{font:800 28px var(--font-d);text-transform:uppercase;margin:6px 0}
+.hw p{margin:0;color:var(--muted)}
+.nums{padding:90px 0;background:var(--accent);color:#04121c}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.num b{display:inline-flex;font:900 clamp(70px,8vw,130px)/1 var(--font-d)}
+.num>span{display:block;font:800 15px var(--font-d);letter-spacing:.14em;text-transform:uppercase}
+
+.rev{padding:130px 0}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.rv{border-radius:20px;padding:28px;background:#0b1a2e;border:1px solid var(--line)}
+.rv .s{color:#ffd23f;letter-spacing:.2em}
+.rv p{font-size:18px}
+.rv small{color:var(--muted)}
+
+.contact{padding:0 0 120px}
+.ct{border-radius:30px;padding:clamp(28px,5vw,70px);background:radial-gradient(600px circle at var(--mx,30%) var(--my,40%),rgba(255,77,46,.25),transparent 60%),#0b1a2e;border:1px solid var(--line);display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.bigtel{display:block;font:900 clamp(56px,8vw,130px)/.9 var(--font-d);color:var(--fg)}
+.bigtel:hover{color:var(--alert)}
+form{display:grid;gap:12px}
+label{display:grid;gap:6px;font:700 13px var(--font-d);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--fg);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+select option{background:#0b1a2e}
+
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:900 clamp(80px,19vw,330px)/.85 var(--font-d);text-transform:uppercase;text-align:center;white-space:nowrap}
+.foot-word .ch.hot .ci{color:var(--accent);text-shadow:0 0 30px var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:20px}
+.mob-call{display:none}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .nav .callbtn span{display:none}
+  .hero-grid,.s-grid,.ct,.answer{grid-template-columns:1fr}
+  .answer .pr{text-align:left}
+  .problems{grid-template-columns:1fr 1fr}
+  .h-grid,.rv-grid{grid-template-columns:1fr}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .photo-strip{display:none}
+  .mob-call{display:flex;position:fixed;left:12px;right:84px;bottom:20px;z-index:131;justify-content:center;font-size:20px}
+}
+</style>
+</head>
+<body>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><svg viewBox="0 0 26 30"><path d="M15 0 L2 17 h9 l-3 13 15-19 h-9z" fill="#00e1ff"/></svg><span data-biz="nombre">Rayo Urgencias</span></a>
+    <ul><li><a href="#averia">Tu avería</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#zonas">Zonas</a></li><li><a href="#contacto">Contacto</a></li></ul>
+    <a class="callbtn" data-biz-link="tel" data-cursor="Llamar">📞 <span data-biz="telefono">600 000 000</span></a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"urbano","shots":[{"vid":"https://assets.mixkit.co/videos/47071/47071-720.mp4","img":"1607472586893-edb57bdc0e39","k":"Urgencias 24 h","t":"¿Avería? <em>Llegamos</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/49023/49023-720.mp4","img":"1585704032915-c3400ca199e7","k":"Fontanería","t":"Fugas, atascos <em>y calderas</em>","pos":"l"},{"img":"1621905251189-08b45d6a269e","n":{"v":30,"l":"minutos en llegar"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/23695/23695-720.mp4","img":"1581244277943-fe4a9c777189","k":"Electricidad","t":"Luz <em>sin sustos</em>","big":"24 H","pos":"c"},{"vid":"https://assets.mixkit.co/videos/45367/45367-720.mp4","img":"1607472586893-edb57bdc0e39","k":"Precio","t":"Sabes cuánto <em>antes de abrir</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Fontanería y electricidad 24 h</span></p>
+  <h1 data-hero-hide>¿Avería? <em>Llegamos en 30 min</em></h1>
+  <p class="film-p" data-hero-hide>Dinos qué pasa y te damos precio y hora de llegada al momento.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#configurador" data-cursor="Urgente">Pedir técnico ahora</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="casa">
+<script type="application/json">{"eyebrow":"Avería en directo","title":"¿Qué avería <em>tienes?</em>","sub":"Elige la avería, haz lo que te decimos mientras llegamos y sigue al técnico en directo, con precio cerrado.","cta":"Pedir técnico ahora","msg":"Hola, tengo una avería:"}</script>
+</section>
+
+<section class="what" id="averia">
+  <div class="wrap">
+    <p class="tg" data-scramble>Diagnóstico rápido</p>
+    <h2 data-split>¿Qué te <em>pasa?</em></h2>
+    <div class="problems" id="probs" data-reveal="stagger">
+      <button class="pb" type="button" aria-pressed="true" data-k="0"><span class="ic">💧</span><b>Fuga de agua</b><span>Gotea, sale agua o hay mancha en el techo</span></button>
+      <button class="pb" type="button" aria-pressed="false" data-k="1"><span class="ic">⚡</span><b>Sin luz</b><span>Salta el diferencial o no hay corriente</span></button>
+      <button class="pb" type="button" aria-pressed="false" data-k="2"><span class="ic">🚽</span><b>Atasco</b><span>Váter, fregadero o bajante atascado</span></button>
+      <button class="pb" type="button" aria-pressed="false" data-k="3"><span class="ic">🔥</span><b>Sin agua caliente</b><span>Caldera o termo que no arranca</span></button>
+    </div>
+    <div class="answer" data-reveal="up">
+      <div><h3 id="a-t">Fuga de agua</h3><ol id="a-s"></ol></div>
+      <div><div class="pr"><span id="a-p">desde 59 €</span><small>desplazamiento y primera media hora</small></div><p><a class="btn magnetic" id="a-wa" data-biz-link="wa" data-cursor="Enviar" data-alt="Te llamamos en 2 min">Pedir técnico ahora</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="wrap">
+    <p class="tg" data-scramble>Servicios</p>
+    <h2 data-split>Agua <em>y</em> luz</h2>
+    <div class="s-grid" data-reveal="stagger">
+      <div class="side w" data-tilt="4"><img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><h3>Fontanería</h3><ul><li>Fugas</li><li>Atascos</li><li>Calderas y termos</li><li>Grifería</li><li>Detección sin obra</li><li>Bajantes</li></ul></div>
+      <div class="side" data-tilt="4"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&amp;q=70&amp;auto=format 800w, https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1000&amp;q=70&amp;auto=format 1000w" sizes="(max-width:760px) 100vw, 40vw" alt="" loading="lazy"><h3>Electricidad</h3><ul><li>Cortes de luz</li><li>Cuadros eléctricos</li><li>Boletines</li><li>Enchufes y puntos</li><li>Iluminación LED</li><li>Cargadores coche</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="zones" id="zonas">
+  <div class="wrap">
+    <p class="tg" data-scramble>Zonas</p>
+    <h2 data-split>Cerca <em>de ti</em></h2>
+    <div class="z-wrap" data-reveal="stagger">
+      <span class="zc">Centro <i>20 min</i></span><span class="zc">Salamanca <i>20 min</i></span><span class="zc">Chamberí <i>20 min</i></span><span class="zc">Retiro <i>25 min</i></span><span class="zc">Tetuán <i>25 min</i></span><span class="zc">Chamartín <i>25 min</i></span><span class="zc">Arganzuela <i>25 min</i></span><span class="zc">Ciudad Lineal <i>15 min</i></span><span class="zc">San Blas <i>15 min</i></span><span class="zc">Moratalaz <i>20 min</i></span><span class="zc">Vallecas <i>25 min</i></span><span class="zc">Carabanchel <i>30 min</i></span><span class="zc">Usera <i>30 min</i></span><span class="zc">Hortaleza <i>20 min</i></span><span class="zc">Coslada <i>15 min</i></span><span class="zc">Alcobendas <i>30 min</i></span>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Una urgencia real","title":"De tu llamada <em>a arreglado</em>","play":"Ver la urgencia","metric":{"label":"Minutos desde tu llamada"},"frames":[{"k":"00:00","t":"Nos llamas","p":"Te decimos qué hacer mientras llegamos y el precio cerrado.","img":"1585704032915-c3400ca199e7","v":0},{"k":"00:05","t":"Salimos","p":"Furgoneta equipada y la ubicación del técnico en tu WhatsApp.","img":"1581244277943-fe4a9c777189","v":5},{"k":"00:28","t":"Llegamos","p":"Localizamos la avería sin romper de más.","img":"1607472586893-edb57bdc0e39","v":28},{"k":"01:10","t":"Arreglado","p":"Factura al momento y 12 meses de garantía.","img":"1621905251189-08b45d6a269e","v":70}],"layout":"cinema"}</script>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <p class="tg" data-scramble>Así funciona</p>
+    <h2 data-split>Tres pasos, <em>cero líos</em></h2>
+    <div class="h-grid" data-reveal="stagger">
+      <div class="hw" data-tilt="5"><b>01</b><h3>Llamas o mandas foto</h3><p>Te decimos qué puede ser y el precio cerrado.</p></div>
+      <div class="hw" data-tilt="5"><b>02</b><h3>Salimos ya</h3><p>Te avisamos por WhatsApp con la ubicación del técnico.</p></div>
+      <div class="hw" data-tilt="5"><b>03</b><h3>Arreglado y garantizado</h3><p>Factura al momento y 12 meses de garantía.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="wrap nums-grid">
+    <div class="num"><b data-count="24">24</b><span>horas al día</span></div>
+    <div class="num"><b data-count="30">30</b><span>minutos de media</span></div>
+    <div class="num"><b data-count="15000">15000</b><span>averías resueltas</span></div>
+    <div class="num"><b data-count="4,8">4,8</b><span>en Google</span></div>
+  </div>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Nos llamaron <em>a las 3 de la mañana</em>","layout":"chat","rating":"4,9","count":"300","items":[{"n":"Carlos R.","t":"Se reventó una tubería un domingo de madrugada. En 25 minutos estaban en casa.","s":5,"src":"Google"},{"n":"Marta G.","t":"Me dijeron el precio por teléfono y fue exactamente ese. Honrados.","s":5,"src":"Google"},{"n":"Javier P.","t":"Saltaba el diferencial cada hora. Lo encontraron en 10 minutos.","s":5,"src":"WhatsApp"},{"n":"Ana S.","t":"Mil gracias por venir un domingo. Todo perfecto.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="ct" data-spot>
+      <div>
+        <p class="tg">Urgencias 24 h</p>
+        <a class="bigtel" data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+        <p style="color:var(--muted)"><span data-open-status></span></p>
+      </div>
+      <form data-wa-form="Hola, tengo una avería:">
+        <label>Qué pasa<select name="Avería"><option>Fuga de agua</option><option>Sin luz</option><option>Atasco</option><option>Sin agua caliente</option><option>Otro</option></select></label>
+        <label>Calle y barrio<input name="Dirección" required></label>
+        <label>Detalles<textarea name="Detalles" rows="2"></textarea></label>
+        <button class="btn magnetic" type="submit" data-cursor="Enviar" data-alt="Abrir WhatsApp">Pedir técnico</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>24 horas</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Rayo Urgencias</span> · Empresa instaladora autorizada nº: pendiente</span><span>Aviso legal · Privacidad · Cookies</span></div>
+</footer>
+
+<a class="callbtn mob-call" data-biz-link="tel">📞 Llamar ahora</a>
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+// Rayo en zigzag entre dos puntos
+function zig(x1, y1, x2, y2, n, amp) {
+  let d = 'M' + x1 + ' ' + y1;
+  for (let i = 1; i < n; i++) { const t = i / n; d += ' L' + (x1 + (x2 - x1) * t + (Math.random() - .5) * amp * .3) + ' ' + (y1 + (y2 - y1) * t + (Math.random() - .5) * amp); }
+  return d + ' L' + x2 + ' ' + y2;
+}
+window.PAGE = {
+  init(FX) {
+    // Reloj de llegada: cuenta atrás de 30 min que se reinicia
+    const clock = FX.$('#clock'), arr = FX.$('#arrive'); let left = 30 * 60 - 1;
+    const tick = () => { const m = Math.floor(left / 60), s = left % 60; clock.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0'); const t = new Date(Date.now() + left * 1000); arr.textContent = t.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }); left = left > 0 ? left - 1 : 30 * 60 - 1; };
+    if (clock) { tick(); setInterval(tick, 1000); }
+    if (FX.$('#techs')) setInterval(() => FX.$('#techs').textContent = (2 + Math.floor(Math.random() * 3)) + ' técnicos', 9000);
+    // Diagnóstico
+    const P = [
+      ['Fuga de agua', ['Cierra la llave de paso general', 'Seca y aparta lo que se pueda mojar', 'Mándanos una foto por WhatsApp'], 'desde 59 €'],
+      ['Sin luz', ['Mira si ha saltado el diferencial', 'Desenchufa lo último que conectaste', 'Si vuelve a saltar, no lo subas más'], 'desde 55 €'],
+      ['Atasco', ['No tires más agua ni productos químicos', 'Si hay olor, ventila', 'Te llevamos máquina desatascadora'], 'desde 69 €'],
+      ['Sin agua caliente', ['Comprueba la presión de la caldera', 'Rearma una vez si da error', 'Apunta el código de error que sale'], 'desde 65 €']
+    ];
+    const probs = FX.$('#probs');
+    const set = k => {
+      const p = P[k];
+      probs.querySelectorAll('.pb').forEach(b => b.setAttribute('aria-pressed', +b.dataset.k === k));
+      FX.$('#a-t').textContent = p[0]; FX.$('#a-p').textContent = p[2];
+      FX.$('#a-s').innerHTML = p[1].map(s => '<li>' + s + '</li>').join('');
+      if (!FX.RM) gsap.from('#a-s li, #a-t, #a-p', { x: -20, opacity: 0, stagger: .06, duration: .45, ease: 'power3.out' });
+      const a = FX.$('#a-wa'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, tengo una urgencia: ' + p[0] + '. ¿Podéis venir?');
+    };
+    probs.addEventListener('click', e => { const b = e.target.closest('.pb'); if (b) set(+b.dataset.k); });
+    set(0);
+  },
+  opening(tl, FX) {
+    const bulb = FX.$('.bulb'), arc = FX.$('#arcp'), st = { f: 0 };
+    const flick = on => () => bulb.classList.toggle('on', on);
+    tl.from('.bulb', { y: -60, opacity: 0, duration: .6, ease: 'back.out(2)' })
+      .call(flick(true), null, '+=.2').call(flick(false), null, '+=.08').call(flick(true), null, '+=.12').call(flick(false), null, '+=.06').call(flick(true), null, '+=.2').call(flick(false), null, '+=.1')
+      .to(st, { f: 1, duration: .6, ease: 'none', onUpdate: () => { arc.setAttribute('d', zig(0, 60, 1200 * st.f, 60, 24, 90)); } }, '+=.1')
+      .call(flick(true))
+      .from('.op-txt', { y: 30, opacity: 0, duration: .5, ease: 'power3.out' }, '<')
+      .to(st, { f: 1, duration: .5, onUpdate: () => arc.setAttribute('d', zig(0, 60, 1200, 60, 24, 110)) })
+      .to('.op-white', { opacity: 1, duration: .15 })
+      .set('.bulb, .arc, .op-txt', { opacity: 0 })
+      .set('#opening', { backgroundColor: 'transparent' })
+      .to('.op-white', { opacity: 0, duration: .7, ease: 'power2.out' });
+  },
+  hero(tl, FX) {
+    const a = FX.splitChars(FX.$('.h1a')), b = FX.splitChars(FX.$('.h1b'));
+    tl.from(a, { yPercent: 120, duration: .8, ease: 'expo.out', stagger: .04 })
+      .from(b, { yPercent: 120, opacity: 0, filter: 'brightness(4)', duration: .8, ease: 'expo.out', stagger: .04 }, .15)
+      .from('.hero h1 .s', { clipPath: 'inset(0 100% 0 0)', duration: .9, ease: 'expo.inOut' }, .35)
+      .from('.eta', { x: 80, opacity: 0, duration: 1, ease: 'expo.out' }, .3)
+      .from('.live, .hero .lead, .hero-ctas', { y: 24, opacity: 0, stagger: .1, duration: .7, ease: 'power3.out' }, .45);
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>

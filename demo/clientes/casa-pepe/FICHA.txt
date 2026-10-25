@@ -1,0 +1,11 @@
+Cliente: Casa Pepe
+Nicho: Restaurantes y bares
+Zona: Lavapiés, Madrid
+Teléfono: 600 111 222
+Precio orientativo: 490–990 € + 29 €/mes
+Argumento: Reservas por WhatsApp y carta siempre actualizada sin depender de TheFork.
+
+Para cambiar textos, fotos, colores u horario: abre la web añadiendo ?personalizar=1 a la dirección, cámbialo y descarga la configuración.
+Después: node robot/robot.js importar archivo.json
+Avisos en vivo: solo con hechos reales del negocio, nunca inventados.
+Para publicarla: sube la carpeta completa (index.html + assets) a Netlify, Vercel o tu hosting.

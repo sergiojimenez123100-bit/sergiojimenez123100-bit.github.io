@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="es" class="no-js" data-fx-cursor="blend">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Órbita Drones &amp; Tech · Tienda de drones y tecnología en Madrid</title>
+<meta name="description" content="Tienda de drones, cámaras de acción y gadgets en Madrid. Te asesoramos para volar legal: registro AESA, curso A1/A3, seguro y reparación.">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.FX_BOOT)document.documentElement.classList.add('fx-fail')},6000)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../_motor/fx.css">
+<script id="biz" type="application/json">
+{
+  "demo": true,
+  "nicho": "tienda-drones",
+  "nombre": "Órbita Drones & Tech",
+  "lema": "Vuela legal desde el primer día",
+  "zona": "Arganzuela, Madrid",
+  "direccion": "Paseo de las Delicias 60, 28045 Madrid",
+  "telefono": "600 000 000",
+  "whatsapp": "600000000",
+  "email": "hola@orbitadrones.es",
+  "instagram": "@orbitadrones",
+  "cita": true,
+  "whatsappTexto": "Hola, quiero información sobre un dron.",
+  "horario": {
+    "lun": "10:00-14:00, 17:00-20:30",
+    "mar": "10:00-14:00, 17:00-20:30",
+    "mie": "10:00-14:00, 17:00-20:30",
+    "jue": "10:00-14:00, 17:00-20:30",
+    "vie": "10:00-14:00, 17:00-20:30",
+    "sab": "10:00-14:00",
+    "dom": "Cerrado"
+  },
+  "avisos": [
+    "🛸 Alguien acaba de reservar una demo de vuelo",
+    "🎓 Quedan 4 plazas en el curso A1/A3 del sábado",
+    "🔧 Reparación de gimbal entregada hoy",
+    "⭐ Nueva reseña de 5 estrellas"
+  ],
+  "mapa": {
+    "estilo": "oscuro"
+  },
+  "lat": 40.3985,
+  "lng": -3.6936,
+  "cerca": [
+    {
+      "t": "metro",
+      "n": "Delicias",
+      "d": 102,
+      "b": 334
+    },
+    {
+      "t": "metro",
+      "n": "Palos de la Frontera",
+      "d": 520,
+      "b": 349
+    },
+    {
+      "t": "metro",
+      "n": "Arganzuela-Planetario",
+      "d": 732,
+      "b": 143
+    },
+    {
+      "t": "bus",
+      "n": "Ferrocarril",
+      "d": 296,
+      "b": 328
+    },
+    {
+      "t": "bus",
+      "n": "Jaime El Conquistador-Embajadores",
+      "d": 391,
+      "b": 258
+    },
+    {
+      "t": "parking",
+      "n": "Parking",
+      "d": 85,
+      "b": 238
+    },
+    {
+      "t": "parking",
+      "n": "Aparcamiento para residentes. Rutilio Gacís",
+      "d": 575,
+      "b": 207
+    },
+    {
+      "t": "parque",
+      "n": "Parque",
+      "d": 251,
+      "b": 17
+    },
+    {
+      "t": "parque",
+      "n": "Jardín de Palestina",
+      "d": 440,
+      "b": 341
+    },
+    {
+      "t": "lugar",
+      "n": "Museo del Ferrocarril de Madrid",
+      "d": 153,
+      "b": 53
+    },
+    {
+      "t": "lugar",
+      "n": "Almacén del MUNCYT",
+      "d": 249,
+      "b": 89
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#070b12;--fg:#e8f1ff;--muted:#8a9bb4;--accent:#c6ff3d;--accent2:#38d6ff;--line:rgba(232,241,255,.12);--font-d:'Space Grotesk',sans-serif;--font-m:'JetBrains Mono',monospace;--font-b:'Space Grotesk',sans-serif;--btn-ink:#070b12;--btn-r:12px;--btn-hover:#38d6ff;--btn-hover-ink:#070b12;--cursor-ink:#070b12}
+body{font-family:var(--font-b)}
+.wrap{width:min(1260px,100% - 40px);margin-inline:auto}
+.kick{font:700 12px/1 var(--font-m);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.kick::before{content:"// "}
+h2{font:700 clamp(44px,6.5vw,104px)/.95 var(--font-d);margin:.2em 0 .35em;letter-spacing:-.04em}
+h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px var(--accent2)}
+
+/* Apertura: secuencia de despegue con cuenta atrás */
+#opening{background:var(--bg);font-family:var(--font-m)}
+.op-grid{position:absolute;inset:0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px}
+.op-hud{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--accent)}
+.op-hud b{display:block;font:700 clamp(70px,16vw,200px)/1 var(--font-m)}
+.op-hud span{font-size:14px;letter-spacing:.3em;color:var(--fg)}
+.op-ret{position:absolute;left:50%;top:50%;width:220px;height:220px;margin:-110px;border:1px solid var(--accent2);border-radius:50%}
+
+/* Cabecera */
+.fx-nav{padding:14px 0}
+.fx-nav.scrolled{background:rgba(7,11,18,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font:700 21px/1 var(--font-d);letter-spacing:-.02em}
+.logo i{width:28px;height:28px;border:2px solid var(--accent);border-radius:50%;position:relative}
+.logo i::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--accent2);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.2}}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:500 13px var(--font-m);text-transform:uppercase}
+.nav ul a:hover{color:var(--accent)}
+.nav .btn{padding:.85em 1.3em;font-size:14px}
+
+/* HERO: visor de dron con telemetría */
+.hero{position:relative;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:100px 0 36px}
+.hero canvas{opacity:.55}
+.view{position:absolute;inset:0;z-index:0}
+.view img{width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.9) contrast(1.1)}
+.view::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 30%,var(--bg) 85%)}
+.ret{position:absolute;left:50%;top:46%;width:clamp(180px,22vw,300px);aspect-ratio:1;margin-left:calc(clamp(180px,22vw,300px) / -2);margin-top:calc(clamp(180px,22vw,300px) / -2);z-index:2;border:1.5px solid rgba(198,255,61,.7);border-radius:50%}
+.ret::before,.ret::after{content:"";position:absolute;background:rgba(198,255,61,.7)}
+.ret::before{left:50%;top:-20px;bottom:-20px;width:1.5px}
+.ret::after{top:50%;left:-20px;right:-20px;height:1.5px}
+.tele{position:absolute;z-index:3;font:700 12px/1.6 var(--font-m);color:var(--accent);background:rgba(7,11,18,.55);border:1px solid var(--line);padding:10px 14px;border-radius:10px;backdrop-filter:blur(6px)}
+.tele.a{left:4%;top:24%}.tele.b{right:4%;top:24%;text-align:right}.tele.c{left:4%;bottom:28%}
+.tele span{color:var(--fg);opacity:.7}
+.ttl{position:relative;z-index:3}
+.ttl h1{font:700 clamp(54px,10vw,170px)/.9 var(--font-d);margin:0;letter-spacing:-.05em}
+.ttl h1 em{font-style:normal;color:var(--accent)}
+.hero-foot{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:30px}
+.hero-foot p{max-width:40ch;margin:0;font-size:18px;color:#c4d2e6}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.meta{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
+
+/* Catálogo */
+.cat{padding:120px 0}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.pc{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,rgba(232,241,255,.04),transparent)}
+.pc .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
+.pc img{width:100%;height:100%;object-fit:cover;transition:scale 1s cubic-bezier(.2,.8,.2,1)}
+.pc:hover img{scale:1.06}
+.pc .ph b{position:absolute;top:12px;left:12px;font:700 11px var(--font-m);background:var(--accent);color:var(--bg);padding:5px 9px;border-radius:6px}
+.pc div.tx{padding:18px}
+.pc h3{font:700 22px/1.1 var(--font-d);margin:0 0 8px}
+.pc ul{list-style:none;margin:0 0 12px;padding:0;font:400 13px/1.7 var(--font-m);color:var(--muted)}
+.pc .pr{display:flex;justify-content:space-between;align-items:center;font:700 24px var(--font-d)}
+.pc .pr small{font:700 11px var(--font-m);color:var(--accent2)}
+
+/* Servicios */
+.serv{padding:0 0 120px}
+.s-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.sv{border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.sv i{font-style:normal;font-size:28px}
+.sv h3{font:700 20px var(--font-d);margin:12px 0 6px}
+.sv p{margin:0 0 12px;color:var(--muted);font-size:14px;line-height:1.5}
+.sv b{font:700 13px var(--font-m);color:var(--accent)}
+.sv:hover{border-color:var(--accent)}
+
+/* Reserva */
+.book{padding:120px 0}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.pick{display:grid;gap:20px}
+.pick>div>b{display:block;font:700 12px var(--font-m);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{padding:12px 16px;border:1px solid var(--line);border-radius:10px;font:500 15px var(--font-b);transition:all .3s}
+.pills button:hover{border-color:var(--fg)}
+.pills button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.term{border:1px solid var(--line);border-radius:18px;padding:26px;background:#0b111c;font-family:var(--font-m)}
+.term h3{font:700 14px var(--font-m);color:var(--accent);margin:0 0 16px;letter-spacing:.12em}
+.term h3::before{content:"● ● ●  ";color:var(--muted)}
+.term div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.term .tot{border:0;color:var(--accent2)}
+.term .btn{width:100%;margin-top:16px}
+
+.contact{padding:0 0 110px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ct-grid iframe{width:100%;min-height:360px;border:0;border-radius:18px}
+.ct-grid a{display:block;font:700 clamp(24px,2.8vw,38px)/1.2 var(--font-d)}
+.ct-grid a:hover{color:var(--accent)}
+footer{padding:40px 0 30px;overflow:hidden;border-top:1px solid var(--line)}
+.foot-word{font:700 clamp(80px,19vw,320px)/.85 var(--font-d);text-align:center;white-space:nowrap;letter-spacing:-.06em}
+.foot-word .ch.hot .ci{color:var(--accent)}
+.foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px;margin-top:24px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .tele.b,.tele.c{display:none}.tele.a{top:16%}
+  .c-grid,.book-grid,.ct-grid{grid-template-columns:1fr}
+  .s-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="fx-grain" aria-hidden="true"></div>
+
+
+<header class="fx-nav">
+  <nav class="nav wrap">
+    <a class="logo" href="#top"><i></i><span data-biz="nombre">Órbita Drones &amp; Tech</span></a>
+    <ul><li><a href="#catalogo">Catálogo</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#configurador">Volar legal</a></li><li><a href="#reserva">Demo</a></li></ul>
+    <a class="btn magnetic" href="#reserva" data-cursor="Volar" data-alt="Prueba en tienda">Reservar demo</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero fx-film" id="inicio">
+<script type="application/json">{"estilo":"urbano","shots":[{"vid":"https://assets.mixkit.co/videos/44644/44644-720.mp4","img":"1473968512647-3e447244af8f","k":"Drones y tech","t":"Vuela <em>legal</em>","pos":"c"},{"vid":"https://assets.mixkit.co/videos/15919/15919-720.mp4","img":"1770260071751-0711b6f26ff4","k":"Desde el cielo","t":"Madrid <em>como nunca</em>","pos":"l"},{"img":"1507582020474-9a35b7d455d9","n":{"v":250,"l":"gramos: el límite que lo cambia todo","suf":" g"},"pos":"r"},{"vid":"https://assets.mixkit.co/videos/44708/44708-720.mp4","img":"1577533870320-2c31e7e41028","k":"Te enseñamos","t":"A1, A3 <em>y seguro</em>","big":"DRON","pos":"c"},{"vid":"https://assets.mixkit.co/videos/623/623-720.mp4","img":"1473968512647-3e447244af8f","k":"¿Puedo volarlo?","t":"Compruébalo <em>aquí</em>","pos":"l"}]}</script>
+<div class="film-hud"><div class="film-in">
+  <p class="film-k" data-hero-hide><span data-open-status></span><span>Tienda de drones</span></p>
+  <h1 data-hero-hide>Drones y tech. <em>Vuela legal.</em></h1>
+  <p class="film-p" data-hero-hide>Elige dron y zona: te decimos si puedes volarlo y qué papeles necesitas.</p>
+  <div class="film-cta" data-hero-hide><a class="btn magnetic" href="#configurador" data-cursor="Comprobar">¿Puedo volarlo?</a><a class="btn ghost magnetic" href="#catalogo" data-cursor="Ver">Catálogo</a></div>
+</div></div>
+</section>
+
+<section class="fx-studio" id="configurador" data-scene="dron">
+<script type="application/json">{"eyebrow":"Asesor de vuelo","title":"Elige equipo y <em>vuela legal</em>","sub":"Dinos qué buscas y para qué: te decimos qué papeles necesitas en España (registro AESA, examen A1/A3, seguro), el precio con extras y la cuota si lo financias.","cta":"Reservar demo en tienda","msg":"Hola, me interesa este equipo:"}</script>
+</section>
+
+<section class="cat" id="catalogo">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">catálogo</p>
+    <h2 data-split>Lo que <em>vuela</em></h2>
+    <div class="c-grid" data-reveal="stagger">
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1770260071751-0711b6f26ff4?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1770260071751-0711b6f26ff4?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1770260071751-0711b6f26ff4?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Dron mini" loading="lazy"><b>SIN EXAMEN</b></div><div class="tx"><h3>Dron mini 4K</h3><ul><li>249 g · categoría C0</li><li>34 min de vuelo</li><li>Plegable, cabe en el bolsillo</li></ul><div class="pr">459 €<small>38 €/MES</small></div></div></div>
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Dron con cámara profesional" loading="lazy"><b>TOP VENTAS</b></div><div class="tx"><h3>Dron cámara pro</h3><ul><li>Sensor 1" · 5,1K</li><li>43 min de vuelo</li><li>Detección de obstáculos</li></ul><div class="pr">1.399 €<small>117 €/MES</small></div></div></div>
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1577533870320-2c31e7e41028?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1577533870320-2c31e7e41028?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1577533870320-2c31e7e41028?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Dron FPV" loading="lazy"><b>FPV</b></div><div class="tx"><h3>Kit FPV con gafas</h3><ul><li>Gafas + mando + dron</li><li>Hasta 140 km/h</li><li>Simulador incluido</li></ul><div class="pr">999 €<small>84 €/MES</small></div></div></div>
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1506731249430-5c2146c9db5f?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1506731249430-5c2146c9db5f?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1506731249430-5c2146c9db5f?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Cámara de acción" loading="lazy"></div><div class="tx"><h3>Cámara de acción</h3><ul><li>5,3K · estabilización</li><li>Sumergible 10 m</li><li>Kit de soportes</li></ul><div class="pr">399 €<small>34 €/MES</small></div></div></div>
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Auriculares" loading="lazy"></div><div class="tx"><h3>Auriculares ANC</h3><ul><li>Cancelación de ruido</li><li>30 h de batería</li><li>Prueba en tienda</li></ul><div class="pr">249 €<small>21 €/MES</small></div></div></div>
+      <div class="pc"><div class="ph"><img src="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=700&amp;q=70&amp;auto=format" srcset="https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=480&amp;q=70&amp;auto=format 480w, https://images.unsplash.com/photo-1615655406736-b37c4fabf923?w=700&amp;q=70&amp;auto=format 700w" sizes="(max-width:760px) 100vw, 40vw" alt="Gadgets y electrónica" loading="lazy"><b>RECOGIDA HOY</b></div><div class="tx"><h3>Gadgets y accesorios</h3><ul><li>Baterías, hélices, filtros ND</li><li>Cargadores y mochilas</li><li>Originales y compatibles</li></ul><div class="pr">desde 19 €<small>EN STOCK</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="wrap">
+    <p class="kick" data-reveal="up">más que una tienda</p>
+    <h2 data-split>Te dejamos <em>volando</em></h2>
+    <div class="s-grid" data-reveal="stagger">
+      <div class="sv"><i>🎓</i><h3>Curso A1/A3</h3><p>Preparamos el examen online de AESA y practicas con instructor.</p><b>89 € · sábados</b></div>
+      <div class="sv"><i>📝</i><h3>Registro y papeleo</h3><p>Te damos de alta como operador y te explicamos las zonas.</p><b>Incluido al comprar</b></div>
+      <div class="sv"><i>🛡️</i><h3>Seguro RC</h3><p>Responsabilidad civil para ocio o uso profesional.</p><b>desde 49 €/año</b></div>
+      <div class="sv"><i>🔧</i><h3>Taller</h3><p>Diagnóstico gratis. Hélices en el día, gimbal en 48–72 h.</p><b>Piezas originales</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="fx-story" id="historia">
+<script type="application/json">{"eyebrow":"Del unboxing al primer vuelo","title":"Tu primer <em>despegue</em>","play":"Ver el proceso","metric":{"label":"Metros de altura"},"frames":[{"k":"Paso 1","t":"Lo montamos","p":"Actualizamos firmware, calibramos la brújula y cargamos baterías en tienda.","img":"1532989029401-439615f3d4b4","v":0},{"k":"Paso 2","t":"Papeles listos","p":"Registro de operador en AESA y seguro activado antes de salir.","img":"1508444845599-5c89863b1c44","v":2},{"k":"Paso 3","t":"Clase de vuelo","p":"Despegue, aterrizaje y vuelta a casa automática con un instructor.","img":"1521405924368-64c5b84bec60","v":30},{"k":"Paso 4","t":"A volar","p":"Primeras tomas en una zona permitida que te enseñamos en el mapa.","img":"1473968512647-3e447244af8f","v":118}],"layout":"phone"}</script>
+</section>
+
+<section class="fx-reviews" id="opiniones">
+<script type="application/json">{"eyebrow":"Opiniones","title":"Pilotos <em>contentos</em>","layout":"chat","rating":"4,9","count":"260","items":[{"n":"Álvaro P.","t":"Me explicaron lo del registro y el examen sin rollos. Aprobé a la primera.","s":5,"src":"Google"},{"n":"Nuria S.","t":"Se me cayó el dron al agua y me lo dejaron como nuevo en 3 días.","s":5,"src":"Google"},{"n":"Rubén D.","t":"Probé tres drones en la tienda antes de decidir. Atención de 10.","s":5,"src":"Google"},{"n":"Carmen V.","t":"Compré el mini para viajar y me enseñaron a volarlo en una tarde.","s":5,"src":"Instagram"},{"n":"Inmo Retiro","t":"Nos asesoraron para el uso profesional en fotos de pisos.","s":5,"src":"Google"}]}</script>
+</section>
+
+<section class="book" id="reserva">
+  <div class="wrap book-grid">
+    <div>
+      <p class="kick">demo gratis</p>
+      <h2 data-split>Pruébalo <em>antes</em></h2>
+      <div class="pick">
+        <div><b>Qué quieres probar</b><div class="pills" data-pick="Equipo"><button type="button" aria-pressed="true">Dron mini</button><button type="button" aria-pressed="false">Dron cámara pro</button><button type="button" aria-pressed="false">FPV</button><button type="button" aria-pressed="false">Cámara de acción</button></div></div>
+        <div><b>Necesitas</b><div class="pills" data-pick="Necesito"><button type="button" aria-pressed="true">Solo verlo</button><button type="button" aria-pressed="false">Curso A1/A3</button><button type="button" aria-pressed="false">Reparación</button></div></div>
+        <div><b>Cuándo</b><div class="pills" data-pick="Cuándo"><button type="button" aria-pressed="true">Hoy</button><button type="button" aria-pressed="false">Mañana</button><button type="button" aria-pressed="false">Sábado</button></div></div>
+      </div>
+    </div>
+    <div class="term" data-tilt="4">
+      <h3>RESERVA.LOG</h3>
+      <div id="sum"></div>
+      <div class="tot"><span>Demo</span><span>Gratis · 20 min</span></div>
+      <a class="btn magnetic" id="sum-send" data-biz-link="wa" data-cursor="Enviar" data-alt="Confirmar por WhatsApp">Reservar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="kick">la tienda</p>
+      <a data-biz-link="maps" data-biz="direccion" data-cursor="Ir">Paseo de las Delicias 60, 28045 Madrid</a>
+      <a data-biz-link="tel" data-biz="telefono" data-cursor="Llamar">600 000 000</a>
+      <a data-biz-link="ig" data-biz="instagram" style="color:var(--accent)">@orbitadrones</a>
+      <ul data-horario style="margin-top:24px"></ul>
+    </div>
+    <iframe data-biz-map title="Mapa" loading="lazy"></iframe>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-word" data-magnet-letters>Órbita</div>
+  <div class="wrap foot-row"><span>© <span data-year></span> <span data-biz="nombre">Órbita Drones &amp; Tech</span></span><span>Información orientativa: consulta siempre la normativa de AESA y ENAIRE antes de volar</span></div>
+</footer>
+
+<a class="fx-wa" data-biz-link="wa" aria-label="Escribir por WhatsApp" data-cursor="Chat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg></a>
+
+<script>
+window.PAGE = {
+  init(FX) {
+    const groups = FX.$$('[data-pick]');
+    groups.forEach(g => g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); upd(); }));
+    function upd() {
+      const rows = groups.map(g => [g.dataset.pick, g.querySelector('[aria-pressed=true]')]);
+      FX.$('#sum').innerHTML = rows.map(([k, b]) => '<div><span>&gt; ' + k + '</span><b>' + b.textContent + '</b></div>').join('');
+      const a = FX.$('#sum-send'); a.href = a.href.split('?text=')[0] + '?text=' + encodeURIComponent('Hola, quiero reservar una demo:\n' + rows.map(([k, b]) => '• ' + k + ': ' + b.textContent).join('\n'));
+    }
+    upd();
+    // Telemetría viva: la altura sigue al scroll y la batería baja poco a poco
+    const alt = FX.$('.t-alt'), bat = FX.$('.t-bat'); let b = 87;
+    if (alt) addEventListener('scroll', () => { alt.textContent = Math.max(0, Math.round(118 - scrollY / 12)); }, { passive: true });
+    if (bat) setInterval(() => { b = b > 21 ? b - 1 : 87; bat.textContent = b; }, 4000);
+    if (!FX.RM) {
+      gsap.to('.view img', { scale: 1.25, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+      gsap.to('.ret', { rotation: 90, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+      addEventListener('pointermove', e => gsap.to('.view img', { x: (e.clientX / innerWidth - .5) * -30, y: (e.clientY / innerHeight - .5) * -20, duration: 1.2 }), { passive: true });
+    }
+  },
+  opening(tl, FX) {
+    const n = FX.$('.op-n');
+    tl.from('.op-ret', { scale: 0, duration: .5, ease: 'back.out(2)' }, 0)
+      .call(() => n.textContent = '2', null, .5).call(() => n.textContent = '1', null, .9).call(() => n.textContent = 'GO', null, 1.3)
+      .to('.op-ret', { scale: 8, opacity: 0, duration: .7, ease: 'power3.in' }, 1.4)
+      .to('#opening', { yPercent: -100, duration: .8, ease: 'expo.inOut' }, 1.7);
+  },
+  hero(tl, FX) {
+    tl.from('.view img', { scale: 1.5, opacity: 0, duration: 1.6, ease: 'expo.out' })
+      .from('.ret', { scale: 2.5, opacity: 0, duration: 1, ease: 'expo.out' }, .2)
+      .from('.tele', { x: i => i % 2 ? 40 : -40, opacity: 0, stagger: .1, duration: .8, ease: 'power3.out' }, .5)
+      .from('.ttl h1', { y: 60, opacity: 0, duration: 1.1, ease: 'expo.out' }, .3)
+      .from('.hero-foot > *', { y: 30, opacity: 0, stagger: .12, duration: .8, ease: 'power3.out' }, .6);
+  }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script defer src="../../_motor/fx-cine.js"></script>
+<script defer src="../../_motor/fx.js"></script>
+</body>
+</html>
